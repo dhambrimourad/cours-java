@@ -80,7 +80,7 @@
 </div></div></div></code></pre>
 
 <p>Une fois que vous avez saisi cette ligne de code dans votre méthode main, il vous faut lancer le programme.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse7.png" /><br/>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse7.png" /><br/><br/>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse8.png" />
 
 

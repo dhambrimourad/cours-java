@@ -129,6 +129,10 @@ Cysboy</pre>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;float pi;\npi = 3.141592653f;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">pi</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">pi</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3.141592653f</span>;</div></div></div></code></pre>
 
+<p>Le type double (8 octets) est identique à float, si ce n'est qu'il contient plus de chiffres derrière la virgule.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;double division;\ndivision = 0.333333333333333333333333333333333333333333334d;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">division</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">division</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0.333333333333333333333333333333333333333333334d</span>;</div></div></div></code></pre>
+
 
 
 

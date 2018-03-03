@@ -26,6 +26,8 @@
 
 <h3>Les outils de développement</h3>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk.png" />
+<p>Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk1.png" />
 
 
 

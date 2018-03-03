@@ -50,7 +50,28 @@
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse3.png" />
 <p>Ajoutons une nouvelle classe dans ce projet.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse4.png" />
+<p>Cochez la case : «public static void main(String[] args)».</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse5.png" />
 
+<h3>Votre premier programme</h3>
+<p>Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse6.png" />
+
+<h3>Les commentaires</h3>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  //Un commentaire\n  //Un autre\n  //Encore un autre\n\n  /*\n  Un commentaire\n  Un autre\n  Encore un autre\n  */\n\nCeci n&amp;#x27;est pas un commentaire !\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Un commentaire</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Un autre</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Encore un autre</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">/*</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  Un commentaire</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  Un autre</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  Encore un autre</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  */</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ceci</span> <span class="ace_identifier">n</span>'<span class="ace_identifier">est</span> <span class="ace_identifier">pas</span> <span class="ace_identifier">un</span> <span class="ace_identifier">commentaire</span> <span class="ace_keyword ace_operator">!</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
 
 
 

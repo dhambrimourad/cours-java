@@ -97,8 +97,8 @@
 </div></div></div></code></pre>
 <p>Avec pour résultat :</p>
 <pre>Hello World !
-My name is
-<br/>
+My name is\n
+
 Cysboy</pre>
 
 <h3>Les variables et les opérateurs</h3>

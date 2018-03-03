@@ -101,6 +101,16 @@ My name is
  
 Cysboy</pre>
 
+<h3>Les variables et les opérateurs</h3>
+<p>En Java, nous avons deux types de variables :</p>
+<ul>
+  <li>des variables de type simple ou « primitif » ;</li>
+  <li>des variables de type complexe ou des « objets ».</li>
+</ul>
+<h3>Les variables de type numérique</h3>
+<p>Le type byte(1 octet) peut contenir les entiers entre -128 et +127.</p>
+
+
 
 
 

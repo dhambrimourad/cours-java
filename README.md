@@ -139,6 +139,27 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">caractere</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'A'</span>;
 </div></div></div></code></pre>
 
+<h3>Des variables de type booléen</h3>
+<p>Le type « boolean » ne peut contenir que deux valeurs : true (vrai) ou false (faux).</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;boolean question;\nquestion = true;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">boolean</span> <span class="ace_identifier">question</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">question</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">true</span>;</div></div></div></code></pre>
+
+<h3>Le type String</h3>
+<p>Le type « String » permet de gérer les chaînes de caractères, c'est-à-dire le stockage de texte. Il s'agit d'une variable d'un type plus complexe que l'on appelle <b>« objet »</b>.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Premi&amp;#xE8;re m&amp;#xE9;thode de d&amp;#xE9;claration\nString phrase;\nphrase = &amp;#x22;Titi et Grosminet&amp;#x22;;\n\n//Deuxi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString str = new String();\nstr = &amp;#x22;Une autre cha&amp;#xEE;ne de caract&amp;#xE8;res&amp;#x22;;\n\n//Troisi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString string = &amp;#x22;Une autre cha&amp;#xEE;ne&amp;#x22;;\n\n//Quatri&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString chaine = new String(&amp;#x22;Et une de plus !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Première méthode de déclaration</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">phrase</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">phrase</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Titi et Grosminet"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Deuxième méthode de déclaration</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Une autre chaîne de caractères"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Troisième méthode de déclaration</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">string</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Une autre chaîne"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Quatrième méthode de déclaration</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"Et une de plus !"</span>);</div></div></div></code></pre>
+
 
 
 

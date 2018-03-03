@@ -108,7 +108,12 @@ Cysboy</pre>
   <li>des variables de type complexe ou des « objets ».</li>
 </ul>
 <h3>Les variables de type numérique</h3>
-<p>Le type byte(1 octet) peut contenir les entiers entre -128 et +127.</p>
+<p>Le type byte (1 octet) peut contenir les entiers entre -128 et +127.</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;byte temperature;\ntemperature = 64;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">byte</span> <span class="ace_identifier">temperature</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperature</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">64</span>;</div></div></div></code></pre>
+
+
 
 
 

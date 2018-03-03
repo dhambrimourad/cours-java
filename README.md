@@ -121,6 +121,8 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperatureSoleil</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15600000</span>; <span class="ace_comment">//La température est exprimée en kelvins</span>
 </div></div></div></code></pre>
 
+<p>Le type long (8 octets) peut aller de −9×10<sup>18</sup>  à 9×10<sup>18</sup>.</p>
+
 
 
 

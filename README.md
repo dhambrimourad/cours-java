@@ -97,7 +97,8 @@
 </div></div></div></code></pre>
 <p>Avec pour résultat :</p>
 <pre>Hello World !
-My name is\n
+My name is
+
 
 Cysboy</pre>
 

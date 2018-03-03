@@ -33,10 +33,10 @@
 <ul>
   <li>Mettre à jour la variable d’environnement « PATH ». C'est grâce à elle que Windows trouve des exécutables sans  qu'il soit nécessaire de lui spécifier le chemin d'accès complet.</li>
   <li>Allez dans le répertoire de votre premier programme et effacez le « .class ». Ensuite, faites « Démarrer > Exécuter » (ou encore touche « Windows + R » et tapez « cmd ».</li>
-  <li>Maintenant, vous pouvez créer votre fichier « .class » en exécutant la commande suivante :</li>
-  <pre style="margin-top:50px;"><code>javac &lt;nomDeFichier.java&gt;</code></pre>
-  <li>Vous pouvez lancer votre programme Java en faisant ce qui suit :</li>
-  <pre style="margin-top:50px;"><code>java &lt;nomFichierClassSansExtension&gt;</code></pre>
+  <li style="margin-bottom:10px;">Maintenant, vous pouvez créer votre fichier « .class » en exécutant la commande suivante :</li>
+  <pre><code>javac &lt;nomDeFichier.java&gt;</code></pre>
+  <li style="margin-top:10px;">Vous pouvez lancer votre programme Java en faisant ce qui suit :</li>
+  <pre><code>java &lt;nomFichierClassSansExtension&gt;</code></pre>
 </ul>
 
 

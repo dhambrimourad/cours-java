@@ -14,6 +14,18 @@
   <li>et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...</li>
 </ul>
 
+<h3>Les certifications Java</h3>
+<p>Pour être certifié Java SE 7, vous devez passer ces 2 examens :</p>
+<ul>
+  <li>1Z0-803 Oracle Certified Associate, Java SE 7 Programmer I.</li>
+  <li>1Z0-804 Oracle Certified Professional , Java SE 7 Programmer II.</li>
+</ul>
+
+<h3>Les certifications J2ee</h3>
+
+
+
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a &amp;#x3C; b)\n{\n  System.out.println(&amp;#x22;coucou &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{

@@ -122,7 +122,12 @@ Cysboy</pre>
 </div></div></div></code></pre>
 
 <p>Le type long (8 octets) peut aller de −9×10<sup>18</sup>  à 9×10<sup>18</sup>.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;long anneeLumiere;\nanneeLumiere = 9460700000000000L;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">long</span> <span class="ace_identifier">anneeLumiere</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">anneeLumiere</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">9460700000000000L</span>;</div></div></div></code></pre>
 
+<p>Le type float (4 octets) est utilisé pour les nombres avec une virgule flottante.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;float pi;\npi = 3.141592653f;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">pi</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">pi</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3.141592653f</span>;</div></div></div></code></pre>
 
 
 

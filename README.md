@@ -166,6 +166,24 @@ Cysboy</pre>
 <p>Si le nom d'une variable est composé de plusieurs mots, le premier commence par une minuscule, le ou les autres par une majuscule, et ce, sans séparation ;</p>
 <p>Tout ceci sans accentuation !</p>
 <p>On peut très bien compacter les phases de déclaration et d'initialisation en une seule phase ! Comme ceci :</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int entier = 32;\nfloat pi = 3.1416f;\nchar carac = &amp;#x27;z&amp;#x27;;\nString mot = new String(&amp;#x22;Coucou&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">entier</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">32</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">pi</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3.1416f</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'z'</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">mot</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"Coucou"</span>);
+</div></div></div></code></pre>
+
+<p>Et lorsque nous avons plusieurs variables d'un même type, nous pouvons résumer tout ceci à une déclaration :</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int nbre1 = 2, nbre2 = 3, nbre3 = 0;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>, <span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3</span>, <span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;</div></div></div></code></pre>
+
+<p>Les opérateurs arithmétiques :</p>
+<ul>
+  <li>« + » : permet d'additionner deux variables numériques (mais aussi de concaténer des chaînes de caractères).</li>
+  <li>« - » : permet de soustraire deux variables numériques.</li>
+  <li>« * » : permet de multiplier deux variables numériques.</li>
+  <li>« / » : permet de diviser deux variables.</li>
+  <li>« % » : permet de renvoyer le reste de la division entière de deux variables de type numérique ; cet opérateur s'appelle le modulo.</li>
+</ul>
+
 
 
 

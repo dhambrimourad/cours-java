@@ -116,6 +116,12 @@ Cysboy</pre>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;short vitesseMax;\nvitesseMax = 32000;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">short</span> <span class="ace_identifier">vitesseMax</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">vitesseMax</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">32000</span>;</div></div></div></code></pre>
 
+<p>Le type int (4 octets) va de -2*10<sup>9</sup> à 2*10<sup>9</sup>.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int temperatureSoleil;\ntemperatureSoleil = 15600000; //La temp&amp;#xE9;rature est exprim&amp;#xE9;e en kelvins&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">temperatureSoleil</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperatureSoleil</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15600000</span>; <span class="ace_comment">//La température est exprimée en kelvins</span>
+</div></div></div></code></pre>
+
+
 
 
 

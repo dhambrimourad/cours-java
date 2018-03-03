@@ -160,6 +160,13 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Quatrième méthode de déclaration</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"Et une de plus !"</span>);</div></div></div></code></pre>
 
+<h3>Conventions de nommage</h3>
+<p>Tous vos noms de classes doivent commencer par une majuscule ;</p>
+<p>Tous vos noms de variables doivent commencer par une minuscule ;</p>
+<p>Si le nom d'une variable est composé de plusieurs mots, le premier commence par une minuscule, le ou les autres par une majuscule, et ce, sans séparation ;</p>
+<p>Tout ceci sans accentuation !</p>
+<p>On peut très bien compacter les phases de déclaration et d'initialisation en une seule phase ! Comme ceci :</p>
+
 
 
 

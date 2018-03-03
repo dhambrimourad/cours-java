@@ -106,12 +106,15 @@ Cysboy</pre>
   <li>des variables de type simple ou « primitif » ;</li>
   <li>des variables de type complexe ou des « objets ».</li>
 </ul>
+
 <h3>Les variables de type numérique</h3>
 <p>Le type byte (1 octet) peut contenir les entiers entre -128 et +127.</p>
-
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;byte temperature;\ntemperature = 64;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">byte</span> <span class="ace_identifier">temperature</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperature</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">64</span>;</div></div></div></code></pre>
 
+<p>Le type short(2 octets) contient les entiers compris entre -32768 et +32767.</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;short vitesseMax;\nvitesseMax = 32000;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">short</span> <span class="ace_identifier">vitesseMax</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">vitesseMax</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">32000</span>;</div></div></div></code></pre>
 
 
 

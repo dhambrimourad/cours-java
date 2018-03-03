@@ -43,6 +43,16 @@
 <p>Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse.png" />
 
+<h3>Créer un nouveau projet Java.</h3>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse1.png" />
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse2.png" />
+<p>Vous devriez avoir un nouveau projet dans la fenêtre de gauche, comme à la figure suivante.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse3.png" />
+<p>Ajoutons une nouvelle classe dans ce projet.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse4.png" />
+
+
+
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a &amp;#x3C; b)\n{\n  System.out.println(&amp;#x22;coucou &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)

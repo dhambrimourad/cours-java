@@ -82,6 +82,23 @@
 <p>Une fois que vous avez saisi cette ligne de code dans votre méthode main, il vous faut lancer le programme.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse7.png" /><br/><br/>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse8.png" />
+<p>Prenons le code suivant :</p>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;System.out.print(&amp;#x22;Hello World !&amp;#x22;);\nSystem.out.print(&amp;#x22;My name is&amp;#x22;);\nSystem.out.print(&amp;#x22;Cysboy&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World !"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"My name is"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Cysboy"</span>);
+</div></div></div></code></pre>
+<pre>Résultat: « Hello World !My name isCysboy ».</pre>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;System.out.print(&amp;#x22;Hello World ! \\n&amp;#x22;);\nSystem.out.println(&amp;#x22;My name is&amp;#x22;);\nSystem.out.println(&amp;#x22;\\nCysboy&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World ! \n"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"My name is"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\nCysboy"</span>);
+</div></div></div></code></pre>
+<pre>Avec pour résultat :
+
+Hello World !
+My name is
+ 
+Cysboy</pre>
+
 
 
 

@@ -241,7 +241,8 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">k</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)<span class="ace_identifier">i</span>;        <span class="ace_comment">//k vaut 1</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">k</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)<span class="ace_identifier">j</span>;            <span class="ace_comment">//k vaut 2</span></div></div></div></code></pre>
 
-
+<h3>Récupérer ce que vous tapez</h3>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/scanner.png" />
 
 
 

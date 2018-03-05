@@ -1,8 +1,12 @@
 # Programmation JAVA
 
-<a href="#hello">Hello World</a>
+<h3>Sommaire</h3>
+<a href="#presentation">Présentation</a>
+<a href="#certif">Les certifications Java</a>
+<a href="#outils">Les outils de développement</a>
+<a href="#hello">Votre premier programme</a>
 
-<h3>Présentation</h3>
+<h3><a name="presentation">Présentation</a></h3>
 
 <p>Développé par Sun Microsystems, présenté officiellement le 23 mai 1995.</p>
 <p>La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java.</p>
@@ -16,7 +20,7 @@
   <li>et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...</li>
 </ul>
 
-<h3>Les certifications Java</h3>
+<h3><a name="certif">Les certifications Java</a></h3>
 <p>Pour être certifié Java SE 7, vous devez passer ces 2 examens :</p>
 <ul>
   <li>1Z0-803 Oracle Certified Associate, Java SE 7 Programmer I.</li>
@@ -26,7 +30,7 @@
 <h3>Les certifications J2ee</h3>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/certification.png" />
 
-<h3>Les outils de développement</h3>
+<h3><a name="outils">Les outils de développement</a></h3>
 <p>Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">www.oracle.com/technetwork/java/javase/downloads</a></p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk.png" />
 <p>Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).</p>
@@ -56,7 +60,7 @@
 <p>Cochez la case : «public static void main(String[] args)».</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse5.png" />
 
-<h3>Votre premier programme</h3>
+<h3><a name="hello">Votre premier programme</a></h3>
 <p>Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse6.png" />
 
@@ -76,7 +80,7 @@
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<h3><a name=hello>Hello World</a></h3>
+<h3>Hello World</h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  System.out.print(&amp;#x22;Hello World !&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World !"</span>);
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}

@@ -43,7 +43,7 @@
 </ul>
 
 <h3>Eclipse IDE</h3>
-<p>Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer.</p>
+<p>Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer. Eclipse IDE est disponible en téléchargement à l'adresse suivante : <a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank">http://www.eclipse.org/downloads/eclipse-packages</a></p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse.png" />
 
 <h3>Créer un nouveau projet Java.</h3>

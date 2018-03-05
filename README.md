@@ -7,6 +7,9 @@
   <li><a href="#outils">Les outils de développement</a></li>
   <li><a href="#hello">Votre premier programme</a></li>
   <li><a href="#scanner">Récupérer ce que vous tapez</a></li>
+  <li><a href="#conditions">Les conditions</a></li>
+  <li><a href="#boucles">Les boucles</a></li>
+  <li><a href="#tableaux">Les tableaux</a></li>
  </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
@@ -252,7 +255,7 @@ Cysboy</pre>
 <h3><a name="scanner">Récupérer ce que vous tapez</a></h3>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/scanner.png" />
 
-<h3>La structure If… else…</h3>
+<h3><a name="conditions">La structure If… else…</a></h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 0;\nif (i &amp;#x3C; 0)\n  System.out.println(&amp;#x22;Ce nombre est n&amp;#xE9;gatif !&amp;#x22;);      \n  \nelse if(i &amp;#x3E; 0)\n  System.out.println(&amp;#x22;Ce nombre est positif !&amp;#x22;);           \n \nelse  \n  System.out.println(&amp;#x22;Ce nombre est nul !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">if</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">0</span>)
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Ce nombre est négatif !"</span>);      
@@ -317,7 +320,7 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">max</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">y</span>) ? ((<span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">10</span>) ? <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">10</span> : <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">2</span>) : <span class="ace_identifier">x</span> ; <span class="ace_comment">//Max vaut 40</span>
 </div></div></div></code></pre>
 
-<h3>La boucle « while »</h3>
+<h3><a name="boucles">La boucle « while »</a></h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Une variable vide\nString prenom;\n//On initialise celle-ci &amp;#xE0; O pour oui\nchar reponse = &amp;#x27;O&amp;#x27;;\n//Notre objet Scanner, n&amp;#x27;oubliez pas l&amp;#x27;import de java.util.Scanner !\nScanner sc = new Scanner(System.in);\n//Tant que la r&amp;#xE9;ponse donn&amp;#xE9;e est &amp;#xE9;gale &amp;#xE0; oui&amp;#x2026;\nwhile (reponse == &amp;#x27;O&amp;#x27;)\n{\n  //On affiche une instruction\n  System.out.println(&amp;#x22;Donnez un pr&amp;#xE9;nom : &amp;#x22;);\n  //On r&amp;#xE9;cup&amp;#xE8;re le pr&amp;#xE9;nom saisi\n  prenom = sc.nextLine();\n  //On affiche notre phrase avec le pr&amp;#xE9;nom\n  System.out.println(&amp;#x22;Bonjour &amp;#x22; +prenom+ &amp;#x22;, comment vas-tu ?&amp;#x22;);\n  //On demande si la personne veut faire un autre essai\n  System.out.println(&amp;#x22;Voulez-vous r&amp;#xE9;essayer ? (O/N)&amp;#x22;);\n  //On r&amp;#xE9;cup&amp;#xE8;re la r&amp;#xE9;ponse de l&amp;#x27;utilisateur\n  reponse = sc.nextLine().charAt(0);\n}\n \nSystem.out.println(&amp;#x22;Au revoir&amp;#x2026;&amp;#x22;);\n//Fin de la boucle&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Une variable vide</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">prenom</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//On initialise celle-ci à O pour oui</span>
@@ -451,6 +454,8 @@ Cysboy</pre>
 <pre>				C=(F−32)×5/9</pre>
 <p>La figure suivante est un aperçu de ce que je vous demande.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/celsius.png" />
+
+<h3><a name="tableaux">Tableaux à une dimension</a></h3>
 
 
 

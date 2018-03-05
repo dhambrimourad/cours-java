@@ -27,6 +27,7 @@
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/certification.png" />
 
 <h3>Les outils de développement</h3>
+<p>Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">www.oracle.com/technetwork/java/javase/downloads</a></p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk.png" />
 <p>Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk1.png" />

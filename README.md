@@ -1,10 +1,12 @@
 # Programmation JAVA
 
 <h3>Sommaire</h3>
-<p><a href="#presentation">Présentation</a></p>
-<p><a href="#certif">Les certifications Java</a></p>
-<p><a href="#outils">Les outils de développement</a></p>
-<p><a href="#hello">Votre premier programme</a></p>
+<ul>
+  <li><a href="#presentation">Présentation</a></li>
+  <li><a href="#certif">Les certifications Java</a></li>
+  <li><a href="#outils">Les outils de développement</a></li>
+  <li><a href="#hello">Votre premier programme</a></li>
+ </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
 

@@ -437,6 +437,23 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
+<h3>TP : conversion Celsius - Fahrenheit</h3>
+<p>Voici les caractéristiques du programme que nous allons devoir réaliser:</p>
+<ul>
+  <li>Le programme demande quelle conversion nous souhaitons effectuer, Celsius vers Fahrenheit ou l'inverse ;</li>
+  <li>On n'autorise que les modes de conversion définis dans le programme (un simple contrôle sur la saisie fera l'affaire) ;</li>
+  <li>Enfin, on demande à la fin à l'utilisateur s'il veut faire une nouvelle conversion, ce qui signifie que l'on doit pouvoir revenir au début du programme !</li>
+</ul>
+
+<p>Voici la formule de conversion pour passer des degrés Celsius en degrés Fahrenheit :</p>
+<pre>				F=(9/5)×C+32</pre>
+<p>Pour l'opération inverse, c'est comme ceci :</p>
+<pre>				C=(F−32)×5/9</pre>
+<p>La figure suivante est un aperçu de ce que je vous demande.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/celsius.png" />
+
+
+
 
 
 

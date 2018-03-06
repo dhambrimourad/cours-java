@@ -1143,6 +1143,9 @@ Cysboy</pre>
 
 <p>Testez le code ci-dessous, il aura pour résultat la figure suivante.</p>
 
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale(&amp;#x22;Paris&amp;#x22;, 654987, &amp;#x22;France&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n  System.out.println(&amp;#x22;\\n&amp;#x22;+cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>(<span class="ace_string">"Paris"</span>, <span class="ace_constant ace_numeric">654987</span>, <span class="ace_string">"France"</span>, <span class="ace_string">"la tour Eiffel"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n"</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
+
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale1.png" />
 
 

@@ -1232,6 +1232,15 @@ Cysboy</pre>
 
 <p><strong>Attention :</strong> si vous ne redéfinissez pas ou ne «&nbsp;polymorphez&nbsp;» pas la méthode d'une classe mère dans une classe fille (exemple de<code data-claire-semantic="text">toString()</code>), à l'appel de celle-ci avec un objet fille, c'est la méthode de la classe mère qui sera invoquée !</p>
 
+<p>Il existe encore un type de méthodes : le type <strong>« final »</strong>. Une méthode signée <strong>final</strong> est figée, vous ne pourrez jamais la redéfinir (la méthode <strong>getClass()</strong> de la classe <strong>Object</strong> est un exemple de ce type de méthode : vous ne pourrez pas la redéfinir).</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public final int maMethode(){\n  //M&amp;#xE9;thode ne pouvant pas &amp;#xEA;tre surcharg&amp;#xE9;e\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">final</span> <span class="ace_keyword">int</span> <span class="ace_identifier">maMethode</span>(){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Méthode ne pouvant pas être surchargée</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<p>Il existe aussi des classes déclarées <strong>final</strong>. Ces classes sont immuables, et vous ne pouvez donc pas faire hériter un objet d'une classe déclarée <strong>final</strong>.</p>
+
 
 
 

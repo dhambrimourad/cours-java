@@ -10,6 +10,7 @@
   <li><a href="#conditions">Les conditions</a></li>
   <li><a href="#boucles">Les boucles</a></li>
   <li><a href="#tableaux">Les tableaux</a></li>
+  <li><a href="#classe">Votre première classe</a></li>
  </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
@@ -699,6 +700,10 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode avec un tableau de String à deux dimensions sera invoquée</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabStr2</span>);
 </div></div></div></code></pre>
+
+<h3><a name="classe">Votre première classe</a></h3>
+<p>Créons une classe « Ville ». Allez dans File > New > Class.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville.png" />
 
 
 

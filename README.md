@@ -749,6 +749,9 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
+<p>Exécutez ce code, vous devriez avoir l'équivalent de la figure suivante.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville1.jpg" />
+
 
 
 

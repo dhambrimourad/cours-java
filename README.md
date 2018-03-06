@@ -1261,6 +1261,20 @@ Cysboy</pre>
 <p>Ainsi que son diagramme de séquences :</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/sequence.png" />
 
+<p>Voici une classe nommée <strong>ObjetA</strong> qui a comme attributs :</p>
+<ul>
+  <li>numero de type int ;</li>
+  <li>nom de type String ;</li>
+  <li>bool de type boolean.</li>
+</ul>
+<p>Ses méthodes sont :</p>
+<ul>
+  <li>getNom() qui retourne une chaîne de caractères ;</li>
+  <li>setNom() qui ne renvoie rien ;</li>
+  <li>afficher() qui renvoie également une chaîne de caractères.</li>
+</ul>
+
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/objeta.png" />
 
 
 

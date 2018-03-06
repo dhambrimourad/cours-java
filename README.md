@@ -601,4 +601,72 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode pow() prend donc une valeur en premier paramètre, et un exposant en second</span>
 </div></div></div></code></pre>
 
+<h3>Créer sa propre méthode</h3>
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Sdz1\n{\n  public static void main(String[] args)\n  {\n    String[] tab = {&amp;#x22;toto&amp;#x22;, &amp;#x22;tata&amp;#x22;, &amp;#x22;titi&amp;#x22;, &amp;#x22;tete&amp;#x22;};\n    parcourirTableau(tab); \n  }\n \n  static void parcourirTableau(String[] tabBis)\n  {\n    for(String str : tabBis)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Sdz1</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"toto"</span>, <span class="ace_string">"tata"</span>, <span class="ace_string">"titi"</span>, <span class="ace_string">"tete"</span>};
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tab</span>); 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tabBis</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tabBis</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Sdz1 {\n \n  public static void main(String[] args)\n  {\n    String[] tab = {&amp;#x22;toto&amp;#x22;, &amp;#x22;tata&amp;#x22;, &amp;#x22;titi&amp;#x22;, &amp;#x22;tete&amp;#x22;};\n    parcourirTableau(tab);\n    System.out.println(toString(tab));   \n  }\n\n  static void parcourirTableau(String[] tab)\n  {\n    for(String str : tab)\n    System.out.println(str);\n  }\n           \n  static String toString(String[] tab)\n  {\n    System.out.println(&amp;#x22;M&amp;#xE9;thode toString() !\\n----------&amp;#x22;);\n    String retour = &amp;#x22;&amp;#x22;;\n                   \n    for(String str : tab)\n      retour += str + &amp;#x22;\\n&amp;#x22;; \n                   \n    return retour;\n  }         \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Sdz1</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"toto"</span>, <span class="ace_string">"tata"</span>, <span class="ace_string">"titi"</span>, <span class="ace_string">"tete"</span>};
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tab</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">toString</span>(<span class="ace_identifier">tab</span>));   
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Méthode toString() !\n----------"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">retour</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">""</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">retour</span> <span class="ace_keyword ace_operator">+=</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"\n"</span>; 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">retour</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }         
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<h3>La surcharge de méthode</h3>
+<p>La surcharge de méthode consiste à garder le nom d'une méthode et à changer la liste ou le type de ses paramètres. Dans le cas qui nous intéresse, nous voulons que notre méthode <strong>parcourirTableau</strong> puisse parcourir n'importe quel type de tableau. Nous allons donc surcharger notre méthode afin qu'elle puisse aussi travailler avec des int, comme le montre cet exemple :</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[] tab)\n{\n  for(String str : tab)\n    System.out.println(str);\n}\n        \nstatic void parcourirTableau(int[] tab)\n{\n  for(int str : tab)\n    System.out.println(str);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_keyword">int</span>[] <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<p>Avec ces méthodes, vous pourrez parcourir de la même manière :</p>
+<ul>
+  <li>Les tableaux d'entiers ;</li>
+  <li>Les tableaux de chaînes de caractères.</li>
+</ul>
+
+
 

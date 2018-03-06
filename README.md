@@ -12,6 +12,7 @@
   <li><a href="#tableaux">Les tableaux</a></li>
   <li><a href="#classe">Votre première classe</a></li>
   <li><a href="#heritage">L'héritage</a></li>
+  <li><a href="#polymorphisme">Le polymorphisme</a></li>
  </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
@@ -1148,7 +1149,7 @@ Cysboy</pre>
 
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale1.png" />
 
-<h3>Le polymorphisme</h3>
+<h3><a name="polymorphisme">Le polymorphisme</a></h3>
 <p>Ce concept complète parfaitement celui de l'héritage. Nous pouvons le définir en disant qu'il permet de manipuler des objets sans vraiment connaître leur type.</p>
 
 <p>Dans notre exemple, vous avez vu qu'il suffisait d'utiliser la méthode <strong><i>« decrisToi() »</i></strong> sur un objet <strong><i>« Ville »</i></strong> ou sur un objet <strong><i>« Capitale »</i></strong>. On pourrait construire un tableau d'objets et appeler <strong><i>« decrisToi() »</i></strong> sans se soucier de son contenu : villes, capitales, ou les deux.</p>

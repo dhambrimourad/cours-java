@@ -1074,6 +1074,46 @@ Cysboy</pre>
 
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale.jpg" />
 
+<p>Notre classe « Capitale » hérite de la classe « Ville », par conséquent, le constructeur de notre objet appelle, de façon tacite, le constructeur de la classe mère. C'est pour cela que les variables d'instance ont pu être initialisées ! Par contre, essayez ceci dans votre classe :</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Capitale extends Ville{ \n  public Capitale(){\n    this.nomVille = &amp;#x22;toto&amp;#x22;;\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span>{ 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"toto"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<p>Vous allez avoir une erreur de compilation ! Dans notre classe <strong>« Capitale »</strong>, nous ne pouvons pas utiliser directement les attributs de la classe <strong>« Ville »</strong> qui sont déclarées <strong>« private »</strong>. C'est ici que le nouveau mot clé <strong>« protected »</strong> fait son entrée. Seules les méthodes et les variables déclarées <strong>« public »</strong> ou <strong>« protected »</strong> peuvent être utilisées dans une classe héritée.</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  public static int nbreInstances = 0;\n  protected static int nbreInstancesBis = 0;\n  protected String nomVille;\n  protected String nomPays;\n  protected int nbreHabitants;\n  protected char categorie;\n  \n  //Tout le reste est identique. \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstances</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstancesBis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">char</span> <span class="ace_identifier">categorie</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Tout le reste est identique. </span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<p>Ce qui va différencier nos objets <strong><i>Capitale</i></strong> de nos objets <strong><i>Ville</i></strong> sera la présence d'un nouveau champ : le nom d'un monument. Cela implique que nous devons créer un constructeur par défaut et un constructeur d'initialisation pour notre objet <strong><i>Capitale</i></strong>.</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n \n  private String monument;\n \n  //Constructeur par d&amp;#xE9;faut\n  public Capitale(){\n    //Ce mot cl&amp;#xE9; appelle le constructeur de la classe m&amp;#xE8;re  \n    super();\n    monument = &amp;#x22;aucun&amp;#x22;;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">monument</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Ce mot clé appelle le constructeur de la classe mère  </span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">super</span>();
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"aucun"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+
 
 
 

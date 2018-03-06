@@ -1100,18 +1100,25 @@ Cysboy</pre>
 
 <p>Ce qui va différencier nos objets <strong><i>Capitale</i></strong> de nos objets <strong><i>Ville</i></strong> sera la présence d'un nouveau champ : le nom d'un monument. Cela implique que nous devons créer un constructeur par défaut et un constructeur d'initialisation pour notre objet <strong><i>Capitale</i></strong>.</p>
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n \n  private String monument;\n \n  //Constructeur par d&amp;#xE9;faut\n  public Capitale(){\n    //Ce mot cl&amp;#xE9; appelle le constructeur de la classe m&amp;#xE8;re  \n    super();\n    monument = &amp;#x22;aucun&amp;#x22;;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n  private String monument;\n \n  public Capitale(){\n    //Ce mot cl&amp;#xE9; appelle le constructeur de la classe m&amp;#xE8;re  \n    super();\n    monument = &amp;#x22;aucun&amp;#x22;;\n  } \n\n  public String decrisToi(){\n    String str =  super.decrisToi() + &amp;#x22;\\n \\t ==&amp;#x3E;&amp;#x3E;&amp;#x22; + this.monument+ &amp;#x22; en est un monument&amp;#x22;;\n    System.out.println(&amp;#x22;Invocation de super.decrisToi()&amp;#x22;);\n    \n    return str;\n   }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">monument</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(){
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Ce mot clé appelle le constructeur de la classe mère  </span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">super</span>();
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"aucun"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">decrisToi</span>(){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span>  <span class="ace_keyword">super</span>.<span class="ace_identifier">decrisToi</span>() <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"\n \t ==&gt;&gt;"</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">monument</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" en est un monument"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Invocation de super.decrisToi()"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">str</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   }
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
+
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale1.png" />
 
 
 

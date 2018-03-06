@@ -1055,6 +1055,15 @@ Cysboy</pre>
 <p>Le résultat, visible à la figure suivante, montre que le nombre augmente à chaque instanciation.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/static.jpg" />
 
+<h3>Le principe d’encapsulation</h3>
+<p>Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !</p>
+
+<p>En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.</p>
+
+
+
+
+
 
 
 

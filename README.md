@@ -988,6 +988,22 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
+<p>Le mot <strong><i>this</i></strong> fait référence à l'objet courant. À l'intérieur d'un objet, ce mot clé permet de désigner une de ses variables ou une de ses méthodes.</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();\nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 1236, &amp;#x22;France&amp;#x22;);       \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);\n        \nSystem.out.println(&amp;#x22;\\n\\n&amp;#x22;+v1.decrisToi());\nSystem.out.println(v.decrisToi());\nSystem.out.println(v2.decrisToi()+&amp;#x22;\\n\\n&amp;#x22;);\nSystem.out.println(v1.comparer(v2));&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">1236</span>, <span class="ace_string">"France"</span>);       
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Rio"</span>, <span class="ace_constant ace_numeric">321654</span>, <span class="ace_string">"Brésil"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n\n"</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">decrisToi</span>());
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v</span>.<span class="ace_identifier">decrisToi</span>());
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v2</span>.<span class="ace_identifier">decrisToi</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v1</span>.<span class="ace_identifier">comparer</span>(<span class="ace_identifier">v2</span>));
+</div></div></div></code></pre>
+
+<p>Ce qui devrait donner le résultat de la figure suivante.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville3.jpg" />
+
+
 
 
 

@@ -13,6 +13,7 @@
   <li><a href="#classe">Votre première classe</a></li>
   <li><a href="#heritage">L'héritage</a></li>
   <li><a href="#polymorphisme">Le polymorphisme</a></li>
+  <li><a href="#uml">Modéliser ses objets grâce à UML</a></li>
  </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
@@ -1241,6 +1242,24 @@ Cysboy</pre>
 
 <p>Il existe aussi des classes déclarées <strong>final</strong>. Ces classes sont immuables, et vous ne pouvez donc pas faire hériter un objet d'une classe déclarée <strong>final</strong>.</p>
 
+<h3><a name="uml">Modéliser ses objets grâce à UML</a></h3>
+<p>Avec UML, vous pouvez modéliser toutes les étapes du développement d'une application informatique, de sa conception à la mise en route, grâce à des diagrammes.</p>
+
+<p>Il existe plusieurs outils de modélisation pour créer de tels diagrammes (PowerDesigner, ArgoUML, ...).</p>
+
+<p>Avec ces outils, vous pouvez réaliser les différents diagrammes qu'UML vous propose :</p>
+<ul>
+  <li>Le diagramme de use case (cas d'utilisation) permet de déterminer les différents cas d'utilisation d'un programme informatique ;</li>
+  <li>Le diagramme de classes ; c'est de celui-là que nous allons nous servir. Il permet de modéliser des classes ainsi que les interactions entre elles ;</li>
+  <li>Les diagrammes de séquences, eux, permettent de visualiser le déroulement d'une application dans un contexte donné ;</li>
+  <li>et d'autres encore…</li>
+</ul>
+
+<p>Voici un exemple de diagramme de use case décrivant le fonctionnement d'un guichet automatique de banque :</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/case.png" />
+
+<p>Ainsi que son diagramme de séquences :</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/sequence.png" />
 
 
 

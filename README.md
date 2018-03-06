@@ -11,6 +11,7 @@
   <li><a href="#boucles">Les boucles</a></li>
   <li><a href="#tableaux">Les tableaux</a></li>
   <li><a href="#classe">Votre première classe</a></li>
+  <li><a href="#heritage">L'héritage</a></li>
  </ul>
 
 <h3><a name="presentation">Présentation</a></h3>
@@ -1059,6 +1060,21 @@ Cysboy</pre>
 <p>Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !</p>
 
 <p>En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.</p>
+
+<h3><a name="heritage">L'héritage</a></h3>
+<p>Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale();\nSystem.out.println(cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>();
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
+
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale.jpg" />
+
+
 
 
 

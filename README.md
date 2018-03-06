@@ -752,6 +752,105 @@ Cysboy</pre>
 <p>Exécutez ce code, vous devriez avoir l'équivalent de la figure suivante.</p>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville1.jpg" />
 
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  //Stocke le nom de notre ville\n  String nomVille;\n  //Stocke le nom du pays de notre ville\n  String nomPays;\n  //Stocke le nombre d&amp;#x27;habitants de notre ville\n  int nbreHabitants;\n \n  //Constructeur par d&amp;#xE9;faut\n  public Ville(){\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville !&amp;#x22;);          \n    nomVille = &amp;#x22;Inconnu&amp;#x22;;\n    nomPays = &amp;#x22;Inconnu&amp;#x22;;\n    nbreHabitants = 0;\n  }\n \n  //Constructeur avec param&amp;#xE8;tres\n  //J&amp;#x27;ai ajout&amp;#xE9; un &amp;#xAB; p &amp;#xBB; en premi&amp;#xE8;re lettre des param&amp;#xE8;tres.\n  //Ce n&amp;#x27;est pas une convention, mais &amp;#xE7;a peut &amp;#xEA;tre un bon moyen de les rep&amp;#xE9;rer.\n  public Ville(String pNom, int pNbre, String pPays)\n  {\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville avec des param&amp;#xE8;tres !&amp;#x22;);\n    nomVille = pNom;\n    nomPays = pPays;\n    nbreHabitants = pNbre;\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom de notre ville</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom du pays de notre ville</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nombre d'habitants de notre ville</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville !"</span>);          
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur avec paramètres</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//J'ai ajouté un « p » en première lettre des paramètres.</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Ce n'est pas une convention, mais ça peut être un bon moyen de les repérer.</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville avec des paramètres !"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNbre</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//L&amp;#x27;ordre est respect&amp;#xE9; -&amp;#x3E; aucun souci\nVille ville1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 123456789, &amp;#x22;France&amp;#x22;);\n//Erreur dans l&amp;#x27;ordre des param&amp;#xE8;tres -&amp;#x3E; erreur de compilation au final\nVille ville2 = new Ville(12456, &amp;#x22;France&amp;#x22;, &amp;#x22;Lille&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//L'ordre est respecté -&gt; aucun souci</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">ville1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">123456789</span>, <span class="ace_string">"France"</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Erreur dans l'ordre des paramètres -&gt; erreur de compilation au final</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">ville2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_constant ace_numeric">12456</span>, <span class="ace_string">"France"</span>, <span class="ace_string">"Lille"</span>);
+</div></div></div></code></pre>
+
+<p>Dans la majorité des cas, nous allons contrôler les modifications des variables de classe, de manière à ce qu'un code extérieur ne fasse pas n'importe quoi avec nos objets ! En plus de ça, imaginez que vous souhaitiez faire quelque chose à chaque fois qu'une valeur change ; si vous ne protégez pas vos données, ce sera impossible à réaliser… C'est pour cela que nous protégeons nos variables d'instance en les déclarant <strong><i>private</i></strong>, comme ceci :</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n\n  private String nomVille;\n  private String nomPays;\n  private int nbreHabitants;\n   \n  //&amp;#x2026;     \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//…     </span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<h3>Les getters et les setters</h3>
+<p>Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture, et un mutateur (setter) nous permettra d'en faire de même en écriture ! Grâce aux accesseurs, vous pourrez afficher les variables de vos objets, et grâce aux mutateurs, vous pourrez les modifier.</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n\n  //Les variables et les constructeurs n&amp;#x27;ont pas chang&amp;#xE9;&amp;#x2026;\n          \n  //*************   ACCESSEURS *************\n    \n  //Retourne le nom de la ville\n  public String getNom()  {  \n    return nomVille;\n  }\n\n  //Retourne le nom du pays\n  public String getNomPays()\n  {\n    return nomPays;\n  }\n\n  // Retourne le nombre d&amp;#x27;habitants\n  public int getNombreHabitants()\n  {\n    return nbreHabitants;\n  } \n \n  //*************   MUTATEURS   *************\n\n  //D&amp;#xE9;finit le nom de la ville\n  public void setNom(String pNom)\n  {\n    nomVille = pNom;\n  }\n\n  //D&amp;#xE9;finit le nom du pays\n  public void setNomPays(String pPays)\n  {\n    nomPays = pPays;\n  }\n\n  //D&amp;#xE9;finit le nombre d&amp;#x27;habitants\n  public void setNombreHabitants(int nbre)\n  {\n    nbreHabitants = nbre;\n  }  \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Les variables et les constructeurs n'ont pas changé…</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//*************   ACCESSEURS *************</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom de la ville</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNom</span>()  {  
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomVille</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom du pays</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNomPays</span>()
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">// Retourne le nombre d'habitants</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getNombreHabitants</span>()
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nbreHabitants</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//*************   MUTATEURS   *************</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom de la ville</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNom</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom du pays</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNomPays</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nombre d'habitants</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNombreHabitants</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">nbre</span>)
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+
+
+
 
 
 

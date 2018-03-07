@@ -1276,6 +1276,14 @@ Cysboy</pre>
 
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/objeta.png" />
 
+<h3>Modéliser les liens entre les objets</h3>
+<p>Sur le diagramme représenté à la figure suivante, vous remarquez un deuxième objet qui dispose, lui aussi, de paramètres. <strong>ObjetB</strong> possède également les attributs et les méthodes de la classe <strong>ObjetA</strong>. C'est parce que la flèche qui relie nos deux objets signifie « extends ». En gros, vous pouvez lire ce diagramme comme suit : l'ObjetB hérite de l'ObjetA.</p>
+
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml2.png" />
+
+
+
+
 
 
 

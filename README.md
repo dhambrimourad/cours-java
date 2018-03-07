@@ -1281,6 +1281,14 @@ Cysboy</pre>
 
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml2.png" />
 
+<p>Dans l'exemple suivant, nous avons toujours notre héritage entre un objet A et un objet B, mais dans ce cas, l'ObjetA (et donc l'ObjetB) possède une variable de classe de type <strong>ObjetC</strong>, ainsi qu'une méthode dont le type de retour est <strong>ObjetC</strong>. Vous pouvez lire ce diagramme comme suit : l'ObjetA a un ObjetC.</p>
+
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml3.png" />
+
+
+
+
+
 
 
 

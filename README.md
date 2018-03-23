@@ -1346,6 +1346,20 @@ Cysboy</pre>
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/packages.png" />
 <img src="https://github.com/dhambrimourad/java1/blob/master/Images/packages1.png" />
 
+<h3>Les classes abstraites</h3>
+<p>Une classe abstraite est une classe que vous ne pouvez pas instancier. Imaginons que nous ayons une classe A déclarée abstraite. Voici un code qui ne compilera pas :</p>
+
+<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test{\n  public static void main(String[] args){\n    A obj = new A(); //Erreur de compilation !  \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span>{
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">A</span> <span class="ace_identifier">obj</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">A</span>(); <span class="ace_comment">//Erreur de compilation !  </span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></code></pre>
+
+<h4>exemple</h4>
+<p>Imaginez que vous êtes en train de réaliser un programme qui gère différents types d'animaux.</p>
+<img src="https://github.com/dhambrimourad/java1/blob/master/Images/abstraite.png" />
+
 
 
 

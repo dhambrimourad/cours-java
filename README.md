@@ -1781,7 +1781,8 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v</span>.<span class="ace_identifier">toString</span>());
 </div></div></div></code></pre>
 
-<h3>Les énumérations</h3>
+<h3>Les collections d'objets</h3>
+<img src="Images/collection.png" />
 
 
 

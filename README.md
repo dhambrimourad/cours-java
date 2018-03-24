@@ -43,13 +43,13 @@
 </ul>
 
 <h3>Les certifications J2ee</h3>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/certification.png" />
+<img src="Images/certification.png" />
 
 <h3><a name="outils">Les outils de développement</a></h3>
 <p>Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">www.oracle.com/technetwork/java/javase/downloads</a></p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk.png" />
+<img src="Images/jdk.png" />
 <p>Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/jdk1.png" />
+<img src="Images/jdk1.png" />
 
 <h3>Compilation en ligne de commande</h3>
 <ul>
@@ -63,21 +63,21 @@
 
 <h3>Eclipse IDE</h3>
 <p>Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer. Eclipse IDE est disponible en téléchargement à l'adresse suivante : <a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank">http://www.eclipse.org/downloads/eclipse-packages</a></p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse.png" />
+<img src="Images/eclipse.png" />
 
 <h3>Créer un nouveau projet Java.</h3>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse1.png" />
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse2.png" />
+<img src="Images/eclipse1.png" />
+<img src="Images/eclipse2.png" />
 <p>Vous devriez avoir un nouveau projet dans la fenêtre de gauche, comme à la figure suivante.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse3.png" />
+<img src="Images/eclipse3.png" />
 <p>Ajoutons une nouvelle classe dans ce projet.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse4.png" />
+<img src="Images/eclipse4.png" />
 <p>Cochez la case : «public static void main(String[] args)».</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse5.png" />
+<img src="Images/eclipse5.png" />
 
 <h3><a name="hello">Votre premier programme</a></h3>
 <p>Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse6.png" />
+<img src="Images/eclipse6.png" />
 
 <h3>Les commentaires</h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  //Un commentaire\n  //Un autre\n  //Encore un autre\n\n  /*\n  Un commentaire\n  Un autre\n  Encore un autre\n  */\n\nCeci n&amp;#x27;est pas un commentaire !\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
@@ -102,8 +102,8 @@
 </div></div></div></code></pre>
 
 <p>Une fois que vous avez saisi cette ligne de code dans votre méthode main, il vous faut lancer le programme.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse7.png" /><br/>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/eclipse8.png" /><br/>
+<img src="Images/eclipse7.png" /><br/>
+<img src="Images/eclipse8.png" /><br/>
 <p>Prenons le code suivant :</p>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;System.out.print(&amp;#x22;Hello World !&amp;#x22;);\nSystem.out.print(&amp;#x22;My name is&amp;#x22;);\nSystem.out.print(&amp;#x22;Cysboy&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World !"</span>);
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"My name is"</span>);
@@ -262,7 +262,7 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">k</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)<span class="ace_identifier">j</span>;            <span class="ace_comment">//k vaut 2</span></div></div></div></code></pre>
 
 <h3><a name="scanner">Récupérer ce que vous tapez</a></h3>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/scanner.png" />
+<img src="Images/scanner.png" />
 
 <h3><a name="conditions">La structure If… else…</a></h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 0;\nif (i &amp;#x3C; 0)\n  System.out.println(&amp;#x22;Ce nombre est n&amp;#xE9;gatif !&amp;#x22;);      \n  \nelse if(i &amp;#x3E; 0)\n  System.out.println(&amp;#x22;Ce nombre est positif !&amp;#x22;);           \n \nelse  \n  System.out.println(&amp;#x22;Ce nombre est nul !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
@@ -374,7 +374,7 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir…"</span>);</div></div></div></code></pre>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/while.png" />
+<img src="Images/while.png" />
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a &amp;#x3C; b)\n{\n  System.out.println(&amp;#x22;bonjour &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
@@ -437,12 +437,12 @@ Cysboy</pre>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voici la ligne "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">i</span>);
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/for.jpg" />
+<img src="Images/for.jpg" />
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;for(int i = 10; i &amp;#x3E;= 0; i--)\n  System.out.println(&amp;#x22;Il reste &amp;#x22;+i+&amp;#x22; ligne(s) &amp;#xE0; &amp;#xE9;crire&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&gt;=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">--</span>)
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Il reste "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">i</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" ligne(s) à écrire"</span>);
 </div></div></div></code></pre>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/for2.jpg" />
+<img src="Images/for2.jpg" />
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;for(int i = 0, j = 2; (i &amp;#x3C; 10 &amp;#x26;&amp;#x26; j &amp;#x3C; 6); i++, j+=2){\n  System.out.println(&amp;#x22;i = &amp;#x22; + i + &amp;#x22;, j = &amp;#x22; + j);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>; (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">10</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">6</span>); <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>, <span class="ace_identifier">j</span><span class="ace_keyword ace_operator">+=</span><span class="ace_constant ace_numeric">2</span>){
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"i = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">", j = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">j</span>);
@@ -462,7 +462,7 @@ Cysboy</pre>
 <p>Pour l'opération inverse, c'est comme ceci :</p>
 <pre>				C=(F−32)×5/9</pre>
 <p>La figure suivante est un aperçu de ce que je vous demande.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/celsius.png" />
+<img src="Images/celsius.png" />
 
 <h3><a name="tableaux">Tableaux à une dimension</a></h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int tableauEntier[] = {0,1,2,3,4,5,6,7,8,9};\ndouble tableauDouble[] = {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};\nchar tableauCaractere[] = {&amp;#x27;a&amp;#x27;,&amp;#x27;b&amp;#x27;,&amp;#x27;c&amp;#x27;,&amp;#x27;d&amp;#x27;,&amp;#x27;e&amp;#x27;,&amp;#x27;f&amp;#x27;,&amp;#x27;g&amp;#x27;};\nString tableauChaine[] = {&amp;#x22;chaine1&amp;#x22;, &amp;#x22;chaine2&amp;#x22;, &amp;#x22;chaine3&amp;#x22; , &amp;#x22;chaine4&amp;#x22;};&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">tableauEntier</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">8</span>,<span class="ace_constant ace_numeric">9</span>};
@@ -478,7 +478,7 @@ Cysboy</pre>
 <h3>Tableaux multidimensionnels</h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">premiersNombres</span>[][] <span class="ace_keyword ace_operator">=</span> { {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">8</span>},{<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">9</span>} };
 </div></div></div></code></pre>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/tableaux.png" />
+<img src="Images/tableaux.png" />
 
 <h3>Utiliser et rechercher dans un tableau</h3>
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;char tableauCaractere[] = {&amp;#x27;a&amp;#x27;, &amp;#x27;b&amp;#x27;, &amp;#x27;c&amp;#x27;, &amp;#x27;d&amp;#x27;, &amp;#x27;e&amp;#x27;, &amp;#x27;f&amp;#x27;, &amp;#x27;g&amp;#x27;};\nint i = 0;\nchar reponse = &amp;#x27; &amp;#x27;,carac = &amp;#x27; &amp;#x27;;\nScanner sc = new Scanner(System.in);\n         \ndo {//Boucle principale\n  do {//On r&amp;#xE9;p&amp;#xE8;te cette boucle tant que l&amp;#x27;utilisateur n&amp;#x27;a pas rentr&amp;#xE9; une lettre figurant dans le tableau\n    i = 0;\n    System.out.println(&amp;#x22;Rentrez une lettre en minuscule, SVP &amp;#x22;);\n                \n    carac = sc.nextLine().charAt(0);\n    //Boucle de recherche dans le tableau\n    while(i &amp;#x3C; tableauCaractere.length &amp;#x26;&amp;#x26; carac != tableauCaractere[i])\n      i++;\n         \n    //Si i &amp;#x3C; 7 c&amp;#x27;est que la boucle n&amp;#x27;a pas d&amp;#xE9;pass&amp;#xE9; le nombre de cases du tableau \n    if (i &amp;#x3C; tableauCaractere.length)\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; se trouve bien dans le tableau !&amp;#x22;);\n    else //Sinon\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; ne se trouve pas dans le tableau !&amp;#x22;);\n         \n  }while(i &amp;#x3E;= tableauCaractere.length);\n\n  //Tant que la lettre de l&amp;#x27;utilisateur ne correspond pas &amp;#xE0; une lettre du tableau    \n  do{\n    System.out.println(&amp;#x22;Voulez-vous essayer &amp;#xE0; nouveau ? (O/N)&amp;#x22;);\n    reponse = sc.nextLine().charAt(0);\n  }while(reponse != &amp;#x27;N&amp;#x27; &amp;#x26;&amp;#x26; reponse != &amp;#x27;O&amp;#x27;);      \n}while (reponse == &amp;#x27;O&amp;#x27;);\n                \nSystem.out.println(&amp;#x22;Au revoir !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">tableauCaractere</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'a'</span>, <span class="ace_string">'b'</span>, <span class="ace_string">'c'</span>, <span class="ace_string">'d'</span>, <span class="ace_string">'e'</span>, <span class="ace_string">'f'</span>, <span class="ace_string">'g'</span>};

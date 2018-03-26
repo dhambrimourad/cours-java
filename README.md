@@ -1,28 +1,27 @@
 # Programmation JAVA
+### Sommaire
 
-<h3>Sommaire</h3>
-<ul>
-  <li><a href="#presentation">Présentation</a></li>
-  <li><a href="#certif">Les certifications Java</a></li>
-  <li><a href="#outils">Les outils de développement</a></li>
-  <li><a href="#hello">Votre premier programme</a></li>
-  <li><a href="#scanner">Récupérer ce que vous tapez</a></li>
-  <li><a href="#conditions">Les conditions</a></li>
-  <li><a href="#boucles">Les boucles</a></li>
-  <li><a href="#tableaux">Les tableaux</a></li>
-  <li><a href="#classe">Votre première classe</a></li>
-  <li><a href="#heritage">L'héritage</a></li>
-  <li><a href="#polymorphisme">Le polymorphisme</a></li>
-  <li><a href="#uml">Modéliser ses objets grâce à UML</a></li>
-  <li><a href="#abstraites">Les classes abstraites</a></li>
-  <li><a href="#interfaces">Les interfaces</a></li>
-  <li><a href="#exceptions">Les exceptions</a></li>
-  <li><a href="#collections">Les collections d'objets</a></li>
-  <li><a href="#flux">Les flux d'entrée/sortie</a></li>
-  <li><a href="#jframe">L'objet JFrame</a></li>
- </ul>
+* [Présentation](#presentation)
+* <a href="#presentation">Présentation</a>
+* <a href="#certif">Les certifications Java</a>
+* <a href="#outils">Les outils de développement</a>
+* <a href="#hello">Votre premier programme</a>
+* <a href="#scanner">Récupérer ce que vous tapez</a>
+* <a href="#conditions">Les conditions</a>
+* <a href="#boucles">Les boucles</a>
+* <a href="#tableaux">Les tableaux</a>
+* <a href="#classe">Votre première classe</a>
+* <a href="#heritage">L'héritage</a>
+* <a href="#polymorphisme">Le polymorphisme</a>
+* <a href="#uml">Modéliser ses objets grâce à UML</a>
+* <a href="#abstraites">Les classes abstraites</a>
+* <a href="#interfaces">Les interfaces</a>
+* <a href="#exceptions">Les exceptions</a>
+* <a href="#collections">Les collections d'objets</a>
+* <a href="#flux">Les flux d'entrée/sortie</a>
+* <a href="#jframe">L'objet JFrame</a>
 
-<h3><a name="presentation">Présentation</a></h3>
+### <a name="presentation">Présentation</a>
 
 <p>Développé par Sun Microsystems, présenté officiellement le 23 mai 1995.</p>
 <p>La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java.</p>

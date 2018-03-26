@@ -76,7 +76,24 @@ Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 <p>Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.</p>
 <img src="Images/eclipse6.png" />
 
-<h3>Les commentaires</h3>
+### Les commentaires
+
+```java
+public static void main(String[] args){
+  //Un commentaire
+  //Un autre
+  //Encore un autre
+
+  /*
+  Un commentaire
+  Un autre
+  Encore un autre
+  */
+
+  Ceci n'est pas un commentaire !
+}
+```
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  //Un commentaire\n  //Un autre\n  //Encore un autre\n\n  /*\n  Un commentaire\n  Un autre\n  Encore un autre\n  */\n\nCeci n&amp;#x27;est pas un commentaire !\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Un commentaire</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Un autre</span>

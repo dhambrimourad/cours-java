@@ -32,15 +32,15 @@ Il permet de développer :
 * des applications pour appareils mobiles.
 * et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...
 
-<h3><a name="certif">Les certifications Java</a></h3>
-<p>Pour être certifié Java SE 7, vous devez passer ces 2 examens :</p>
-<ul>
-  <li>1Z0-803 Oracle Certified Associate, Java SE 7 Programmer I.</li>
-  <li>1Z0-804 Oracle Certified Professional , Java SE 7 Programmer II.</li>
-</ul>
+### <a name="certif">Les certifications Java</a>
+Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 
-<h3>Les certifications J2ee</h3>
-<img src="Images/certification.png" />
+* 1Z0-803 Oracle Certified Associate, Java SE 7 Programmer I.
+* 1Z0-804 Oracle Certified Professional , Java SE 7 Programmer II.
+
+
+### Les certifications J2ee
+![Les certifications J2ee](Images/certification.png)
 
 <h3><a name="outils">Les outils de développement</a></h3>
 <p>Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">www.oracle.com/technetwork/java/javase/downloads</a></p>

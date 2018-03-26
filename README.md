@@ -2,38 +2,35 @@
 ### Sommaire
 
 * [Présentation](#presentation)
-* <a href="#presentation">Présentation</a>
-* <a href="#certif">Les certifications Java</a>
-* <a href="#outils">Les outils de développement</a>
-* <a href="#hello">Votre premier programme</a>
-* <a href="#scanner">Récupérer ce que vous tapez</a>
-* <a href="#conditions">Les conditions</a>
-* <a href="#boucles">Les boucles</a>
-* <a href="#tableaux">Les tableaux</a>
-* <a href="#classe">Votre première classe</a>
-* <a href="#heritage">L'héritage</a>
-* <a href="#polymorphisme">Le polymorphisme</a>
-* <a href="#uml">Modéliser ses objets grâce à UML</a>
-* <a href="#abstraites">Les classes abstraites</a>
-* <a href="#interfaces">Les interfaces</a>
-* <a href="#exceptions">Les exceptions</a>
-* <a href="#collections">Les collections d'objets</a>
-* <a href="#flux">Les flux d'entrée/sortie</a>
-* <a href="#jframe">L'objet JFrame</a>
+* [Les certifications Java](#certif)
+* [Les outils de développement](#outils)
+* [Votre premier programme](#hello)
+* [Récupérer ce que vous tapez](#scanner)
+* [Les conditions](#conditions)
+* [Les boucles](#boucles)
+* [Votre première classe](#classe)
+* [L'héritage](#heritage)
+* [Le polymorphisme](#polymorphisme)
+* [Modéliser ses objets grâce à UML](#uml)
+* [Les classes abstraites](#abstraites)
+* [Les interfaces](#interfaces)
+* [Les exceptions](#exceptions)
+* [Les collections d'objets](#collections)
+* [Les flux d'entrée/sortie](#flux)
+* [L'objet JFrame](#jframe)
 
 ### <a name="presentation">Présentation</a>
 
-<p>Développé par Sun Microsystems, présenté officiellement le 23 mai 1995.</p>
-<p>La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java.</p>
-<p>Une de ses plus grandes forces est son excellente portabilité : une fois votre programme créé, il fonctionnera automatiquement sous Windows, Mac, Linux, etc.</p>
+Développé par Sun Microsystems, présenté officiellement le 23 mai 1995.
+La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java.
+Une de ses plus grandes forces est son excellente portabilité : une fois votre programme créé, il fonctionnera automatiquement sous Windows, Mac, Linux, etc.
 
-<p>Il permet de développer :</p>
-<ul>
-  <li>des applications, sous forme de fenêtre ou de console.</li>
-  <li>des applets, qui sont des programmes Java incorporés à des pages web.</li>
-  <li>des applications pour appareils mobiles.</li>
-  <li>et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...</li>
-</ul>
+Il permet de développer :
+
+* des applications, sous forme de fenêtre ou de console.
+* des applets, qui sont des programmes Java incorporés à des pages web.
+* des applications pour appareils mobiles.
+* et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...
 
 <h3><a name="certif">Les certifications Java</a></h3>
 <p>Pour être certifié Java SE 7, vous devez passer ces 2 examens :</p>

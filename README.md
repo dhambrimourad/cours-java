@@ -42,27 +42,41 @@ Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 ### Les certifications J2ee
 ![Les certifications J2ee](Images/certification.png)
 
-<h3><a name="outils">Les outils de développement</a></h3>
-<p>Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">www.oracle.com/technetwork/java/javase/downloads</a></p>
-<img src="Images/jdk.png" />
-<p>Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).</p>
-<img src="Images/jdk1.png" />
+### <a name="outils">Les outils de développement</a>
+Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : [www.oracle.com/technetwork/java/javase/downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-<h3>Compilation en ligne de commande</h3>
-<ul>
-  <li>Mettre à jour la variable d’environnement « PATH ». C'est grâce à elle que Windows trouve des exécutables sans  qu'il soit nécessaire de lui spécifier le chemin d'accès complet.</li>
-  <li>Allez dans le répertoire de votre premier programme et effacez le « .class ». Ensuite, faites « Démarrer > Exécuter » (ou encore touche « Windows + R » et tapez « cmd ».</li>
-  <li>Maintenant, vous pouvez créer votre fichier « .class » en exécutant la commande suivante :</li>
+![JDK](Images/jdk.png)
+
+Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).
+
+![JDK1](Images/jdk1.png)
+
+### Compilation en ligne de commande
+
+* Mettre à jour la variable d’environnement « PATH ». C'est grâce à elle que Windows trouve des exécutables sans  qu'il soit nécessaire de lui spécifier le chemin d'accès complet.
+* Allez dans le répertoire de votre premier programme et effacez le « .class ». Ensuite, faites « Démarrer > Exécuter » (ou encore touche « Windows + R » et tapez « cmd ».
+* Maintenant, vous pouvez créer votre fichier « .class » en exécutant la commande suivante :
+
+```java
+javac &lt;nomDeFichier.java&gt;
+```
   <br/><pre><code>javac &lt;nomDeFichier.java&gt;</code></pre>
-  <li>Vous pouvez lancer votre programme Java en faisant ce qui suit :</li>
+* Vous pouvez lancer votre programme Java en faisant ce qui suit :
+
+```java
+java &lt;nomFichierClassSansExtension&gt;
+```
+
   <br/><pre><code>java &lt;nomFichierClassSansExtension&gt;</code></pre>
-</ul>
 
-<h3>Eclipse IDE</h3>
-<p>Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer. Eclipse IDE est disponible en téléchargement à l'adresse suivante : <a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank">http://www.eclipse.org/downloads/eclipse-packages</a></p>
-<img src="Images/eclipse.png" />
 
-<h3>Créer un nouveau projet Java.</h3>
+### Eclipse IDE
+Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer. Eclipse IDE est disponible en téléchargement à l'adresse suivante : [http://www.eclipse.org/downloads/eclipse-packages](http://www.eclipse.org/downloads/eclipse-packages/)
+
+![Eclipse](Images/eclipse.png)
+
+### Créer un nouveau projet Java.
+
 <img src="Images/eclipse1.png" />
 <img src="Images/eclipse2.png" />
 <p>Vous devriez avoir un nouveau projet dans la fenêtre de gauche, comme à la figure suivante.</p>

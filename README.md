@@ -2495,198 +2495,201 @@ int nbre1 = 2, nbre2 = 3, nbre3 = 0;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<img src="Images/graphics2.png" />
+![Graphics2](Images/graphics2.png)
 
-<h3>Création d'une animation</h3>
+### Création d'une animation
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Color;\nimport java.awt.Graphics;\nimport javax.swing.JPanel;\n\npublic class Panneau extends JPanel {\n  private int posX = -50;\n  private int posY = -50;\n\n  public void paintComponent(Graphics g){\n    g.setColor(Color.red);\n    g.fillOval(posX, posY, 50, 50);\n  }\n\n  public int getPosX() {\n    return posX;\n  }\n\n  public void setPosX(int posX) {\n    this.posX = posX;\n  }\n\n  public int getPosY() {\n    return posY;\n  }\n\n  public void setPosY(int posY) {\n    this.posY = posY;\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Color</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">posX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">-50</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">posY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">-50</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">setColor</span>(<span class="ace_identifier">Color</span>.<span class="ace_identifier">red</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">fillOval</span>(<span class="ace_identifier">posX</span>, <span class="ace_identifier">posY</span>, <span class="ace_constant ace_numeric">50</span>, <span class="ace_constant ace_numeric">50</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getPosX</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">posX</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setPosX</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">posX</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">posX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">posX</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getPosY</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">posY</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setPosY</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">posY</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">posY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">posY</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Dimension; \nimport javax.swing.JFrame;\n \npublic class Fenetre extends JFrame{\n  private Panneau pan = new Panneau();\n\n  public Fenetre(){        \n    this.setTitle(&amp;#x22;Animation&amp;#x22;);\n    this.setSize(300, 300);\n    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n    this.setLocationRelativeTo(null);\n    this.setContentPane(pan);\n    this.setVisible(true);\n    go();\n  }\n\n  private void go(){\n    for(int i = -50; i &amp;#x3C; pan.getWidth(); i++){\n      int x = pan.getPosX(), y = pan.getPosY();\n      x++;\n      y++;\n      pan.setPosX(x);\n      pan.setPosY(y);\n      pan.repaint();  \n      try {\n        Thread.sleep(10);\n      } catch (InterruptedException e) {\n        e.printStackTrace();\n      }\n    }\n  }       \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Dimension</span>; 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JFrame</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Fenetre</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JFrame</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_identifier">Panneau</span> <span class="ace_identifier">pan</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Panneau</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Fenetre</span>(){        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setTitle</span>(<span class="ace_string">"Animation"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setSize</span>(<span class="ace_constant ace_numeric">300</span>, <span class="ace_constant ace_numeric">300</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setDefaultCloseOperation</span>(<span class="ace_identifier">JFrame</span>.<span class="ace_identifier">EXIT_ON_CLOSE</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setLocationRelativeTo</span>(<span class="ace_constant ace_language">null</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setContentPane</span>(<span class="ace_identifier">pan</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setVisible</span>(<span class="ace_constant ace_language ace_boolean">true</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">go</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">void</span> <span class="ace_identifier">go</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">-50</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getWidth</span>(); <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">int</span> <span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosX</span>(), <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosY</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">x</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">y</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosX</span>(<span class="ace_identifier">x</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosY</span>(<span class="ace_identifier">y</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">repaint</span>();  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">Thread</span>.<span class="ace_identifier">sleep</span>(<span class="ace_constant ace_numeric">10</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">InterruptedException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+public class Panneau extends JPanel {
+  private int posX = -50;
+  private int posY = -50;
 
-<img src="Images/animation.png" />
+  public void paintComponent(Graphics g){
+    g.setColor(Color.red);
+    g.fillOval(posX, posY, 50, 50);
+  }
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Color;\nimport java.awt.Graphics;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  private int posX = -50;\n  private int posY = -50;\n\n  public void paintComponent(Graphics g){\n    //On choisit une couleur de fond pour le rectangle\n    g.setColor(Color.white);\n    //On le dessine de sorte qu&amp;#x27;il occupe toute la surface\n    g.fillRect(0, 0, this.getWidth(), this.getHeight());\n    //On red&amp;#xE9;finit une couleur pour le rond\n    g.setColor(Color.red);\n    //On le dessine aux coordonn&amp;#xE9;es souhait&amp;#xE9;es\n    g.fillOval(posX, posY, 50, 50);\n  }\n\n  public int getPosX() {\n    return posX;\n  }\n\n  public void setPosX(int posX) {\n    this.posX = posX;\n  }\n\n  public int getPosY() {\n    return posY;\n  }\n\n  public void setPosY(int posY) {\n    this.posY = posY;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Color</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">posX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">-50</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">posY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">-50</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On choisit une couleur de fond pour le rectangle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">setColor</span>(<span class="ace_identifier">Color</span>.<span class="ace_identifier">white</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On le dessine de sorte qu'il occupe toute la surface</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">fillRect</span>(<span class="ace_constant ace_numeric">0</span>, <span class="ace_constant ace_numeric">0</span>, <span class="ace_keyword">this</span>.<span class="ace_identifier">getWidth</span>(), <span class="ace_keyword">this</span>.<span class="ace_identifier">getHeight</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On redéfinit une couleur pour le rond</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">setColor</span>(<span class="ace_identifier">Color</span>.<span class="ace_identifier">red</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On le dessine aux coordonnées souhaitées</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">fillOval</span>(<span class="ace_identifier">posX</span>, <span class="ace_identifier">posY</span>, <span class="ace_constant ace_numeric">50</span>, <span class="ace_constant ace_numeric">50</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getPosX</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">posX</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setPosX</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">posX</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">posX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">posX</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getPosY</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">posY</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setPosY</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">posY</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">posY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">posY</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+  public int getPosX() {
+    return posX;
+  }
 
-<img src="Images/animation1.png" />
+  public void setPosX(int posX) {
+    this.posX = posX;
+  }
 
-<h4>Améliorations</h4>
+  public int getPosY() {
+    return posY;
+  }
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;private void go(){\n  for(;;){\n    int x = pan.getPosX(), y = pan.getPosY();\n    x++;\n    y++;\n    pan.setPosX(x);\n    pan.setPosY(y);\n    pan.repaint();  \n    try {\n      Thread.sleep(10);\n    } catch (InterruptedException e) {\n      e.printStackTrace();\n    }\n    //Si nos coordonn&amp;#xE9;es arrivent au bord de notre composant\n    //On r&amp;#xE9;initialise\n    if(x == pan.getWidth() || y == pan.getHeight()){\n      pan.setPosX(-50);\n      pan.setPosY(-50);\n    }\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">private</span> <span class="ace_keyword">void</span> <span class="ace_identifier">go</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(;;){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosX</span>(), <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosY</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">x</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">y</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosX</span>(<span class="ace_identifier">x</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosY</span>(<span class="ace_identifier">y</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">pan</span>.<span class="ace_identifier">repaint</span>();  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">Thread</span>.<span class="ace_identifier">sleep</span>(<span class="ace_constant ace_numeric">10</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">InterruptedException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Si nos coordonnées arrivent au bord de notre composant</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On réinitialise</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getWidth</span>() <span class="ace_keyword ace_operator">||</span> <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getHeight</span>()){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosX</span>(<span class="ace_constant ace_numeric">-50</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosY</span>(<span class="ace_constant ace_numeric">-50</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+  public void setPosY(int posY) {
+    this.posY = posY;
+  }        
+}
+```
 
-<h4>Détection des bords</h4>
+```java
+import java.awt.Dimension; 
+import javax.swing.JFrame;
+ 
+public class Fenetre extends JFrame{
+  private Panneau pan = new Panneau();
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;private void go(){\n  //Les coordonn&amp;#xE9;es de d&amp;#xE9;part de notre rond\n  int x = pan.getPosX(), y = pan.getPosY();\n  //Le bool&amp;#xE9;en pour savoir si l&amp;#x27;on recule ou non sur l&amp;#x27;axe x\n  boolean backX = false;\n  //Le bool&amp;#xE9;en pour savoir si l&amp;#x27;on recule ou non sur l&amp;#x27;axe y\n  boolean backY = false;\n\n  //Dans cet exemple, j&amp;#x27;utilise une boucle while\n  //Vous verrez qu&amp;#x27;elle fonctionne tr&amp;#xE8;s bien\n  while(true){\n    //Si la coordonn&amp;#xE9;e x est inf&amp;#xE9;rieure &amp;#xE0; 1, on avance\n    if(x &amp;#x3C; 1)\n      backX = false;\n\n    //Si la coordonn&amp;#xE9;e x est sup&amp;#xE9;rieure &amp;#xE0; la taille du Panneau moins la taille du rond, on recule\n    if(x &amp;#x3E; pan.getWidth()-50)\n      backX = true;\n\n    //Idem pour l&amp;#x27;axe y\n    if(y &amp;#x3C; 1)\n      backY = false;\n    if(y &amp;#x3E; pan.getHeight()-50)\n      backY = true;\n\n    //Si on avance, on incr&amp;#xE9;mente la coordonn&amp;#xE9;e\n    //backX est un bool&amp;#xE9;en, donc !backX revient &amp;#xE0; &amp;#xE9;crire\n    //if (backX == false)\n    if(!backX)\n      pan.setPosX(++x);\n\n    //Sinon, on d&amp;#xE9;cr&amp;#xE9;mente\n    else\n      pan.setPosX(--x);\n\n    //Idem pour l&amp;#x27;axe Y\n    if(!backY)\n      pan.setPosY(++y);\n    else\n      pan.setPosY(--y);\n\n    //On redessine notre Panneau\n    pan.repaint();\n\n    //Comme on dit : la pause s&amp;#x27;impose ! Ici, trois milli&amp;#xE8;mes de seconde\n    try {\n      Thread.sleep(3);\n    } catch (InterruptedException e) {\n      e.printStackTrace();\n    }\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">private</span> <span class="ace_keyword">void</span> <span class="ace_identifier">go</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Les coordonnées de départ de notre rond</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosX</span>(), <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getPosY</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Le booléen pour savoir si l'on recule ou non sur l'axe x</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">boolean</span> <span class="ace_identifier">backX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">false</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Le booléen pour savoir si l'on recule ou non sur l'axe y</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">boolean</span> <span class="ace_identifier">backY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">false</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Dans cet exemple, j'utilise une boucle while</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Vous verrez qu'elle fonctionne très bien</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">while</span>(<span class="ace_constant ace_language ace_boolean">true</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Si la coordonnée x est inférieure à 1, on avance</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">1</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">backX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">false</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Si la coordonnée x est supérieure à la taille du Panneau moins la taille du rond, on recule</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getWidth</span>()<span class="ace_constant ace_numeric">-50</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">backX</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">true</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Idem pour l'axe y</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">1</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">backY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">false</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_identifier">pan</span>.<span class="ace_identifier">getHeight</span>()<span class="ace_constant ace_numeric">-50</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">backY</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">true</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Si on avance, on incrémente la coordonnée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//backX est un booléen, donc !backX revient à écrire</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//if (backX == false)</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_keyword ace_operator">!</span><span class="ace_identifier">backX</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosX</span>(<span class="ace_keyword ace_operator">++</span><span class="ace_identifier">x</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Sinon, on décrémente</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosX</span>(<span class="ace_keyword ace_operator">--</span><span class="ace_identifier">x</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Idem pour l'axe Y</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_keyword ace_operator">!</span><span class="ace_identifier">backY</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosY</span>(<span class="ace_keyword ace_operator">++</span><span class="ace_identifier">y</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">pan</span>.<span class="ace_identifier">setPosY</span>(<span class="ace_keyword ace_operator">--</span><span class="ace_identifier">y</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On redessine notre Panneau</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">pan</span>.<span class="ace_identifier">repaint</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Comme on dit : la pause s'impose ! Ici, trois millièmes de seconde</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">Thread</span>.<span class="ace_identifier">sleep</span>(<span class="ace_constant ace_numeric">3</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">InterruptedException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+  public Fenetre(){        
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+    this.setContentPane(pan);
+    this.setVisible(true);
+    go();
+  }
 
+  private void go(){
+    for(int i = -50; i < pan.getWidth(); i++){
+      int x = pan.getPosX(), y = pan.getPosY();
+      x++;
+      y++;
+      pan.setPosX(x);
+      pan.setPosY(y);
+      pan.repaint();  
+      try {
+        Thread.sleep(10);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }       
+}
+```
 
+![Animation](Images/animation.png)
+
+```java
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  private int posX = -50;
+  private int posY = -50;
+
+  public void paintComponent(Graphics g){
+    //On choisit une couleur de fond pour le rectangle
+    g.setColor(Color.white);
+    //On le dessine de sorte qu'il occupe toute la surface
+    g.fillRect(0, 0, this.getWidth(), this.getHeight());
+    //On redéfinit une couleur pour le rond
+    g.setColor(Color.red);
+    //On le dessine aux coordonnées souhaitées
+    g.fillOval(posX, posY, 50, 50);
+  }
+
+  public int getPosX() {
+    return posX;
+  }
+
+  public void setPosX(int posX) {
+    this.posX = posX;
+  }
+
+  public int getPosY() {
+    return posY;
+  }
+
+  public void setPosY(int posY) {
+    this.posY = posY;
+  }
+}
+```
+
+![Animation1](Images/animation1.png)
+
+#### Améliorations
+
+```java
+private void go(){
+  for(;;){
+    int x = pan.getPosX(), y = pan.getPosY();
+    x++;
+    y++;
+    pan.setPosX(x);
+    pan.setPosY(y);
+    pan.repaint();  
+    try {
+      Thread.sleep(10);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    //Si nos coordonnées arrivent au bord de notre composant
+    //On réinitialise
+    if(x == pan.getWidth() || y == pan.getHeight()){
+      pan.setPosX(-50);
+      pan.setPosY(-50);
+    }
+  }
+}
+```
+
+#### Détection des bords
+
+```java
+private void go(){
+  //Les coordonnées de départ de notre rond
+  int x = pan.getPosX(), y = pan.getPosY();
+  //Le booléen pour savoir si l'on recule ou non sur l'axe x
+  boolean backX = false;
+  //Le booléen pour savoir si l'on recule ou non sur l'axe y
+  boolean backY = false;
+
+  //Dans cet exemple, j'utilise une boucle while
+  //Vous verrez qu'elle fonctionne très bien
+  while(true){
+    //Si la coordonnée x est inférieure à 1, on avance
+    if(x < 1)
+      backX = false;
+
+    //Si la coordonnée x est supérieure à la taille du Panneau moins la taille du rond, on recule
+    if(x > pan.getWidth()-50)
+      backX = true;
+
+    //Idem pour l'axe y
+    if(y < 1)
+      backY = false;
+    if(y > pan.getHeight()-50)
+      backY = true;
+
+    //Si on avance, on incrémente la coordonnée
+    //backX est un booléen, donc !backX revient à écrire
+    //if (backX == false)
+    if(!backX)
+      pan.setPosX(++x);
+
+    //Sinon, on décrémente
+    else
+      pan.setPosX(--x);
+
+    //Idem pour l'axe Y
+    if(!backY)
+      pan.setPosY(++y);
+    else
+      pan.setPosY(--y);
+
+    //On redessine notre Panneau
+    pan.repaint();
+
+    //Comme on dit : la pause s'impose ! Ici, trois millièmes de seconde
+    try {
+      Thread.sleep(3);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
 
 
 

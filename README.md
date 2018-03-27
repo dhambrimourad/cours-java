@@ -152,56 +152,75 @@ Avec pour résultat :
 
 > My name is
 
-> 
+
 
 > Cysboy
 
-<h3>Les variables et les opérateurs</h3>
-<p>En Java, nous avons deux types de variables :</p>
-<ul>
-  <li>des variables de type simple ou « primitif » ;</li>
-  <li>des variables de type complexe ou des « objets ».</li>
-</ul>
+### Les variables et les opérateurs
+En Java, nous avons deux types de variables :
 
-<h3>Les variables de type numérique</h3>
-<p>Le type byte (1 octet) peut contenir les entiers entre -128 et +127.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;byte temperature;\ntemperature = 64;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">byte</span> <span class="ace_identifier">temperature</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperature</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">64</span>;</div></div></div></code></pre>
+* des variables de type simple ou « primitif » ;
+* des variables de type complexe ou des « objets ».
 
-<p>Le type short(2 octets) contient les entiers compris entre -32768 et +32767.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;short vitesseMax;\nvitesseMax = 32000;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">short</span> <span class="ace_identifier">vitesseMax</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">vitesseMax</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">32000</span>;</div></div></div></code></pre>
+### Les variables de type numérique
+Le type byte (1 octet) peut contenir les entiers entre -128 et +127.
 
-<p>Le type int (4 octets) va de -2*10<sup>9</sup> à 2*10<sup>9</sup>.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int temperatureSoleil;\ntemperatureSoleil = 15600000; //La temp&amp;#xE9;rature est exprim&amp;#xE9;e en kelvins&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">temperatureSoleil</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temperatureSoleil</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15600000</span>; <span class="ace_comment">//La température est exprimée en kelvins</span>
-</div></div></div></code></pre>
+```java
+  byte temperature;
+  temperature = 64;
+```
 
-<p>Le type long (8 octets) peut aller de −9×10<sup>18</sup>  à 9×10<sup>18</sup>.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;long anneeLumiere;\nanneeLumiere = 9460700000000000L;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">long</span> <span class="ace_identifier">anneeLumiere</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">anneeLumiere</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">9460700000000000L</span>;</div></div></div></code></pre>
+Le type short(2 octets) contient les entiers compris entre -32768 et +32767.
 
-<p>Le type float (4 octets) est utilisé pour les nombres avec une virgule flottante.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;float pi;\npi = 3.141592653f;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">pi</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">pi</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3.141592653f</span>;</div></div></div></code></pre>
+```java
+  short vitesseMax;
+  vitesseMax = 32000;
+```
 
-<p>Le type double (8 octets) est identique à float, si ce n'est qu'il contient plus de chiffres derrière la virgule.</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;double division;\ndivision = 0.333333333333333333333333333333333333333333334d;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">division</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">division</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0.333333333333333333333333333333333333333333334d</span>;</div></div></div></code></pre>
+Le type int (4 octets) va de -2*10<sup>9</sup> à 2*10<sup>9</sup>.
 
-<h3>Des variables stockant un caractère</h3>
-<p>Le type « char » contient un caractère stocké entre apostrophes (« ' ' »), comme ceci :</p>
+```java
+  int temperatureSoleil;
+  temperatureSoleil = 15600000; //La température est exprimée en kelvins
+```
+
+Le type long (8 octets) peut aller de −9×10<sup>18</sup>  à 9×10<sup>18</sup>.
+
+```java
+  long anneeLumiere;
+  anneeLumiere = 9460700000000000L;
+```
+
+Le type float (4 octets) est utilisé pour les nombres avec une virgule flottante.
+
+```java
+  float pi;
+  pi = 3.141592653f;
+```
+
+Le type double (8 octets) est identique à float, si ce n'est qu'il contient plus de chiffres derrière la virgule.
+
+```java
+  double division;
+  division = 0.333333333333333333333333333333333333333333334d;
+```
+
+### Des variables stockant un caractère
+Le type « char » contient un caractère stocké entre apostrophes (« ' ' »), comme ceci :
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;char caractere;\ncaractere = &amp;#x27;A&amp;#x27;;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">caractere</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">caractere</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'A'</span>;
 </div></div></div></code></pre>
 
-<h3>Des variables de type booléen</h3>
-<p>Le type « boolean » ne peut contenir que deux valeurs : true (vrai) ou false (faux).</p>
+### Des variables de type booléen
+Le type « boolean » ne peut contenir que deux valeurs : true (vrai) ou false (faux).
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;boolean question;\nquestion = true;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">boolean</span> <span class="ace_identifier">question</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">question</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">true</span>;</div></div></div></code></pre>
 
-<h3>Le type String</h3>
-<p>Le type « String » permet de gérer les chaînes de caractères, c'est-à-dire le stockage de texte. Il s'agit d'une variable d'un type plus complexe que l'on appelle <b>« objet »</b>.</p>
+### Le type String
+Le type « String » permet de gérer les chaînes de caractères, c'est-à-dire le stockage de texte. Il s'agit d'une variable d'un type plus complexe que l'on appelle <b>« objet »</b>.
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Premi&amp;#xE8;re m&amp;#xE9;thode de d&amp;#xE9;claration\nString phrase;\nphrase = &amp;#x22;Titi et Grosminet&amp;#x22;;\n\n//Deuxi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString str = new String();\nstr = &amp;#x22;Une autre cha&amp;#xEE;ne de caract&amp;#xE8;res&amp;#x22;;\n\n//Troisi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString string = &amp;#x22;Une autre cha&amp;#xEE;ne&amp;#x22;;\n\n//Quatri&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString chaine = new String(&amp;#x22;Et une de plus !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Première méthode de déclaration</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">phrase</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">phrase</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Titi et Grosminet"</span>;

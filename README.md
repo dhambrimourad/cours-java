@@ -139,7 +139,6 @@ Résultat:
 
 > Hello World !My name isCysboy
 
-
 ```java
   System.out.print("Hello World ! \n");
   System.out.println("My name is");
@@ -170,7 +169,7 @@ Le type byte (1 octet) peut contenir les entiers entre -128 et +127.
   temperature = 64;
 ```
 
-Le type short(2 octets) contient les entiers compris entre -32768 et +32767.
+Le type short (2 octets) contient les entiers compris entre -32768 et +32767.
 
 ```java
   short vitesseMax;
@@ -208,58 +207,67 @@ Le type double (8 octets) est identique à float, si ce n'est qu'il contient plu
 ### Des variables stockant un caractère
 Le type « char » contient un caractère stocké entre apostrophes (« ' ' »), comme ceci :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;char caractere;\ncaractere = &amp;#x27;A&amp;#x27;;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">caractere</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">caractere</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'A'</span>;
-</div></div></div></code></pre>
+```java
+  char caractere;
+  caractere = 'A';
+```
 
 ### Des variables de type booléen
 Le type « boolean » ne peut contenir que deux valeurs : true (vrai) ou false (faux).
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;boolean question;\nquestion = true;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">boolean</span> <span class="ace_identifier">question</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">question</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language ace_boolean">true</span>;</div></div></div></code></pre>
+```java
+  boolean question;
+  question = true;
+```
 
 ### Le type String
 Le type « String » permet de gérer les chaînes de caractères, c'est-à-dire le stockage de texte. Il s'agit d'une variable d'un type plus complexe que l'on appelle <b>« objet »</b>.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Premi&amp;#xE8;re m&amp;#xE9;thode de d&amp;#xE9;claration\nString phrase;\nphrase = &amp;#x22;Titi et Grosminet&amp;#x22;;\n\n//Deuxi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString str = new String();\nstr = &amp;#x22;Une autre cha&amp;#xEE;ne de caract&amp;#xE8;res&amp;#x22;;\n\n//Troisi&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString string = &amp;#x22;Une autre cha&amp;#xEE;ne&amp;#x22;;\n\n//Quatri&amp;#xE8;me m&amp;#xE9;thode de d&amp;#xE9;claration\nString chaine = new String(&amp;#x22;Et une de plus !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Première méthode de déclaration</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">phrase</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">phrase</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Titi et Grosminet"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Deuxième méthode de déclaration</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Une autre chaîne de caractères"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Troisième méthode de déclaration</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">string</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Une autre chaîne"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Quatrième méthode de déclaration</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"Et une de plus !"</span>);</div></div></div></code></pre>
+```java
+//Première méthode de déclaration
+String phrase;
+phrase = "Titi et Grosminet";
 
-<h3>Conventions de nommage</h3>
-<p>Tous vos noms de classes doivent commencer par une majuscule ;</p>
-<p>Tous vos noms de variables doivent commencer par une minuscule ;</p>
-<p>Si le nom d'une variable est composé de plusieurs mots, le premier commence par une minuscule, le ou les autres par une majuscule, et ce, sans séparation ;</p>
-<p>Tout ceci sans accentuation !</p>
-<p>On peut très bien compacter les phases de déclaration et d'initialisation en une seule phase ! Comme ceci :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int entier = 32;\nfloat pi = 3.1416f;\nchar carac = &amp;#x27;z&amp;#x27;;\nString mot = new String(&amp;#x22;Coucou&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">entier</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">32</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">pi</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3.1416f</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'z'</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">mot</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"Coucou"</span>);
-</div></div></div></code></pre>
+//Deuxième méthode de déclaration
+String str = new String();
+str = "Une autre chaîne de caractères";
 
-<p>Et lorsque nous avons plusieurs variables d'un même type, nous pouvons résumer tout ceci à une déclaration :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int nbre1 = 2, nbre2 = 3, nbre3 = 0;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>, <span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3</span>, <span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;</div></div></div></code></pre>
+//Troisième méthode de déclaration
+String string = "Une autre chaîne";
 
-<h3>Les opérateurs arithmétiques :</h3>
-<ul>
-  <li>« + » : permet d'additionner deux variables numériques (mais aussi de concaténer des chaînes de caractères).</li>
-  <li>« - » : permet de soustraire deux variables numériques.</li>
-  <li>« * » : permet de multiplier deux variables numériques.</li>
-  <li>« / » : permet de diviser deux variables.</li>
-  <li>« % » : permet de renvoyer le reste de la division entière de deux variables de type numérique ; cet opérateur s'appelle le modulo.</li>
-</ul>
+//Quatrième méthode de déclaration
+String chaine = new String("Et une de plus !");
+```
 
-<h3>Quelques exemples de calcul</h3>
+### Conventions de nommage
+Tous vos noms de classes doivent commencer par une majuscule ;
+Tous vos noms de variables doivent commencer par une minuscule ;
+Si le nom d'une variable est composé de plusieurs mots, le premier commence par une minuscule, le ou les autres par une majuscule, et ce, sans séparation ;
+Tout ceci sans accentuation !
+On peut très bien compacter les phases de déclaration et d'initialisation en une seule phase ! Comme ceci :
+
+```java
+int entier = 32;
+float pi = 3.1416f;
+char carac = 'z';
+String mot = new String("Coucou");
+```
+
+Et lorsque nous avons plusieurs variables d'un même type, nous pouvons résumer tout ceci à une déclaration :
+
+```java
+int nbre1 = 2, nbre2 = 3, nbre3 = 0;
+```
+
+### Les opérateurs arithmétiques :
+* « + » : permet d'additionner deux variables numériques (mais aussi de concaténer des chaînes de caractères).
+* « - » : permet de soustraire deux variables numériques.
+* « * » : permet de multiplier deux variables numériques.
+* « / » : permet de diviser deux variables.
+* « % » : permet de renvoyer le reste de la division entière de deux variables de type numérique ; cet opérateur s'appelle le modulo.
+
+### Quelques exemples de calcul
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int nbre1, nbre2, nbre3;  //D&amp;#xE9;claration des variables\n \nnbre1 = 1 + 3;            //nbre1 vaut 4\nnbre2 = 2 * 6;            //nbre2 vaut 12\nnbre3 = nbre2 / nbre1;    //nbre3 vaut 3\nnbre1 = 5 % 2;            //nbre1 vaut 1, car 5 = 2 * 2 + 1\nnbre2 = 99 % 8;           //nbre2 vaut 3, car 99 = 8 * 12 + 3\nnbre3 = 6 % 3;            //l&amp;#xE0;, nbre3 vaut 0, car il n&amp;#x27;y a pas de reste&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">nbre1</span>, <span class="ace_identifier">nbre2</span>, <span class="ace_identifier">nbre3</span>;  <span class="ace_comment">//Déclaration des variables</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">3</span>;            <span class="ace_comment">//nbre1 vaut 4</span>

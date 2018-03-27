@@ -58,17 +58,14 @@ Cochez la case : « Accept License Agreement » puis cliquez sur le lien cor
 * Maintenant, vous pouvez créer votre fichier « .class » en exécutant la commande suivante :
 
 ```java
-javac &lt;nomDeFichier.java&gt;
+javac <nomDeFichier.java>
 ```
-  <br/><pre><code>javac &lt;nomDeFichier.java&gt;</code></pre>
+
 * Vous pouvez lancer votre programme Java en faisant ce qui suit :
 
 ```java
-java &lt;nomFichierClassSansExtension&gt;
+java <nomFichierClassSansExtension>
 ```
-
-  <br/><pre><code>java &lt;nomFichierClassSansExtension&gt;</code></pre>
-
 
 ### Eclipse IDE
 Eclipse IDE est un environnement de développement libre permettant de créer des programmes dans de nombreux langages de programmation (Java, C++, PHP…). C'est l'outil que nous allons utiliser pour programmer. Eclipse IDE est disponible en téléchargement à l'adresse suivante : [http://www.eclipse.org/downloads/eclipse-packages](http://www.eclipse.org/downloads/eclipse-packages/)
@@ -77,18 +74,26 @@ Eclipse IDE est un environnement de développement libre permettant de créer de
 
 ### Créer un nouveau projet Java.
 
-<img src="Images/eclipse1.png" />
-<img src="Images/eclipse2.png" />
-<p>Vous devriez avoir un nouveau projet dans la fenêtre de gauche, comme à la figure suivante.</p>
-<img src="Images/eclipse3.png" />
-<p>Ajoutons une nouvelle classe dans ce projet.</p>
-<img src="Images/eclipse4.png" />
-<p>Cochez la case : «public static void main(String[] args)».</p>
-<img src="Images/eclipse5.png" />
+![Eclipse1](Images/eclipse1.png)
 
-<h3><a name="hello">Votre premier programme</a></h3>
-<p>Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.</p>
-<img src="Images/eclipse6.png" />
+![Eclipse2](Images/eclipse2.png)
+
+Vous devriez avoir un nouveau projet dans la fenêtre de gauche, comme à la figure suivante.
+
+![Eclipse3](Images/eclipse3.png)
+
+Ajoutons une nouvelle classe dans ce projet.
+
+![Eclipse4](Images/eclipse4.png)
+
+Cochez la case : « public static void main(String[] args) ».
+
+![Eclipse5](Images/eclipse5.png)
+
+### <a name="hello">Votre premier programme</a>
+Tous les programmes Java sont composés d'au moins une classe. Elle doit contenir une méthode appelée « main »: ce sera le point de démarrage de notre programme.
+
+![Eclipse6](Images/eclipse6.png)
 
 ### Les commentaires
 
@@ -108,30 +113,45 @@ public static void main(String[] args){
 }
 ```
 
-<h3>Hello World</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  System.out.print(&amp;#x22;Hello World !&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### Hello World
 
-<p>Une fois que vous avez saisi cette ligne de code dans votre méthode main, il vous faut lancer le programme.</p>
-<img src="Images/eclipse7.png" /><br/>
-<img src="Images/eclipse8.png" /><br/>
-<p>Prenons le code suivant :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;System.out.print(&amp;#x22;Hello World !&amp;#x22;);\nSystem.out.print(&amp;#x22;My name is&amp;#x22;);\nSystem.out.print(&amp;#x22;Cysboy&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"My name is"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Cysboy"</span>);
-</div></div></div></code></pre>
-<p>Résultat:</p>
-<pre>Hello World !My name isCysboy</pre>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;System.out.print(&amp;#x22;Hello World ! \\n&amp;#x22;);\nSystem.out.println(&amp;#x22;My name is&amp;#x22;);\nSystem.out.println(&amp;#x22;\\nCysboy&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Hello World ! \n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"My name is"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\nCysboy"</span>);
-</div></div></div></code></pre>
-<p>Avec pour résultat :</p>
-<pre>Hello World !
-My name is<br/>
-Cysboy</pre>
+```java
+public static void main(String[] args){
+  System.out.print("Hello World !");
+}
+```
+
+Une fois que vous avez saisi cette ligne de code dans votre méthode main, il vous faut lancer le programme.
+
+![Eclipse7](Images/eclipse7.png)
+
+![Eclipse8](Images/eclipse8.png)
+
+Prenons le code suivant :
+
+```java
+  System.out.print("Hello World !");
+  System.out.print("My name is");
+  System.out.print("Cysboy");
+```
+
+Résultat:
+
+> Hello World !My name isCysboy
+
+
+```java
+  System.out.print("Hello World ! \n");
+  System.out.println("My name is");
+  System.out.println("\nCysboy");
+```
+
+Avec pour résultat :
+
+> Hello World !
+> My name is
+
+> Cysboy
 
 <h3>Les variables et les opérateurs</h3>
 <p>En Java, nous avons deux types de variables :</p>

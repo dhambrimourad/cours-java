@@ -51,6 +51,62 @@ Cochez la case : « Accept License Agreement » puis cliquez sur le lien cor
 
 ![JDK1](Images/jdk1.png)
 
+### Comparatif Java / Python
+
+Java | Python
+------------ | -------------
+Abondant en mots | Concis. Exprimer beaucoup en quelques mots.
+
+#### Java
+```java
+public class HelloWorld
+{
+    public static void main (String[] args)
+    {
+        System.out.println("Hello world!");
+    }
+}
+```
+
+#### Python
+```Python
+print "Hello, world!"
+```
+
+Java | Python
+------------ | -------------
+En Java, tous les noms de variables doivent être explicitement déclarés. | En Python, vous ne déclarez jamais rien. Une affectation lie un nom à un objet et l'objet peut être de n'importe quel type.
+
+#### Java
+```java
+int myCounter = 0;
+String myString = String.valueOf(myCounter);
+if (myString.equals("0")) ...
+```
+
+#### Python
+```Python
+myCounter = 0
+myString = str(myCounter)
+if myString == "0": ...
+```
+
+#### Java
+```java
+// print the integers from 1 to 9
+for (int i = 1; i < 10; i++)
+{
+   System.out.println(i);
+}
+```
+
+#### Python
+```Python
+ print the integers from 1 to 9
+for i in range(1,10):
+    print i
+```
+
 ### Compilation en ligne de commande
 
 * Mettre à jour la variable d’environnement « PATH ». C'est grâce à elle que Windows trouve des exécutables sans  qu'il soit nécessaire de lui spécifier le chemin d'accès complet.

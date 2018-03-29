@@ -42,17 +42,6 @@ Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 ### Les certifications J2ee
 ![Les certifications J2ee](Images/certification.png)
 
-
-
-### <a name="outils">Les outils de développement</a>
-Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : [www.oracle.com/technetwork/java/javase/downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-![JDK](Images/jdk.png)
-
-Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).
-
-![JDK1](Images/jdk1.png)
-
 ### Comparatif Java / Python
 
 Java | Python
@@ -108,6 +97,15 @@ for (int i = 1; i < 10; i++)
 for i in range(1,10):
     print i
 ```
+
+### <a name="outils">Les outils de développement</a>
+Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : [www.oracle.com/technetwork/java/javase/downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
+![JDK](Images/jdk.png)
+
+Cochez la case : « Accept License Agreement » puis cliquez sur le lien correspondant à votre système d'exploitation (x86 pour un système 32 bits et x64 pour un système 64 bits).
+
+![JDK1](Images/jdk1.png)
 
 ### Compilation en ligne de commande
 

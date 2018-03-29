@@ -42,6 +42,8 @@ Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 ### Les certifications J2ee
 ![Les certifications J2ee](Images/certification.png)
 
+
+
 ### <a name="outils">Les outils de développement</a>
 Pour commencer à utiliser Java, il suffit d'installer le JDK (Java Development Kit) disponible à l'adresse suivante : [www.oracle.com/technetwork/java/javase/downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -52,26 +54,6 @@ Cochez la case : « Accept License Agreement » puis cliquez sur le lien cor
 ![JDK1](Images/jdk1.png)
 
 ### Comparatif Java / Python
-
-Java | Python
------------- | -------------
-Abondant en mots | Concis. Exprimer beaucoup en quelques mots.
-
-#### Java
-```java
-public class HelloWorld
-{
-    public static void main (String[] args)
-    {
-        System.out.println("Hello world!");
-    }
-}
-```
-
-#### Python
-```Python
-print "Hello, world!"
-```
 
 Java | Python
 ------------ | -------------
@@ -89,6 +71,26 @@ if (myString.equals("0")) ...
 myCounter = 0
 myString = str(myCounter)
 if myString == "0": ...
+```
+
+Java | Python
+------------ | -------------
+Abondant en mots | Concis. Exprime beaucoup en peu de mots.
+
+#### Java
+```java
+public class HelloWorld
+{
+    public static void main (String[] args)
+    {
+        System.out.println("Hello world!");
+    }
+}
+```
+
+#### Python
+```Python
+print "Hello, world!"
 ```
 
 #### Java

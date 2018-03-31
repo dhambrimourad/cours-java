@@ -32,6 +32,13 @@ Il permet de développer :
 * des applications pour appareils mobiles.
 * et bien d'autres ! J2EE pour les applications d'entreprise, JMF pour le traitement vidéo, J3D pour la 3D...
 
+Java est un langage interprété, ce qui signifie qu’un programme compilé n’est pas directement exécutable par le système d’exploitation mais il doit être interprété par un autre programme, qu’on appelle interpréteur.
+
+![Compilation](Images/compilation.png)
+
+Un programmeur Java écrit son code source, sous la forme de classes, dans des fichiers dont l’extension est `.java`. Ce code source est alors compilé par le compilateur `javac` en un langage appelé `bytecode` et enregistre le résultat dans un fichier dont l’extension est `.class`. Le bytecode ainsi obtenu n’est pas directement utilisable. Il doit être interprété par la machine virtuelle de Java qui transforme alors le code compilé en code machine compréhensible par le système d’exploitation.
+C’est la raison pour laquelle Java est un langage portable : le bytecode reste le même quelque soit l’environnement d’exécution.
+
 ### <a name="certif">Les certifications Java</a>
 Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 

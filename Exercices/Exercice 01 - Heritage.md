@@ -80,6 +80,7 @@ class C extends B {
 
 L'affichage correct et donné ci-dessous.
 
+```
 Classe A
 -----
 Classe A
@@ -97,6 +98,7 @@ b = 6
 a = 9
 b = 6
 c = 8
+```
 
 La difficulté principale réside dans l'affichage du dernier objet (de type C).
 
@@ -108,18 +110,17 @@ Lorsque la méthode afficherVariables va être invoquée sur l'objet de type C, 
 
 Pour bien comprendre la nuance, remplacez la méthode afficherVariables de la classe C par la suivante :
 
- 
-
-public void afficherVariables() {
+```java 
+    public void afficherVariables() {
         super.afficherVariables();
         System.out.println("b (masquant) = " + b);
         System.out.println("c = " + c);
     }
-
+```
  
-
 Ré-exécutez le programme. L'affichage devrait alors être le suivant:
 
+```
 Classe A
 -----
 Classe A
@@ -139,3 +140,4 @@ b = 6
 b (masquant) = 3
 c = 8
 -----
+```

@@ -48,7 +48,8 @@ class Bilan {
                 min = montant;
             }           
         }
-         System.out.println("La somme mensuelle moyenne reçue est: " + (total / months));
+        
+        System.out.println("La somme mensuelle moyenne reçue est: " + (total / months));
         System.out.println("Le montant mensuel minimal reçu est: "+ min);
         System.out.println("Le montant mensuel maximal reçu est: "+ max);
     }

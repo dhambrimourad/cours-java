@@ -1161,7 +1161,7 @@ class ArrayCopyOfDemo {
 </div></div></div></code></pre>
 
 <p>Ce qui devrait donner le résultat de la figure suivante.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville3.jpg" />
+<img src="Images/ville3.jpg" />
 
 <h3>Les variables de classe</h3>
 <p>La particularité de ce type de variables, c'est qu'elles seront communes à toutes les instances de la classe. Afin qu'une variable soit une variable de classe, elle doit être précédée du mot clé <strong><i>static</i></strong>. Cela donnerait dans notre classe Ville:</p>
@@ -1213,7 +1213,7 @@ class ArrayCopyOfDemo {
 </div></div></div></code></pre>
 
 <p>Le résultat, visible à la figure suivante, montre que le nombre augmente à chaque instanciation.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/static.jpg" />
+<img src="Images/static.jpg" />
 
 <h3>Le principe d’encapsulation</h3>
 <p>Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !</p>

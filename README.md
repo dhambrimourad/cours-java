@@ -1,4 +1,5 @@
 # Programmation JAVA
+
 ### Sommaire
 
 * [Présentation](#presentation)
@@ -686,7 +687,32 @@ int nbre1 = 2, nbre2 = 3, nbre3 = 0;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<h3>Des méthodes concernant les chaînes de caractères</h3>
+### Classe Arrays
+
+#### Méthodes pour copier des tableaux
+
+```java
+import java.util;
+
+class ArrayCopyOfDemo {
+
+    public static void main(String[] args) {
+        char[] copyFrom = {'h','e','l','l','o','j','a','v','a'} ;
+        char[] copyTo = Arrays.copyOfRange(copyFrom, 2, 6);     // lloj
+        char[] copyTo2 = Arrays.copyOf(copyFrom,3);             // hel
+        System.out.println(new String(copyTo));
+    }
+}
+```
+
+#### Autres méthodes :
+* binarySearch: recherche un élément et retourne l’indexe associé.
+* equals : compare deux tableaux
+* sort : tri d’un tableau d’une manière séquentielle
+* paralllelSort : tri d’un tableau d’une manière parallèle dans des machines multi-processeur (plus rapide que sort), existe depuis Java 1.8
+
+### Des méthodes concernant les chaînes de caractères
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = new String(&amp;#x22;BONJOUR TOUT LE MONDE !&amp;#x22;), chaine2 = new String();\nchaine2 = chaine.toLowerCase();   //Donne &amp;#x22;bonjour tout le monde !&amp;#x22;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"BONJOUR TOUT LE MONDE !"</span>), <span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">chaine</span>.<span class="ace_identifier">toLowerCase</span>();   <span class="ace_comment">//Donne "bonjour tout le monde !"</span></div></div></div></code></pre>
 

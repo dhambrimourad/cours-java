@@ -607,7 +607,8 @@ int nbre1 = 2, nbre2 = 3, nbre3 = 0;
 </div></div></div></code></pre>
 <img src="Images/tableaux.png" />
 
-<h3>Utiliser et rechercher dans un tableau</h3>
+### Utiliser et rechercher dans un tableau
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;char tableauCaractere[] = {&amp;#x27;a&amp;#x27;, &amp;#x27;b&amp;#x27;, &amp;#x27;c&amp;#x27;, &amp;#x27;d&amp;#x27;, &amp;#x27;e&amp;#x27;, &amp;#x27;f&amp;#x27;, &amp;#x27;g&amp;#x27;};\nint i = 0;\nchar reponse = &amp;#x27; &amp;#x27;,carac = &amp;#x27; &amp;#x27;;\nScanner sc = new Scanner(System.in);\n         \ndo {//Boucle principale\n  do {//On r&amp;#xE9;p&amp;#xE8;te cette boucle tant que l&amp;#x27;utilisateur n&amp;#x27;a pas rentr&amp;#xE9; une lettre figurant dans le tableau\n    i = 0;\n    System.out.println(&amp;#x22;Rentrez une lettre en minuscule, SVP &amp;#x22;);\n                \n    carac = sc.nextLine().charAt(0);\n    //Boucle de recherche dans le tableau\n    while(i &amp;#x3C; tableauCaractere.length &amp;#x26;&amp;#x26; carac != tableauCaractere[i])\n      i++;\n         \n    //Si i &amp;#x3C; 7 c&amp;#x27;est que la boucle n&amp;#x27;a pas d&amp;#xE9;pass&amp;#xE9; le nombre de cases du tableau \n    if (i &amp;#x3C; tableauCaractere.length)\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; se trouve bien dans le tableau !&amp;#x22;);\n    else //Sinon\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; ne se trouve pas dans le tableau !&amp;#x22;);\n         \n  }while(i &amp;#x3E;= tableauCaractere.length);\n\n  //Tant que la lettre de l&amp;#x27;utilisateur ne correspond pas &amp;#xE0; une lettre du tableau    \n  do{\n    System.out.println(&amp;#x22;Voulez-vous essayer &amp;#xE0; nouveau ? (O/N)&amp;#x22;);\n    reponse = sc.nextLine().charAt(0);\n  }while(reponse != &amp;#x27;N&amp;#x27; &amp;#x26;&amp;#x26; reponse != &amp;#x27;O&amp;#x27;);      \n}while (reponse == &amp;#x27;O&amp;#x27;);\n                \nSystem.out.println(&amp;#x22;Au revoir !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">tableauCaractere</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'a'</span>, <span class="ace_string">'b'</span>, <span class="ace_string">'c'</span>, <span class="ace_string">'d'</span>, <span class="ace_string">'e'</span>, <span class="ace_string">'f'</span>, <span class="ace_string">'g'</span>};
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>,<span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>;
@@ -641,9 +642,10 @@ int nbre1 = 2, nbre2 = 3, nbre3 = 0;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir !"</span>);</div></div></div></code></pre>
 
 <p>Le résultat de ce code se trouve à la figure suivante.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/tableaux1.jpg" />
+<img src="Images/tableaux1.jpg" />
 
-<h3>Parcourir un tableau multidimensionnel</h3>
+### Parcourir un tableau multidimensionnel
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} }, i = 0, j = 0;\n \nwhile (i &amp;#x3C; 2)\n{\n  j = 0;\n  while(j &amp;#x3C; 5)\n  {\n    System.out.print(premiersNombres[i][j]);\n    j++;\n  }\n  System.out.println(&amp;#x22;&amp;#x22;);\n  i++;\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">premiersNombres</span>[][] <span class="ace_keyword ace_operator">=</span> { {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">8</span>},{<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">9</span>} }, <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">2</span>)
@@ -861,9 +863,36 @@ Avec ces méthodes, vous pourrez parcourir de la même manière :
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabStr2</span>);
 </div></div></div></code></pre>
 
-<h3><a name="classe">Votre première classe</a></h3>
+### Classes
+
+#### Définition :
+Abstraction qui sert à décrire un modèle (structure de données)
+
+#### Concept :
+Un modèle de définition pour les objets
+
+#### Une classe est définie par :
+* Son nom
+* Des champs
+    - Attributs
+    - Méthodes
+
+#### Syntaxe :
+
+```
+[<Modificateur de visibilité>] class <nom classe>
+{
+    //Déclaration des attributs
+
+    //Déclaration des méthodes
+}
+```
+
+<Modificateur de visibilité> = « public » ou « private »
+
+### <a name="classe">Votre première classe</a>
 <p>Créons une classe « Ville ». Allez dans File > New > Class.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville.png" />
+<img src="Images/ville.png" />
 
 <h3>Les constructeurs</h3>
 <p>L'objectif est de construire un objet <strong><i>Ville</i></strong>, Un objet <strong><i>Ville</i></strong> possède :

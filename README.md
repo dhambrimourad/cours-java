@@ -762,7 +762,8 @@ class ArrayCopyOfDemo {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode pow() prend donc une valeur en premier paramètre, et un exposant en second</span>
 </div></div></div></code></pre>
 
-<h3>Créer sa propre méthode</h3>
+### Créer sa propre méthode
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test1\n{\n  public static void main(String[] args)\n  {\n    String[] tab = {&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;, &amp;#x22;d&amp;#x22;};\n    parcourirTableau(tab); \n  }\n \n  static void parcourirTableau(String[] tabBis)\n  {\n    for(String str : tabBis)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test1</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>)
@@ -807,8 +808,9 @@ class ArrayCopyOfDemo {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<h3>La surcharge de méthode</h3>
-<p>La surcharge de méthode consiste à garder le nom d'une méthode et à changer la liste ou le type de ses paramètres. Dans le cas qui nous intéresse, nous voulons que notre méthode <strong>parcourirTableau</strong> puisse parcourir n'importe quel type de tableau. Nous allons donc surcharger notre méthode afin qu'elle puisse aussi travailler avec des int, comme le montre cet exemple :</p>
+### La surcharge de méthode
+
+La surcharge de méthode consiste à garder le nom d'une méthode et à changer la liste ou le type de ses paramètres. Dans le cas qui nous intéresse, nous voulons que notre méthode <strong>parcourirTableau</strong> puisse parcourir n'importe quel type de tableau. Nous allons donc surcharger notre méthode afin qu'elle puisse aussi travailler avec des int, comme le montre cet exemple :
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[] tab)\n{\n  for(String str : tab)\n    System.out.println(str);\n}\n        \nstatic void parcourirTableau(int[] tab)\n{\n  for(int str : tab)\n    System.out.println(str);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
@@ -823,11 +825,9 @@ class ArrayCopyOfDemo {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<p>Avec ces méthodes, vous pourrez parcourir de la même manière :</p>
-<ul>
-  <li>Les tableaux d'entiers ;</li>
-  <li>Les tableaux de chaînes de caractères.</li>
-</ul>
+Avec ces méthodes, vous pourrez parcourir de la même manière :
+* Les tableaux d'entiers ;
+* Les tableaux de chaînes de caractères.
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[][] tab)\n{\n  for(String tab2[] : tab)\n  {\n    for(String str : tab2)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[][] <span class="ace_identifier">tab</span>)
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{

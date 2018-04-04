@@ -3254,7 +3254,7 @@ Notre objet comportera les caractéristiques suivantes :
 * il aura une teinte orangée lorsque l'on pressera le bouton gauche ;
 * il reviendra à la normale si on relâche le clic.
 
-![Jaune](Images/jaune.png) ![Rouge](Images/rouge.png) ![Vert](Images/vert.png)
+![Jaune](Images/jaune.png) ![Oranger](Images/oranger.png) ![Vert](Images/vert.png)
 
 ```java
 import java.awt.Color;

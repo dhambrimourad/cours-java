@@ -636,9 +636,13 @@ Voici les caractéristiques du programme que nous allons devoir réaliser:
 * Enfin, on demande à la fin à l'utilisateur s'il veut faire une nouvelle conversion, ce qui signifie que l'on doit pouvoir revenir au début du programme !
 
 Voici la formule de conversion pour passer des degrés Celsius en degrés Fahrenheit :
-```				F=(9/5)×C+32```
+```				
+    F=(9/5)×C+32
+```
 Pour l'opération inverse, c'est comme ceci :
-```				C=(F−32)×5/9```
+```				
+    C=(F−32)×5/9
+```
 La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)

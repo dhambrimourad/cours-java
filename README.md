@@ -37,7 +37,7 @@ Java est un langage interprété, ce qui signifie qu’un programme compilé n�
 
 ![Compilation](Images/compilation.png)
 
-Un programmeur Java écrit son code source, sous la forme de classes, dans des fichiers dont l’extension est `.java`. Ce code source est alors compilé par le compilateur `javac` en un langage appelé `bytecode` et enregistre le résultat dans un fichier dont l’extension est `.class`. Le bytecode ainsi obtenu n’est pas directement utilisable. Il doit être interprété par la machine virtuelle de Java qui transforme alors le code compilé en code machine compréhensible par le système d’exploitation.
+Un programmeur Java écrit son code source, sous la forme de classes, dans des fichiers dont l’extension est `.java`. Ce code source est alors compilé par le compilateur `javac` en un langage appelé `bytecode` et enregistre le résultat dans un fichier dont l’extension est `.class`. Le bytecode ainsi obtenu n’est pas directement utilisable. Il doit être interprété par la machine virtuelle de Java (un émulateur qui exécute des programmes compilés sous forme de bytecode Java) qui transforme alors le code compilé en code machine compréhensible par le système d’exploitation.
 C’est la raison pour laquelle Java est un langage portable : le bytecode reste le même quelque soit l’environnement d’exécution.
 
 ### <a name="certif">Les certifications Java</a>
@@ -332,266 +332,319 @@ int nbre1 = 2, nbre2 = 3, nbre3 = 0;
 
 ### Quelques exemples de calcul
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int nbre1, nbre2, nbre3;  //D&amp;#xE9;claration des variables\n \nnbre1 = 1 + 3;            //nbre1 vaut 4\nnbre2 = 2 * 6;            //nbre2 vaut 12\nnbre3 = nbre2 / nbre1;    //nbre3 vaut 3\nnbre1 = 5 % 2;            //nbre1 vaut 1, car 5 = 2 * 2 + 1\nnbre2 = 99 % 8;           //nbre2 vaut 3, car 99 = 8 * 12 + 3\nnbre3 = 6 % 3;            //l&amp;#xE0;, nbre3 vaut 0, car il n&amp;#x27;y a pas de reste&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">nbre1</span>, <span class="ace_identifier">nbre2</span>, <span class="ace_identifier">nbre3</span>;  <span class="ace_comment">//Déclaration des variables</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">3</span>;            <span class="ace_comment">//nbre1 vaut 4</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">6</span>;            <span class="ace_comment">//nbre2 vaut 12</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre2</span> / <span class="ace_identifier">nbre1</span>;    <span class="ace_comment">//nbre3 vaut 3</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">5</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">2</span>;            <span class="ace_comment">//nbre1 vaut 1, car 5 = 2 * 2 + 1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">99</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">8</span>;           <span class="ace_comment">//nbre2 vaut 3, car 99 = 8 * 12 + 3</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">6</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">3</span>;            <span class="ace_comment">//là, nbre3 vaut 0, car il n'y a pas de reste</span></div></div></div></code></pre>
+```java
+int nbre1, nbre2, nbre3;  //Déclaration des variables
+ 
+nbre1 = 1 + 3;            //nbre1 vaut 4
+nbre2 = 2 * 6;            //nbre2 vaut 12
+nbre3 = nbre2 / nbre1;    //nbre3 vaut 3
+nbre1 = 5 % 2;            //nbre1 vaut 1, car 5 = 2 * 2 + 1
+nbre2 = 99 % 8;           //nbre2 vaut 3, car 99 = 8 * 12 + 3
+nbre3 = 6 % 3;            //là, nbre3 vaut 0, car il n'y a pas de reste
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int nbre1, nbre2, nbre3;    //D&amp;#xE9;claration des variables\nnbre1 = nbre2 = nbre3 = 0;  //Initialisation\n \nnbre1 = nbre1 + 1;     //nbre1 = lui-m&amp;#xEA;me, donc 0 + 1 =&amp;#x3E; nbre1 = 1\nnbre1 = nbre1 + 1;     //nbre1 = 1 (cf. ci-dessus), maintenant, nbre1 = 1 + 1 = 2\nnbre2 = nbre1;         //nbre2 = nbre1 = 2\nnbre2 = nbre2 * 2;     //nbre2 = 2 =&amp;#x3E; nbre2 = 2 * 2 = 4\nnbre3 = nbre2;         //nbre3 = nbre2 = 4\nnbre3 = nbre3 / nbre3; //nbre3 = 4 / 4 = 1\nnbre1 = nbre3;         //nbre1 = nbre3 = 1\nnbre1 = nbre1 - 1;     //nbre1 = 1 - 1 = 0&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">nbre1</span>, <span class="ace_identifier">nbre2</span>, <span class="ace_identifier">nbre3</span>;    <span class="ace_comment">//Déclaration des variables</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;  <span class="ace_comment">//Initialisation</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">1</span>;     <span class="ace_comment">//nbre1 = lui-même, donc 0 + 1 =&gt; nbre1 = 1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">1</span>;     <span class="ace_comment">//nbre1 = 1 (cf. ci-dessus), maintenant, nbre1 = 1 + 1 = 2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span>;         <span class="ace_comment">//nbre2 = nbre1 = 2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">2</span>;     <span class="ace_comment">//nbre2 = 2 =&gt; nbre2 = 2 * 2 = 4</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre2</span>;         <span class="ace_comment">//nbre3 = nbre2 = 4</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre3</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre3</span> / <span class="ace_identifier">nbre3</span>; <span class="ace_comment">//nbre3 = 4 / 4 = 1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre3</span>;         <span class="ace_comment">//nbre1 = nbre3 = 1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">-</span> <span class="ace_constant ace_numeric">1</span>;     <span class="ace_comment">//nbre1 = 1 - 1 = 0</span></div></div></div></code></pre>
+```java
+int nbre1, nbre2, nbre3;    //Déclaration des variables
+nbre1 = nbre2 = nbre3 = 0;  //Initialisation
+ 
+nbre1 = nbre1 + 1;     //nbre1 = lui-même, donc 0 + 1 => nbre1 = 1
+nbre1 = nbre1 + 1;     //nbre1 = 1 (cf. ci-dessus), maintenant, nbre1 = 1 + 1 = 2
+nbre2 = nbre1;         //nbre2 = nbre1 = 2
+nbre2 = nbre2 * 2;     //nbre2 = 2 => nbre2 = 2 * 2 = 4
+nbre3 = nbre2;         //nbre3 = nbre2 = 4
+nbre3 = nbre3 / nbre3; //nbre3 = 4 / 4 = 1
+nbre1 = nbre3;         //nbre1 = nbre3 = 1
+nbre1 = nbre1 - 1;     //nbre1 = 1 - 1 = 0
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;nbre1 = nbre1 + 1;\nnbre1 += 1;\nnbre1++;\n++nbre1;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">1</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">+=</span> <span class="ace_constant ace_numeric">1</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword ace_operator">++</span><span class="ace_identifier">nbre1</span>;</div></div></div></code></pre>
+```java
+nbre1 = nbre1 + 1;
+nbre1 += 1;
+nbre1++;
+++nbre1;
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;nbre1 = nbre1 - 1;\nnbre1 -= 1;\nnbre1--;\n--nbre1;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">-</span> <span class="ace_constant ace_numeric">1</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">-=</span> <span class="ace_constant ace_numeric">1</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span><span class="ace_keyword ace_operator">--</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword ace_operator">--</span><span class="ace_identifier">nbre1</span>;</div></div></div></code></pre>
+```java
+nbre1 = nbre1 - 1;
+nbre1 -= 1;
+nbre1--;
+--nbre1;
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;nbre1 = nbre1 * 2;\nnbre1 *= 2;\nnbre1 = nbre1 / 2;\nnbre1 /= 2;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">2</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">*=</span> <span class="ace_constant ace_numeric">2</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre1</span> / <span class="ace_constant ace_numeric">2</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">nbre1</span> /<span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>;</div></div></div></code></pre>
+```java
+nbre1 = nbre1 * 2;
+nbre1 *= 2;
+nbre1 = nbre1 / 2;
+nbre1 /= 2;
+```
 
-<p>L'opérateur « + » sert aussi d'opérateur de concaténation, c'est-à-dire qu'il permet de mélanger du texte brut et des variables. Voici un exemple d'affichage avec une perte de précision :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;double nbre1 = 10, nbre2 = 3;\nint resultat = (int)(nbre1 / nbre2);\nSystem.out.println(&amp;#x22;Le r&amp;#xE9;sultat est = &amp;#x22; + resultat);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">nbre1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>, <span class="ace_identifier">nbre2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">resultat</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)(<span class="ace_identifier">nbre1</span> / <span class="ace_identifier">nbre2</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le résultat est = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">resultat</span>);</div></div></div></code></pre>
+L'opérateur « + » sert aussi d'opérateur de concaténation, c'est-à-dire qu'il permet de mélanger du texte brut et des variables. Voici un exemple d'affichage avec une perte de précision :
 
-<h3>Les conversions, ou « cast »</h3>
-<p>D'un type « int » en type « float ».</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 123;\nfloat j = (float)i;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">123</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">float</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">float</span>)<span class="ace_identifier">i</span>;</div></div></div></code></pre>
+```java
+double nbre1 = 10, nbre2 = 3;
+int resultat = (int)(nbre1 / nbre2);
+System.out.println("Le résultat est = " + resultat);
+```
 
-<p>D'un type « int » en « double ».</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 123;\ndouble j = (double)i;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">123</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">double</span>)<span class="ace_identifier">i</span>;</div></div></div></code></pre>
+### Les conversions, ou « cast »
+D'un type « int » en type « float ».
 
-<p>Et inversement :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;double i = 1.23;\ndouble j = 2.9999999;\nint k = (int)i;        //k vaut 1\nk = (int)j;            //k vaut 2&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1.23</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2.9999999</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">k</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)<span class="ace_identifier">i</span>;        <span class="ace_comment">//k vaut 1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">k</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_keyword">int</span>)<span class="ace_identifier">j</span>;            <span class="ace_comment">//k vaut 2</span></div></div></div></code></pre>
+```java
+int i = 123;
+float j = (float)i;
+```
 
-<h3><a name="scanner">Récupérer ce que vous tapez</a></h3>
-<img src="Images/scanner.png" />
+D'un type « int » en « double ».
 
-<h3><a name="conditions">La structure If… else…</a></h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 0;\nif (i &amp;#x3C; 0)\n  System.out.println(&amp;#x22;Ce nombre est n&amp;#xE9;gatif !&amp;#x22;);      \n  \nelse if(i &amp;#x3E; 0)\n  System.out.println(&amp;#x22;Ce nombre est positif !&amp;#x22;);           \n \nelse  \n  System.out.println(&amp;#x22;Ce nombre est nul !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">if</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">0</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Ce nombre est négatif !"</span>);      
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">else</span> <span class="ace_keyword">if</span>(<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_constant ace_numeric">0</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Ce nombre est positif !"</span>);           
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">else</span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Ce nombre est nul !"</span>);</div></div></div></code></pre>
+```java
+int i = 123;
+double j = (double)i;
+```
 
-<h3>Les conditions multiples</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int i = 58;\nif(i &amp;#x3C; 100 &amp;#x26;&amp;#x26; i &amp;#x3E; 50) \n  System.out.println(&amp;#x22;Le nombre est bien dans l&amp;#x27;intervalle.&amp;#x22;);\nelse\n  System.out.println(&amp;#x22;Le nombre n&amp;#x27;est pas dans l&amp;#x27;intervalle.&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">58</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">if</span>(<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">100</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_constant ace_numeric">50</span>) 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre est bien dans l'intervalle."</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre n'est pas dans l'intervalle."</span>);</div></div></div></code></pre>
+Et inversement :
 
-<h3>La structure « switch »</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int note = 10; //On imagine que la note maximale est 20\n\nswitch (note)\n{\n  case 0:\n    System.out.println(&amp;#x22;Ouch !&amp;#x22;);\n    break;\n  case 10:\n    System.out.println(&amp;#x22;Vous avez juste la moyenne.&amp;#x22;);\n    break;\n  case 20:\n    System.out.println(&amp;#x22;Parfait !&amp;#x22;);\n    break;\n  default:\n    System.out.println(&amp;#x22;Il faut davantage travailler.&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">note</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>; <span class="ace_comment">//On imagine que la note maximale est 20</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">switch</span> (<span class="ace_identifier">note</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">case</span> <span class="ace_constant ace_numeric">0</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Ouch !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">break</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">case</span> <span class="ace_constant ace_numeric">10</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Vous avez juste la moyenne."</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">break</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">case</span> <span class="ace_constant ace_numeric">20</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Parfait !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">break</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">default</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Il faut davantage travailler."</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+double i = 1.23;
+double j = 2.9999999;
+int k = (int)i;        //k vaut 1
+k = (int)j;            //k vaut 2
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = &amp;#x22;Bonjour&amp;#x22;;\n\nswitch(chaine) {\n  case &amp;#x22;Bonjour&amp;#x22;:\n    System.out.println(&amp;#x22;Bonjour monsieur !&amp;#x22;);\n    break;\n  case &amp;#x22;Bonsoir&amp;#x22;:\n    System.out.println(&amp;#x22;Bonsoir monsieur !&amp;#x22;);\n    break;\n  default:\n    System.out.println(&amp;#x22;Bonjoir ! :p&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Bonjour"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">switch</span>(<span class="ace_identifier">chaine</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">case</span> <span class="ace_string">"Bonjour"</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonjour monsieur !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">break</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">case</span> <span class="ace_string">"Bonsoir"</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonsoir monsieur !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">break</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">default</span>:
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonjoir ! :p"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### <a name="scanner">Récupérer ce que vous tapez</a>
+![Scanner](Images/scanner.png)
 
-<h3>La condition ternaire</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int x = 10, y = 20;\nint max = (x &amp;#x3C; y) ? y : x ; //Maintenant, max vaut 20&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>, <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">20</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">max</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">y</span>) ? <span class="ace_identifier">y</span> : <span class="ace_identifier">x</span> ; <span class="ace_comment">//Maintenant, max vaut 20</span></div></div></div></code></pre>
+### <a name="conditions">La structure If… else…</a>
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int x = 10, y = 20;\n\nint max = (x &amp;#x3C; y) ? (y &amp;#x3C; 10) ? y % 10 : y * 2 : x ; //Max vaut 40\n\n//Pas tr&amp;#xE8;s facile &amp;#xE0; lire&amp;#x2026;\n//Vous pouvez entourer votre deuxi&amp;#xE8;me instruction ternaire par des parenth&amp;#xE8;ses pour mieux voir :\n\nmax = (x &amp;#x3C; y) ? ((y &amp;#x3C; 10) ? y % 10 : y * 2) : x ; //Max vaut 40&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>, <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">20</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">max</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">y</span>) ? (<span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">10</span>) ? <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">10</span> : <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">2</span> : <span class="ace_identifier">x</span> ; <span class="ace_comment">//Max vaut 40</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Pas très facile à lire…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Vous pouvez entourer votre deuxième instruction ternaire par des parenthèses pour mieux voir :</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">max</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_identifier">x</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">y</span>) ? ((<span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">10</span>) ? <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">%</span> <span class="ace_constant ace_numeric">10</span> : <span class="ace_identifier">y</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_constant ace_numeric">2</span>) : <span class="ace_identifier">x</span> ; <span class="ace_comment">//Max vaut 40</span>
-</div></div></div></code></pre>
+```java
+int i = 0;
+if (i < 0)
+  System.out.println("Ce nombre est négatif !");      
+  
+else if(i > 0)
+  System.out.println("Ce nombre est positif !");           
+ 
+else  
+  System.out.println("Ce nombre est nul !");
+```
 
-<h3><a name="boucles">La boucle « while »</a></h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Une variable vide\nString prenom;\n//On initialise celle-ci &amp;#xE0; O pour oui\nchar reponse = &amp;#x27;O&amp;#x27;;\n//Notre objet Scanner, n&amp;#x27;oubliez pas l&amp;#x27;import de java.util.Scanner !\nScanner sc = new Scanner(System.in);\n//Tant que la r&amp;#xE9;ponse donn&amp;#xE9;e est &amp;#xE9;gale &amp;#xE0; oui&amp;#x2026;\nwhile (reponse == &amp;#x27;O&amp;#x27;)\n{\n  //On affiche une instruction\n  System.out.println(&amp;#x22;Donnez un pr&amp;#xE9;nom : &amp;#x22;);\n  //On r&amp;#xE9;cup&amp;#xE8;re le pr&amp;#xE9;nom saisi\n  prenom = sc.nextLine();\n  //On affiche notre phrase avec le pr&amp;#xE9;nom\n  System.out.println(&amp;#x22;Bonjour &amp;#x22; +prenom+ &amp;#x22;, comment vas-tu ?&amp;#x22;);\n  //On demande si la personne veut faire un autre essai\n  System.out.println(&amp;#x22;Voulez-vous r&amp;#xE9;essayer ? (O/N)&amp;#x22;);\n  //On r&amp;#xE9;cup&amp;#xE8;re la r&amp;#xE9;ponse de l&amp;#x27;utilisateur\n  reponse = sc.nextLine().charAt(0);\n}\n \nSystem.out.println(&amp;#x22;Au revoir&amp;#x2026;&amp;#x22;);\n//Fin de la boucle&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Une variable vide</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">prenom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//On initialise celle-ci à O pour oui</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'O'</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Notre objet Scanner, n'oubliez pas l'import de java.util.Scanner !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Scanner</span> <span class="ace_identifier">sc</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Scanner</span>(<span class="ace_support ace_function">System</span>.<span class="ace_identifier">in</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Tant que la réponse donnée est égale à oui…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_string">'O'</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//On affiche une instruction</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Donnez un prénom : "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//On récupère le prénom saisi</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">prenom</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//On affiche notre phrase avec le prénom</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">prenom</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">", comment vas-tu ?"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//On demande si la personne veut faire un autre essai</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voulez-vous réessayer ? (O/N)"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//On récupère la réponse de l'utilisateur</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>().<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">0</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir…"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Fin de la boucle</span></div></div></div></code></pre>
+### Les conditions multiples
+```java
+int i = 58;
+if(i < 100 && i > 50) 
+  System.out.println("Le nombre est bien dans l'intervalle.");
+else
+  System.out.println("Le nombre n'est pas dans l'intervalle.");
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String prenom;\nchar reponse = &amp;#x27;O&amp;#x27;;\nScanner sc = new Scanner(System.in);\nwhile (reponse == &amp;#x27;O&amp;#x27;)\n{\n  System.out.println(&amp;#x22;Donnez un pr&amp;#xE9;nom : &amp;#x22;);\n  prenom = sc.nextLine();\n  System.out.println(&amp;#x22;Bonjour &amp;#x22; +prenom+ &amp;#x22;, comment vas-tu ?&amp;#x22;);                        \n  //Sans &amp;#xE7;a, nous n&amp;#x27;entrerions pas dans la deuxi&amp;#xE8;me boucle\n  reponse = &amp;#x27; &amp;#x27;;\n                        \n  //Tant que la r&amp;#xE9;ponse n&amp;#x27;est pas O ou N, on repose la question\n  while(reponse != &amp;#x27;O&amp;#x27; &amp;#x26;&amp;#x26; reponse != &amp;#x27;N&amp;#x27;)\n  {\n    //On demande si la personne veut faire un autre essai\n    System.out.println(&amp;#x22;Voulez-vous r&amp;#xE9;essayer ? (O/N)&amp;#x22;);\n    reponse = sc.nextLine().charAt(0);\n  }\n}\nSystem.out.println(&amp;#x22;Au revoir&amp;#x2026;&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">prenom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">'O'</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Scanner</span> <span class="ace_identifier">sc</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Scanner</span>(<span class="ace_support ace_function">System</span>.<span class="ace_identifier">in</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_string">'O'</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Donnez un prénom : "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">prenom</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">prenom</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">", comment vas-tu ?"</span>);                        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Sans ça, nous n'entrerions pas dans la deuxième boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Tant que la réponse n'est pas O ou N, on repose la question</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'O'</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'N'</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On demande si la personne veut faire un autre essai</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voulez-vous réessayer ? (O/N)"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>().<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">0</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir…"</span>);</div></div></div></code></pre>
-<img src="Images/while.png" />
+### La structure « switch »
+```java
+int note = 10; //On imagine que la note maximale est 20
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a &amp;#x3C; b)\n{\n  System.out.println(&amp;#x22;bonjour &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">a</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" fois !!"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+switch (note)
+{
+  case 0:
+    System.out.println("Ouch !");
+    break;
+  case 10:
+    System.out.println("Vous avez juste la moyenne.");
+    break;
+  case 20:
+    System.out.println("Parfait !");
+    break;
+  default:
+    System.out.println("Il faut davantage travailler.");
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a &amp;#x3C; b)\n{\n  System.out.println(&amp;#x22;bonjour &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);\n  a++;\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">a</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" fois !!"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">a</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+String chaine = "Bonjour";
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (a++ &amp;#x3C; b)\n   System.out.println(&amp;#x22;bonjour &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">a</span><span class="ace_keyword ace_operator">++</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">a</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" fois !!"</span>);</div></div></div></code></pre>
+switch(chaine) {
+  case "Bonjour":
+    System.out.println("Bonjour monsieur !");
+    break;
+  case "Bonsoir":
+    System.out.println("Bonsoir monsieur !");
+    break;
+  default:
+    System.out.println("Bonjoir ! :p");
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int a = 1, b = 15;\nwhile (++a &amp;#x3C; b)\n  System.out.println(&amp;#x22;bonjour &amp;#x22; +a+ &amp;#x22; fois !!&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>, <span class="ace_identifier">b</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">15</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_keyword ace_operator">++</span><span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">a</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" fois !!"</span>);</div></div></div></code></pre>
+### La condition ternaire
+```java
+int x = 10, y = 20;
+int max = (x < y) ? y : x ; //Maintenant, max vaut 20
+```
 
-<h3>La boucle « do… while »</h3>
-<p>Syntaxe</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;do{\n  //Instructions\n}while(a &amp;#x3C; b);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">do</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Instructions</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}<span class="ace_keyword">while</span>(<span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">b</span>);</div></div></div></code></pre>
+```java
+int x = 10, y = 20;
 
-<h4>Première différence</h4>
-<p>La boucle « do… while » s'exécutera au moins une fois, contrairement à la boucle « while ». C'est-à-dire que la phase de test de la condition se fait à la fin, car la condition se met après le while.</p>
+int max = (x < y) ? (y < 10) ? y % 10 : y * 2 : x ; //Max vaut 40
 
-<h4>Deuxième différence</h4>
-<p>C'est une différence de syntaxe, qui se situe après la condition du while. Il y a un «;» après le while. C'est tout ! Ne l'oubliez cependant pas, sinon le programme ne compilera pas.</p>
+//Pas très facile à lire…
+//Vous pouvez entourer votre deuxième instruction ternaire par des parenthèses pour mieux voir :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String prenom = new String();\n//Pas besoin d&amp;#x27;initialiser : on entre au moins une fois dans la boucle !\nchar reponse = &amp;#x27; &amp;#x27;;\n \nScanner sc = new Scanner(System.in);\n \ndo{\n  System.out.println(&amp;#x22;Donnez un pr&amp;#xE9;nom : &amp;#x22;);\n  prenom = sc.nextLine();\n  System.out.println(&amp;#x22;Bonjour &amp;#x22; +prenom+ &amp;#x22;, comment vas-tu ?&amp;#x22;);\n       \n  do{\n    System.out.println(&amp;#x22;Voulez-vous r&amp;#xE9;essayer ? (O/N)&amp;#x22;);\n    reponse = sc.nextLine().charAt(0);\n  }while(reponse != &amp;#x27;O&amp;#x27; &amp;#x26;&amp;#x26; reponse != &amp;#x27;N&amp;#x27;);\n        \n}while (reponse == &amp;#x27;O&amp;#x27;);\n \nSystem.out.println(&amp;#x22;Au revoir&amp;#x2026;&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">prenom</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Pas besoin d'initialiser : on entre au moins une fois dans la boucle !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Scanner</span> <span class="ace_identifier">sc</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Scanner</span>(<span class="ace_support ace_function">System</span>.<span class="ace_identifier">in</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">do</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Donnez un prénom : "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">prenom</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Bonjour "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">prenom</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">", comment vas-tu ?"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">do</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voulez-vous réessayer ? (O/N)"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>().<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">0</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }<span class="ace_keyword">while</span>(<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'O'</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'N'</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}<span class="ace_keyword">while</span> (<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_string">'O'</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir…"</span>);</div></div></div></code></pre>
+max = (x < y) ? ((y < 10) ? y % 10 : y * 2) : x ; //Max vaut 40
+```
 
-<h3>La boucle « for »</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;for(int i = 1; i &amp;#x3C;= 10; i++)\n{\n  System.out.println(&amp;#x22;Voici la ligne &amp;#x22;+i);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;=</span> <span class="ace_constant ace_numeric">10</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voici la ligne "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">i</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
-<img src="Images/for.jpg" />
+### <a name="boucles">La boucle « while »</a>
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;for(int i = 10; i &amp;#x3E;= 0; i--)\n  System.out.println(&amp;#x22;Il reste &amp;#x22;+i+&amp;#x22; ligne(s) &amp;#xE0; &amp;#xE9;crire&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">10</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&gt;=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">--</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Il reste "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">i</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" ligne(s) à écrire"</span>);
-</div></div></div></code></pre>
-<img src="Images/for2.jpg" />
+```java
+//Une variable vide
+String prenom;
+//On initialise celle-ci à O pour oui
+char reponse = 'O';
+//Notre objet Scanner, n'oubliez pas l'import de java.util.Scanner !
+Scanner sc = new Scanner(System.in);
+//Tant que la réponse donnée est égale à oui…
+while (reponse == 'O')
+{
+  //On affiche une instruction
+  System.out.println("Donnez un prénom : ");
+  //On récupère le prénom saisi
+  prenom = sc.nextLine();
+  //On affiche notre phrase avec le prénom
+  System.out.println("Bonjour " +prenom+ ", comment vas-tu ?");
+  //On demande si la personne veut faire un autre essai
+  System.out.println("Voulez-vous réessayer ? (O/N)");
+  //On récupère la réponse de l'utilisateur
+  reponse = sc.nextLine().charAt(0);
+}
+ 
+System.out.println("Au revoir…");
+//Fin de la boucle
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;for(int i = 0, j = 2; (i &amp;#x3C; 10 &amp;#x26;&amp;#x26; j &amp;#x3C; 6); i++, j+=2){\n  System.out.println(&amp;#x22;i = &amp;#x22; + i + &amp;#x22;, j = &amp;#x22; + j);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>; (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">10</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">6</span>); <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>, <span class="ace_identifier">j</span><span class="ace_keyword ace_operator">+=</span><span class="ace_constant ace_numeric">2</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"i = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">", j = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">j</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+String prenom;
+char reponse = 'O';
+Scanner sc = new Scanner(System.in);
+while (reponse == 'O')
+{
+  System.out.println("Donnez un prénom : ");
+  prenom = sc.nextLine();
+  System.out.println("Bonjour " +prenom+ ", comment vas-tu ?");                        
+  //Sans ça, nous n'entrerions pas dans la deuxième boucle
+  reponse = ' ';
+                        
+  //Tant que la réponse n'est pas O ou N, on repose la question
+  while(reponse != 'O' && reponse != 'N')
+  {
+    //On demande si la personne veut faire un autre essai
+    System.out.println("Voulez-vous réessayer ? (O/N)");
+    reponse = sc.nextLine().charAt(0);
+  }
+}
+System.out.println("Au revoir…");
+```
 
-<h3>TP : conversion Celsius - Fahrenheit</h3>
-<p>Voici les caractéristiques du programme que nous allons devoir réaliser:</p>
-<ul>
-  <li>Le programme demande quelle conversion nous souhaitons effectuer, Celsius vers Fahrenheit ou l'inverse ;</li>
-  <li>On n'autorise que les modes de conversion définis dans le programme (un simple contrôle sur la saisie fera l'affaire) ;</li>
-  <li>Enfin, on demande à la fin à l'utilisateur s'il veut faire une nouvelle conversion, ce qui signifie que l'on doit pouvoir revenir au début du programme !</li>
-</ul>
+![While](Images/while.png)
 
-<p>Voici la formule de conversion pour passer des degrés Celsius en degrés Fahrenheit :</p>
-<pre>				F=(9/5)×C+32</pre>
-<p>Pour l'opération inverse, c'est comme ceci :</p>
-<pre>				C=(F−32)×5/9</pre>
-<p>La figure suivante est un aperçu de ce que je vous demande.</p>
-<img src="Images/celsius.png" />
+```java
+int a = 1, b = 15;
+while (a < b)
+{
+  System.out.println("bonjour " +a+ " fois !!");
+}
+```
 
-<h3><a name="tableaux">Tableaux à une dimension</a></h3>
+```java
+int a = 1, b = 15;
+while (a < b)
+{
+  System.out.println("bonjour " +a+ " fois !!");
+  a++;
+}
+```
+
+```java
+int a = 1, b = 15;
+while (a++ < b)
+   System.out.println("bonjour " +a+ " fois !!");
+```
+
+```java
+int a = 1, b = 15;
+while (++a < b)
+  System.out.println("bonjour " +a+ " fois !!");
+```
+
+### La boucle « do… while »
+Syntaxe
+```java
+do{
+  //Instructions
+}while(a < b);
+```
+
+#### Première différence
+La boucle « do… while » s'exécutera au moins une fois, contrairement à la boucle « while ». C'est-à-dire que la phase de test de la condition se fait à la fin, car la condition se met après le while.
+
+#### Deuxième différence
+C'est une différence de syntaxe, qui se situe après la condition du while. Il y a un «;» après le while. C'est tout ! Ne l'oubliez cependant pas, sinon le programme ne compilera pas.
+
+```java
+String prenom = new String();
+//Pas besoin d'initialiser : on entre au moins une fois dans la boucle !
+char reponse = ' ';
+ 
+Scanner sc = new Scanner(System.in);
+ 
+do{
+  System.out.println("Donnez un prénom : ");
+  prenom = sc.nextLine();
+  System.out.println("Bonjour " +prenom+ ", comment vas-tu ?");
+       
+  do{
+    System.out.println("Voulez-vous réessayer ? (O/N)");
+    reponse = sc.nextLine().charAt(0);
+  }while(reponse != 'O' && reponse != 'N');
+        
+}while (reponse == 'O');
+ 
+System.out.println("Au revoir…");
+```
+
+### La boucle « for »
+```java
+for(int i = 1; i <= 10; i++)
+{
+  System.out.println("Voici la ligne "+i);
+}
+```
+
+![For](Images/for.jpg)
+
+```java
+for(int i = 10; i >= 0; i--)
+  System.out.println("Il reste "+i+" ligne(s) à écrire");
+```
+
+![For](Images/for2.jpg)
+
+```java
+for(int i = 0, j = 2; (i < 10 && j < 6); i++, j+=2){
+  System.out.println("i = " + i + ", j = " + j);
+}
+```
+
+### TP : conversion Celsius - Fahrenheit
+Voici les caractéristiques du programme que nous allons devoir réaliser:
+* Le programme demande quelle conversion nous souhaitons effectuer, Celsius vers Fahrenheit ou l'inverse ;
+* On n'autorise que les modes de conversion définis dans le programme (un simple contrôle sur la saisie fera l'affaire) ;
+* Enfin, on demande à la fin à l'utilisateur s'il veut faire une nouvelle conversion, ce qui signifie que l'on doit pouvoir revenir au début du programme !
+
+Voici la formule de conversion pour passer des degrés Celsius en degrés Fahrenheit :
+```				F=(9/5)×C+32```
+Pour l'opération inverse, c'est comme ceci :
+```				C=(F−32)×5/9```
+La figure suivante est un aperçu de ce que je vous demande.
+
+![Celsius](Images/celsius.png)
+
+### <a name="tableaux">Tableaux à une dimension</a>
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int tableauEntier[] = {0,1,2,3,4,5,6,7,8,9};\ndouble tableauDouble[] = {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};\nchar tableauCaractere[] = {&amp;#x27;a&amp;#x27;,&amp;#x27;b&amp;#x27;,&amp;#x27;c&amp;#x27;,&amp;#x27;d&amp;#x27;,&amp;#x27;e&amp;#x27;,&amp;#x27;f&amp;#x27;,&amp;#x27;g&amp;#x27;};\nString tableauChaine[] = {&amp;#x22;chaine1&amp;#x22;, &amp;#x22;chaine2&amp;#x22;, &amp;#x22;chaine3&amp;#x22; , &amp;#x22;chaine4&amp;#x22;};&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">tableauEntier</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">8</span>,<span class="ace_constant ace_numeric">9</span>};
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">tableauDouble</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0.0</span>,<span class="ace_constant ace_numeric">1.0</span>,<span class="ace_constant ace_numeric">2.0</span>,<span class="ace_constant ace_numeric">3.0</span>,<span class="ace_constant ace_numeric">4.0</span>,<span class="ace_constant ace_numeric">5.0</span>,<span class="ace_constant ace_numeric">6.0</span>,<span class="ace_constant ace_numeric">7.0</span>,<span class="ace_constant ace_numeric">8.0</span>,<span class="ace_constant ace_numeric">9.0</span>};
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">tableauCaractere</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'a'</span>,<span class="ace_string">'b'</span>,<span class="ace_string">'c'</span>,<span class="ace_string">'d'</span>,<span class="ace_string">'e'</span>,<span class="ace_string">'f'</span>,<span class="ace_string">'g'</span>};

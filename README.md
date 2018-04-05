@@ -59,7 +59,6 @@ Pour être certifié Java SE 7, vous devez passer ces 2 examens :
 * 1Z0-803 Oracle Certified Associate, Java SE 7 Programmer I.
 * 1Z0-804 Oracle Certified Professional , Java SE 7 Programmer II.
 
-
 ### Les certifications J2ee
 ![Les certifications J2ee](Images/certification.png)
 
@@ -662,20 +661,28 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ### <a name="tableaux">Tableaux à une dimension</a>
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int tableauEntier[] = {0,1,2,3,4,5,6,7,8,9};\ndouble tableauDouble[] = {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};\nchar tableauCaractere[] = {&amp;#x27;a&amp;#x27;,&amp;#x27;b&amp;#x27;,&amp;#x27;c&amp;#x27;,&amp;#x27;d&amp;#x27;,&amp;#x27;e&amp;#x27;,&amp;#x27;f&amp;#x27;,&amp;#x27;g&amp;#x27;};\nString tableauChaine[] = {&amp;#x22;chaine1&amp;#x22;, &amp;#x22;chaine2&amp;#x22;, &amp;#x22;chaine3&amp;#x22; , &amp;#x22;chaine4&amp;#x22;};&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">tableauEntier</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">8</span>,<span class="ace_constant ace_numeric">9</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">tableauDouble</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0.0</span>,<span class="ace_constant ace_numeric">1.0</span>,<span class="ace_constant ace_numeric">2.0</span>,<span class="ace_constant ace_numeric">3.0</span>,<span class="ace_constant ace_numeric">4.0</span>,<span class="ace_constant ace_numeric">5.0</span>,<span class="ace_constant ace_numeric">6.0</span>,<span class="ace_constant ace_numeric">7.0</span>,<span class="ace_constant ace_numeric">8.0</span>,<span class="ace_constant ace_numeric">9.0</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">tableauCaractere</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'a'</span>,<span class="ace_string">'b'</span>,<span class="ace_string">'c'</span>,<span class="ace_string">'d'</span>,<span class="ace_string">'e'</span>,<span class="ace_string">'f'</span>,<span class="ace_string">'g'</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">tableauChaine</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"chaine1"</span>, <span class="ace_string">"chaine2"</span>, <span class="ace_string">"chaine3"</span> , <span class="ace_string">"chaine4"</span>};</div></div></div></code></pre>
+```java
+int tableauEntier[] = {0,1,2,3,4,5,6,7,8,9};
+double tableauDouble[] = {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};
+char tableauCaractere[] = {'a','b','c','d','e','f','g'};
+String tableauChaine[] = {"chaine1", "chaine2", "chaine3" , "chaine4"};
+```
 
-<p>Vous pouvez aussi déclarer un tableau vide, mais celui-ci devra impérativement contenir un nombre de cases bien défini. Par exemple, si vous voulez un tableau vide de six entiers :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int tableauEntier[] = new int[6];\n//Ou encore\nint[] tableauEntier2 = new int[6];&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">tableauEntier</span>[] <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">int</span>[<span class="ace_constant ace_numeric">6</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Ou encore</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span>[] <span class="ace_identifier">tableauEntier2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">int</span>[<span class="ace_constant ace_numeric">6</span>];</div></div></div></code></pre>
+Vous pouvez aussi déclarer un tableau vide, mais celui-ci devra impérativement contenir un nombre de cases bien défini. Par exemple, si vous voulez un tableau vide de six entiers :
 
-<h3>Tableaux multidimensionnels</h3>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">premiersNombres</span>[][] <span class="ace_keyword ace_operator">=</span> { {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">8</span>},{<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">9</span>} };
-</div></div></div></code></pre>
-<img src="Images/tableaux.png" />
+```java
+int tableauEntier[] = new int[6];
+//Ou encore
+int[] tableauEntier2 = new int[6];
+```
+
+### Tableaux multidimensionnels
+
+```java
+int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };
+```
+
+![Tableaux](Images/tableaux.png)
 
 ### Utiliser et rechercher dans un tableau
 

@@ -940,6 +940,8 @@ Avec ces méthodes, vous pourrez parcourir de la même manière :
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabStr2</span>);
 </div></div></div></code></pre>
 
+<!--
+
 ### Classes
 
 #### Définition :
@@ -3355,7 +3357,7 @@ public class Bouton extends JButton implements MouseListener{
 }
 ```
 
-
+-->
 
 
 

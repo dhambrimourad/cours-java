@@ -1,4 +1,5 @@
 # Programmation JAVA
+Présenté par : Mourad DHAMBRI
 
 ### Sommaire
 
@@ -19,6 +20,18 @@
 * [Les collections d'objets](#collections)
 * [Les flux d'entrée/sortie](#flux)
 * [L'objet JFrame](#jframe)
+
+### Références
+
+* Livres
+    - Programmer en Java, 7e Edition, Claude Delannoy, Eyrolles, 2011
+    - The Java Tutorial : A Short Course on the Basics, 4th Edition, Collectif, Prentice Hall, 2006
+    - Effective Java, 2nd Edition, Joshua Bloch, Prendice Hall, 2008
+* Site web
+    - Site officiel Java, http://www.oracle.com/technetwork/java/index.html
+    - Tutoriels Java, http://docs.oracle.com/javase/tutorial/
+    - Le site Java World, http://javaworld.com
+    - Le site https://openclassrooms.com
 
 ### <a name="presentation">Présentation</a>
 

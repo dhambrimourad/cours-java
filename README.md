@@ -686,85 +686,90 @@ int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };
 
 ### Utiliser et rechercher dans un tableau
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;char tableauCaractere[] = {&amp;#x27;a&amp;#x27;, &amp;#x27;b&amp;#x27;, &amp;#x27;c&amp;#x27;, &amp;#x27;d&amp;#x27;, &amp;#x27;e&amp;#x27;, &amp;#x27;f&amp;#x27;, &amp;#x27;g&amp;#x27;};\nint i = 0;\nchar reponse = &amp;#x27; &amp;#x27;,carac = &amp;#x27; &amp;#x27;;\nScanner sc = new Scanner(System.in);\n         \ndo {//Boucle principale\n  do {//On r&amp;#xE9;p&amp;#xE8;te cette boucle tant que l&amp;#x27;utilisateur n&amp;#x27;a pas rentr&amp;#xE9; une lettre figurant dans le tableau\n    i = 0;\n    System.out.println(&amp;#x22;Rentrez une lettre en minuscule, SVP &amp;#x22;);\n                \n    carac = sc.nextLine().charAt(0);\n    //Boucle de recherche dans le tableau\n    while(i &amp;#x3C; tableauCaractere.length &amp;#x26;&amp;#x26; carac != tableauCaractere[i])\n      i++;\n         \n    //Si i &amp;#x3C; 7 c&amp;#x27;est que la boucle n&amp;#x27;a pas d&amp;#xE9;pass&amp;#xE9; le nombre de cases du tableau \n    if (i &amp;#x3C; tableauCaractere.length)\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; se trouve bien dans le tableau !&amp;#x22;);\n    else //Sinon\n      System.out.println(&amp;#x22; La lettre &amp;#x22; +carac+ &amp;#x22; ne se trouve pas dans le tableau !&amp;#x22;);\n         \n  }while(i &amp;#x3E;= tableauCaractere.length);\n\n  //Tant que la lettre de l&amp;#x27;utilisateur ne correspond pas &amp;#xE0; une lettre du tableau    \n  do{\n    System.out.println(&amp;#x22;Voulez-vous essayer &amp;#xE0; nouveau ? (O/N)&amp;#x22;);\n    reponse = sc.nextLine().charAt(0);\n  }while(reponse != &amp;#x27;N&amp;#x27; &amp;#x26;&amp;#x26; reponse != &amp;#x27;O&amp;#x27;);      \n}while (reponse == &amp;#x27;O&amp;#x27;);\n                \nSystem.out.println(&amp;#x22;Au revoir !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">tableauCaractere</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'a'</span>, <span class="ace_string">'b'</span>, <span class="ace_string">'c'</span>, <span class="ace_string">'d'</span>, <span class="ace_string">'e'</span>, <span class="ace_string">'f'</span>, <span class="ace_string">'g'</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>,<span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">' '</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Scanner</span> <span class="ace_identifier">sc</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Scanner</span>(<span class="ace_support ace_function">System</span>.<span class="ace_identifier">in</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">do</span> {<span class="ace_comment">//Boucle principale</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">do</span> {<span class="ace_comment">//On répète cette boucle tant que l'utilisateur n'a pas rentré une lettre figurant dans le tableau</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Rentrez une lettre en minuscule, SVP "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>().<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">0</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Boucle de recherche dans le tableau</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">while</span>(<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">tableauCaractere</span>.<span class="ace_identifier">length</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_identifier">tableauCaractere</span>[<span class="ace_identifier">i</span>])
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Si i &lt; 7 c'est que la boucle n'a pas dépassé le nombre de cases du tableau </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">tableauCaractere</span>.<span class="ace_identifier">length</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" La lettre "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">carac</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" se trouve bien dans le tableau !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">else</span> <span class="ace_comment">//Sinon</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" La lettre "</span> <span class="ace_keyword ace_operator">+</span><span class="ace_identifier">carac</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">" ne se trouve pas dans le tableau !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }<span class="ace_keyword">while</span>(<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&gt;=</span> <span class="ace_identifier">tableauCaractere</span>.<span class="ace_identifier">length</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Tant que la lettre de l'utilisateur ne correspond pas à une lettre du tableau    </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">do</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Voulez-vous essayer à nouveau ? (O/N)"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">sc</span>.<span class="ace_identifier">nextLine</span>().<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">0</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }<span class="ace_keyword">while</span>(<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'N'</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_string">'O'</span>);      
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}<span class="ace_keyword">while</span> (<span class="ace_identifier">reponse</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_string">'O'</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Au revoir !"</span>);</div></div></div></code></pre>
+```java
+char tableauCaractere[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+int i = 0;
+char reponse = ' ',carac = ' ';
+Scanner sc = new Scanner(System.in);
+         
+do {//Boucle principale
+  do {//On répète cette boucle tant que l'utilisateur n'a pas rentré une lettre figurant dans le tableau
+    i = 0;
+    System.out.println("Rentrez une lettre en minuscule, SVP ");
+                
+    carac = sc.nextLine().charAt(0);
+    //Boucle de recherche dans le tableau
+    while(i < tableauCaractere.length && carac != tableauCaractere[i])
+      i++;
+         
+    //Si i < 7 c'est que la boucle n'a pas dépassé le nombre de cases du tableau 
+    if (i < tableauCaractere.length)
+      System.out.println(" La lettre " +carac+ " se trouve bien dans le tableau !");
+    else //Sinon
+      System.out.println(" La lettre " +carac+ " ne se trouve pas dans le tableau !");
+         
+  }while(i >= tableauCaractere.length);
 
-<p>Le résultat de ce code se trouve à la figure suivante.</p>
-<img src="Images/tableaux1.jpg" />
+  //Tant que la lettre de l'utilisateur ne correspond pas à une lettre du tableau    
+  do{
+    System.out.println("Voulez-vous essayer à nouveau ? (O/N)");
+    reponse = sc.nextLine().charAt(0);
+  }while(reponse != 'N' && reponse != 'O');      
+}while (reponse == 'O');
+                
+System.out.println("Au revoir !");
+```
+
+Le résultat de ce code se trouve à la figure suivante.
+![Tableaux](Images/tableaux1.jpg)
 
 ### Parcourir un tableau multidimensionnel
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} }, i = 0, j = 0;\n \nwhile (i &amp;#x3C; 2)\n{\n  j = 0;\n  while(j &amp;#x3C; 5)\n  {\n    System.out.print(premiersNombres[i][j]);\n    j++;\n  }\n  System.out.println(&amp;#x22;&amp;#x22;);\n  i++;\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">premiersNombres</span>[][] <span class="ace_keyword ace_operator">=</span> { {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">8</span>},{<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">9</span>} }, <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">while</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">2</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">5</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_identifier">premiersNombres</span>[<span class="ace_identifier">i</span>][<span class="ace_identifier">j</span>]);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">j</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">""</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} }, i = 0, j = 0;
+ 
+while (i < 2)
+{
+  j = 0;
+  while(j < 5)
+  {
+    System.out.print(premiersNombres[i][j]);
+    j++;
+  }
+  System.out.println("");
+  i++;
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };\n \nfor(int i = 0; i &amp;#x3C; 2; i++)\n{    \n  for(int j = 0; j &amp;#x3C; 5; j++)\n  {\n    System.out.print(premiersNombres[i][j]);       \n  }\n  System.out.println(&amp;#x22;&amp;#x22;);     \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">premiersNombres</span>[][] <span class="ace_keyword ace_operator">=</span> { {<span class="ace_constant ace_numeric">0</span>,<span class="ace_constant ace_numeric">2</span>,<span class="ace_constant ace_numeric">4</span>,<span class="ace_constant ace_numeric">6</span>,<span class="ace_constant ace_numeric">8</span>},{<span class="ace_constant ace_numeric">1</span>,<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">5</span>,<span class="ace_constant ace_numeric">7</span>,<span class="ace_constant ace_numeric">9</span>} };
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">2</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">5</span>; <span class="ace_identifier">j</span><span class="ace_keyword ace_operator">++</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_identifier">premiersNombres</span>[<span class="ace_identifier">i</span>][<span class="ace_identifier">j</span>]);       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">""</span>);     
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+int premiersNombres[][] = { {0,2,4,6,8},{1,3,5,7,9} };
+ 
+for(int i = 0; i < 2; i++)
+{    
+  for(int j = 0; j < 5; j++)
+  {
+    System.out.print(premiersNombres[i][j]);       
+  }
+  System.out.println("");     
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String tab[][]={{&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;, &amp;#x22;d&amp;#x22;, &amp;#x22;e&amp;#x22;}, {&amp;#x22;1&amp;#x22;, &amp;#x22;2&amp;#x22;, &amp;#x22;3&amp;#x22;, &amp;#x22;4&amp;#x22;}};\nint i = 0, j = 0;\n \nfor(String sousTab[] : tab)\n{\n  i = 0;\n  for(String str : sousTab)\n  {     \n    System.out.println(&amp;#x22;La valeur de la nouvelle boucle est  : &amp;#x22; + str);\n    System.out.println(&amp;#x22;La valeur du tableau &amp;#xE0; l&amp;#x27;indice [&amp;#x22;+j+&amp;#x22;][&amp;#x22;+i+&amp;#x22;] est : &amp;#x22; + tab[j][i]);\n    i++;\n  }\n  j++;\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">tab</span>[][]<span class="ace_keyword ace_operator">=</span>{{<span class="ace_string">"a"</span>, <span class="ace_string">"b"</span>, <span class="ace_string">"c"</span>, <span class="ace_string">"d"</span>, <span class="ace_string">"e"</span>}, {<span class="ace_string">"1"</span>, <span class="ace_string">"2"</span>, <span class="ace_string">"3"</span>, <span class="ace_string">"4"</span>}};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">sousTab</span>[] : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">sousTab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {     
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"La valeur de la nouvelle boucle est  : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"La valeur du tableau à l'indice ["</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">j</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">"]["</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">i</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">"] est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">tab</span>[<span class="ace_identifier">j</span>][<span class="ace_identifier">i</span>]);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">j</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+String tab[][]={{"a", "b", "c", "d", "e"}, {"1", "2", "3", "4"}};
+int i = 0, j = 0;
+ 
+for(String sousTab[] : tab)
+{
+  i = 0;
+  for(String str : sousTab)
+  {     
+    System.out.println("La valeur de la nouvelle boucle est  : " + str);
+    System.out.println("La valeur du tableau à l'indice ["+j+"]["+i+"] est : " + tab[j][i]);
+    i++;
+  }
+  j++;
+}
+```
 
 ### Classe Arrays
 
@@ -785,160 +790,137 @@ class ArrayCopyOfDemo {
 ```
 
 #### Autres méthodes :
-* binarySearch: recherche un élément et retourne l’indexe associé.
+* binarySearch: recherche un élément et retourne l’index associé.
 * equals : compare deux tableaux
 * sort : tri d’un tableau d’une manière séquentielle
 * paralllelSort : tri d’un tableau d’une manière parallèle dans des machines multi-processeur (plus rapide que sort), existe depuis Java 1.8
 
 ### Des méthodes concernant les chaînes de caractères
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = new String(&amp;#x22;BONJOUR TOUT LE MONDE !&amp;#x22;), chaine2 = new String();\nchaine2 = chaine.toLowerCase();   //Donne &amp;#x22;bonjour tout le monde !&amp;#x22;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"BONJOUR TOUT LE MONDE !"</span>), <span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">chaine</span>.<span class="ace_identifier">toLowerCase</span>();   <span class="ace_comment">//Donne "bonjour tout le monde !"</span></div></div></div></code></pre>
+```java
+String chaine = new String("BONJOUR TOUT LE MONDE !"), chaine2 = new String();
+chaine2 = chaine.toLowerCase();   //Donne "bonjour tout le monde !"
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = new String(&amp;#x22;bonjour bonjour&amp;#x22;), chaine2 = new String();\nchaine2 = chaine.toUpperCase();   //Donne &amp;#x22;BONJOUR BONJOUR&amp;#x22;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"bonjour bonjour"</span>), <span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">chaine</span>.<span class="ace_identifier">toUpperCase</span>();   <span class="ace_comment">//Donne "BONJOUR BONJOUR"</span></div></div></div></code></pre>
+```java
+String chaine = new String("bonjour bonjour"), chaine2 = new String();
+chaine2 = chaine.toUpperCase();   //Donne "BONJOUR BONJOUR"
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = new String(&amp;#x22;bonjour ! &amp;#x22;); \nint longueur = 0;\nlongueur = chaine.length();   //Renvoie 9&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"bonjour ! "</span>); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">longueur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">longueur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">chaine</span>.<span class="ace_identifier">length</span>();   <span class="ace_comment">//Renvoie 9</span></div></div></div></code></pre>
+```java
+String chaine = new String("bonjour ! "); 
+int longueur = 0;
+longueur = chaine.length();   //Renvoie 9
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String str1 = new String(&amp;#x22;bonjour&amp;#x22;), str2 = new String(&amp;#x22;bonsoir&amp;#x22;);\n \nif (str1.equals(str2))\n  System.out.println(&amp;#x22;Les deux cha&amp;#xEE;nes sont identiques !&amp;#x22;);\n \nelse\n  System.out.println(&amp;#x22;Les deux cha&amp;#xEE;nes sont diff&amp;#xE9;rentes !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">str1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"bonjour"</span>), <span class="ace_identifier">str2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"bonsoir"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">if</span> (<span class="ace_identifier">str1</span>.<span class="ace_identifier">equals</span>(<span class="ace_identifier">str2</span>))
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Les deux chaînes sont identiques !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Les deux chaînes sont différentes !"</span>);
-</div></div></div></code></pre>
+```java
+String str1 = new String("bonjour"), str2 = new String("bonsoir");
+ 
+if (str1.equals(str2))
+  System.out.println("Les deux chaînes sont identiques !");
+else
+  System.out.println("Les deux chaînes sont différentes !");
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String nbre = new String(&amp;#x22;1234567&amp;#x22;);\nchar carac = nbre.charAt(4);   //Renverra ici le caract&amp;#xE8;re 5&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">nbre</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"1234567"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">char</span> <span class="ace_identifier">carac</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre</span>.<span class="ace_identifier">charAt</span>(<span class="ace_constant ace_numeric">4</span>);   <span class="ace_comment">//Renverra ici le caractère 5</span></div></div></div></code></pre>
+```java
+String nbre = new String("1234567");
+char carac = nbre.charAt(4);   //Renverra ici le caractère 5
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String chaine = new String(&amp;#x22;la paix niche&amp;#x22;), chaine2 = new String();\nchaine2 = chaine.substring(3,13);   //Permet d&amp;#x27;extraire &amp;#x22;paix niche&amp;#x22;&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">chaine</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"la paix niche"</span>), <span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">chaine2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">chaine</span>.<span class="ace_identifier">substring</span>(<span class="ace_constant ace_numeric">3</span>,<span class="ace_constant ace_numeric">13</span>);   <span class="ace_comment">//Permet d'extraire "paix niche"</span></div></div></div></code></pre>
+```java
+String chaine = new String("la paix niche"), chaine2 = new String();
+chaine2 = chaine.substring(3,13);   //Permet d'extraire "paix niche"
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String mot = new String(&amp;#x22;anticonstitutionnellement&amp;#x22;);\nint n = 0;\n \nn = mot.indexOf(&amp;#x27;t&amp;#x27;);           //n vaut 2\nn = mot.lastIndexOf(&amp;#x27;t&amp;#x27;);       //n vaut 24\nn = mot.indexOf(&amp;#x22;ti&amp;#x22;);          //n vaut 2\nn = mot.lastIndexOf(&amp;#x22;ti&amp;#x22;);      //n vaut 12\nn = mot.indexOf(&amp;#x27;x&amp;#x27;);           //n vaut -1&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span> <span class="ace_identifier">mot</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>(<span class="ace_string">"anticonstitutionnellement"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">mot</span>.<span class="ace_identifier">indexOf</span>(<span class="ace_string">'t'</span>);           <span class="ace_comment">//n vaut 2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">mot</span>.<span class="ace_identifier">lastIndexOf</span>(<span class="ace_string">'t'</span>);       <span class="ace_comment">//n vaut 24</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">mot</span>.<span class="ace_identifier">indexOf</span>(<span class="ace_string">"ti"</span>);          <span class="ace_comment">//n vaut 2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">mot</span>.<span class="ace_identifier">lastIndexOf</span>(<span class="ace_string">"ti"</span>);      <span class="ace_comment">//n vaut 12</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">mot</span>.<span class="ace_identifier">indexOf</span>(<span class="ace_string">'x'</span>);           <span class="ace_comment">//n vaut -1</span></div></div></div></code></pre>
+```java
+String mot = new String("anticonstitutionnellement");
+int n = 0;
+ 
+n = mot.indexOf('t');           //n vaut 2
+n = mot.lastIndexOf('t');       //n vaut 24
+n = mot.indexOf("ti");          //n vaut 2
+n = mot.lastIndexOf("ti");      //n vaut 12
+n = mot.indexOf('x');           //n vaut -1
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;double X = 0.0;\nX = Math.random();\n//Retourne un nombre al&amp;#xE9;atoire \n//compris entre 0 et 1, comme 0.0001385746329371058\n\ndouble sin = Math.sin(120);     //La fonction sinus\ndouble cos = Math.cos(120);     //La fonction cosinus\ndouble tan = Math.tan(120);     //La fonction tangente\ndouble abs = Math.abs(-120.25); //La fonction valeur absolue (retourne le nombre sans le signe)\ndouble d = 2;\ndouble exp = Math.pow(d, 2);    //La fonction exposant\n//Ici, on initialise la variable exp avec la valeur de d &amp;#xE9;lev&amp;#xE9;e au carr&amp;#xE9;\n//La m&amp;#xE9;thode pow() prend donc une valeur en premier param&amp;#xE8;tre, et un exposant en second&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">X</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0.0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">X</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">random</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Retourne un nombre aléatoire </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//compris entre 0 et 1, comme 0.0001385746329371058</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">sin</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">sin</span>(<span class="ace_constant ace_numeric">120</span>);     <span class="ace_comment">//La fonction sinus</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">cos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">cos</span>(<span class="ace_constant ace_numeric">120</span>);     <span class="ace_comment">//La fonction cosinus</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">tan</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">tan</span>(<span class="ace_constant ace_numeric">120</span>);     <span class="ace_comment">//La fonction tangente</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">abs</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">abs</span>(<span class="ace_constant ace_numeric">-120.25</span>); <span class="ace_comment">//La fonction valeur absolue (retourne le nombre sans le signe)</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">d</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">2</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">double</span> <span class="ace_identifier">exp</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">Math</span>.<span class="ace_identifier">pow</span>(<span class="ace_identifier">d</span>, <span class="ace_constant ace_numeric">2</span>);    <span class="ace_comment">//La fonction exposant</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Ici, on initialise la variable exp avec la valeur de d élevée au carré</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode pow() prend donc une valeur en premier paramètre, et un exposant en second</span>
-</div></div></div></code></pre>
+```java
+double X = 0.0;
+X = Math.random();
+//Retourne un nombre aléatoire 
+//compris entre 0 et 1, comme 0.0001385746329371058
 
-### Créer sa propre méthode
-
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test1\n{\n  public static void main(String[] args)\n  {\n    String[] tab = {&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;, &amp;#x22;d&amp;#x22;};\n    parcourirTableau(tab); \n  }\n \n  static void parcourirTableau(String[] tabBis)\n  {\n    for(String str : tabBis)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test1</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"a"</span>, <span class="ace_string">"b"</span>, <span class="ace_string">"c"</span>, <span class="ace_string">"d"</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tab</span>); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tabBis</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tabBis</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
-
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test1 {\n \n  public static void main(String[] args)\n  {\n    String[] tab = {&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;, &amp;#x22;d&amp;#x22;};\n    parcourirTableau(tab);\n    System.out.println(toString(tab));   \n  }\n\n  static void parcourirTableau(String[] tab)\n  {\n    for(String str : tab)\n    System.out.println(str);\n  }\n           \n  static String toString(String[] tab)\n  {\n    System.out.println(&amp;#x22;M&amp;#xE9;thode toString() !\\n----------&amp;#x22;);\n    String retour = &amp;#x22;&amp;#x22;;\n                   \n    for(String str : tab)\n      retour += str + &amp;#x22;\\n&amp;#x22;; \n                   \n    return retour;\n  }         \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test1</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"a"</span>, <span class="ace_string">"b"</span>, <span class="ace_string">"c"</span>, <span class="ace_string">"d"</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tab</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">toString</span>(<span class="ace_identifier">tab</span>));   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">static</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Méthode toString() !\n----------"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">retour</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">""</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">retour</span> <span class="ace_keyword ace_operator">+=</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"\n"</span>; 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">retour</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }         
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+double sin = Math.sin(120);     //La fonction sinus
+double cos = Math.cos(120);     //La fonction cosinus
+double tan = Math.tan(120);     //La fonction tangente
+double abs = Math.abs(-120.25); //La fonction valeur absolue (retourne le nombre sans le signe)
+double d = 2;
+double exp = Math.pow(d, 2);    //La fonction exposant
+//Ici, on initialise la variable exp avec la valeur de d élevée au carré
+//La méthode pow() prend donc une valeur en premier paramètre, et un exposant en second
+```
 
 ### La surcharge de méthode
 
+```java
+public class Test1
+{
+  public static void main(String[] args)
+  {
+    String[] tab = {"a", "b", "c", "d"};
+    parcourirTableau(tab); 
+  }
+ 
+  static void parcourirTableau(String[] tabBis)
+  {
+    for(String str : tabBis)
+      System.out.println(str);
+  }
+}
+```
+
 La surcharge de méthode consiste à garder le nom d'une méthode et à changer la liste ou le type de ses paramètres. Dans le cas qui nous intéresse, nous voulons que notre méthode <strong>parcourirTableau</strong> puisse parcourir n'importe quel type de tableau. Nous allons donc surcharger notre méthode afin qu'elle puisse aussi travailler avec des int, comme le montre cet exemple :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[] tab)\n{\n  for(String str : tab)\n    System.out.println(str);\n}\n        \nstatic void parcourirTableau(int[] tab)\n{\n  for(int str : tab)\n    System.out.println(str);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_keyword">int</span>[] <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+static void parcourirTableau(String[] tab)
+{
+  for(String str : tab)
+    System.out.println(str);
+}
+        
+static void parcourirTableau(int[] tab)
+{
+  for(int str : tab)
+    System.out.println(str);
+}
+```
 
 Avec ces méthodes, vous pourrez parcourir de la même manière :
 * Les tableaux d'entiers ;
 * Les tableaux de chaînes de caractères.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[][] tab)\n{\n  for(String tab2[] : tab)\n  {\n    for(String str : tab2)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[][] <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">tab2</span>[] : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab2</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+static void parcourirTableau(String[][] tab)
+{
+  for(String tab2[] : tab)
+  {
+    for(String str : tab2)
+      System.out.println(str);
+  }
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;static void parcourirTableau(String[][] tab, int i)\n{\n  for(String tab2[] : tab)\n  {\n    for(String str : tab2)\n      System.out.println(str);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">parcourirTableau</span>(<span class="ace_support ace_function">String</span>[][] <span class="ace_identifier">tab</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">i</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">tab2</span>[] : <span class="ace_identifier">tab</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> : <span class="ace_identifier">tab2</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">str</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+String[] tabStr = {"a", "b", "c"};
+int[] tabInt = {1, 2, 3, 4};
+String[][] tabStr2 = {{"1", "2", "3", "4"}, {"a", "b", "c"}};
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;String[] tabStr = {&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;};\nint[] tabInt = {1, 2, 3, 4};\nString[][] tabStr2 = {{&amp;#x22;1&amp;#x22;, &amp;#x22;2&amp;#x22;, &amp;#x22;3&amp;#x22;, &amp;#x22;4&amp;#x22;}, {&amp;#x22;a&amp;#x22;, &amp;#x22;b&amp;#x22;, &amp;#x22;c&amp;#x22;}};\n\n//La m&amp;#xE9;thode avec un tableau de String sera invoqu&amp;#xE9;e\nparcourirTableau(tabStr);\n//La m&amp;#xE9;thode avec un tableau d&amp;#x27;int sera invoqu&amp;#xE9;e\nparcourirTableau(tabInt);\n//La m&amp;#xE9;thode avec un tableau de String &amp;#xE0; deux dimensions sera invoqu&amp;#xE9;e\nparcourirTableau(tabStr2);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tabStr</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"a"</span>, <span class="ace_string">"b"</span>, <span class="ace_string">"c"</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span>[] <span class="ace_identifier">tabInt</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">1</span>, <span class="ace_constant ace_numeric">2</span>, <span class="ace_constant ace_numeric">3</span>, <span class="ace_constant ace_numeric">4</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span>[][] <span class="ace_identifier">tabStr2</span> <span class="ace_keyword ace_operator">=</span> {{<span class="ace_string">"1"</span>, <span class="ace_string">"2"</span>, <span class="ace_string">"3"</span>, <span class="ace_string">"4"</span>}, {<span class="ace_string">"a"</span>, <span class="ace_string">"b"</span>, <span class="ace_string">"c"</span>}};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode avec un tableau de String sera invoquée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabStr</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode avec un tableau d'int sera invoquée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabInt</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//La méthode avec un tableau de String à deux dimensions sera invoquée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">parcourirTableau</span>(<span class="ace_identifier">tabStr2</span>);
-</div></div></div></code></pre>
+//La méthode avec un tableau de String sera invoquée
+parcourirTableau(tabStr);
+//La méthode avec un tableau d'int sera invoquée
+parcourirTableau(tabInt);
+//La méthode avec un tableau de String à deux dimensions sera invoquée
+parcourirTableau(tabStr2);
+```
 
 <!--
 

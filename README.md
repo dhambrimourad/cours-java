@@ -50,7 +50,7 @@ Java est un langage interprété, ce qui signifie qu’un programme compilé n�
 
 ![Compilation](Images/compilation.png)
 
-Un programmeur Java écrit son code source, sous la forme de classes, dans des fichiers dont l’extension est `.java`. Ce code source est alors compilé par le compilateur `javac` en un langage appelé `bytecode` et enregistre le résultat dans un fichier dont l’extension est `.class`. Le bytecode ainsi obtenu n’est pas directement utilisable. Il doit être interprété par la machine virtuelle de Java (un émulateur qui exécute des programmes compilés sous forme de bytecode Java) qui transforme alors le code compilé en code machine compréhensible par le système d’exploitation.
+Un programmeur Java écrit son code source, sous la forme de classes, dans des fichiers dont l’extension est `.java`. Ce code source est alors compilé par le compilateur `javac` en un langage appelé `bytecode` et enregistre le résultat dans un fichier dont l’extension est `.class`. Le bytecode ainsi obtenu n’est pas directement utilisable. Il doit être interprété par la machine virtuelle de Java (un interpréteur qui exécute des programmes compilés sous forme de bytecode Java) qui transforme alors le code compilé en code machine compréhensible par le système d’exploitation.
 C’est la raison pour laquelle Java est un langage portable : le bytecode reste le même quelque soit l’environnement d’exécution.
 
 ### <a name="certif">Les certifications Java</a>

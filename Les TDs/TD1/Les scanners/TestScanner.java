@@ -18,7 +18,7 @@ public class TestScanner {
 		while (reponse == 'O')
 		{
 		  //On affiche une instruction
-		  System.out.println("Donnez un pr�nom : ");
+		  System.out.println("Donnez un prénom : ");
 
 		  //On récupère le prénom saisi
 		  prenom = sc.nextLine();

@@ -1,7 +1,6 @@
 package ept.cour1;
 
 import java.util.Scanner;
-import java.lang.*;
 
 public class ConversionCF {
 
@@ -25,7 +24,7 @@ public class ConversionCF {
 
         mode = sc.nextLine().charAt(0);
         if(mode != '1' && mode != '2')
-          System.out.println("Mode inconnu, veuillez r�p�ter votre choix.");
+          System.out.println("Mode inconnu, veuillez réitérer votre choix.");
       }while (mode != '1' && mode != '2');
 
       //saisie de la température à convertir
@@ -55,9 +54,6 @@ public class ConversionCF {
 
     sc.close();
     System.out.println("Au revoir !");
-    String s = "Bonjours";
-    
-
     //Fin de programme
   }
 

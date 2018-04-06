@@ -326,7 +326,7 @@ On peut très bien compacter les phases de déclaration et d'initialisation en u
 int entier = 32;
 float pi = 3.1416f;
 char carac = 'z';
-String mot = new String("Coucou");
+String mot = new String("Bonjour tout le monde !");
 ```
 
 Et lorsque nous avons plusieurs variables d'un même type, nous pouvons résumer tout ceci à une déclaration :
@@ -479,7 +479,7 @@ switch(chaine) {
     System.out.println("Bonsoir monsieur !");
     break;
   default:
-    System.out.println("Bonjoir ! :p");
+    System.out.println("Au revoir !");
 }
 ```
 
@@ -922,15 +922,10 @@ parcourirTableau(tabInt);
 parcourirTableau(tabStr2);
 ```
 
-<!--
-
 ### Classes
 
 #### Définition :
-Abstraction qui sert à décrire un modèle (structure de données)
-
-#### Concept :
-Un modèle de définition pour les objets
+Une classe est un modèle de définition pour des objets ayant le même ensemble d'attributs, et le même ensemble d'opérations. A partir d'une classe on peut créer un ou plusieurs objets par instanciation ; chaque objet est une instance d'une seule classe.
 
 #### Une classe est définie par :
 * Son nom
@@ -1000,7 +995,7 @@ Un modèle de définition pour les objets
 </div></div></div></code></pre>
 
 <p>Exécutez ce code, vous devriez avoir l'équivalent de la figure suivante.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville1.jpg" />
+<img src="Images/ville1.jpg" />
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  //Stocke le nom de notre ville\n  String nomVille;\n  //Stocke le nom du pays de notre ville\n  String nomPays;\n  //Stocke le nombre d&amp;#x27;habitants de notre ville\n  int nbreHabitants;\n \n  //Constructeur par d&amp;#xE9;faut\n  public Ville(){\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville !&amp;#x22;);          \n    nomVille = &amp;#x22;Inconnu&amp;#x22;;\n    nomPays = &amp;#x22;Inconnu&amp;#x22;;\n    nbreHabitants = 0;\n  }\n \n  //Constructeur avec param&amp;#xE8;tres\n  //J&amp;#x27;ai ajout&amp;#xE9; un &amp;#xAB; p &amp;#xBB; en premi&amp;#xE8;re lettre des param&amp;#xE8;tres.\n  //Ce n&amp;#x27;est pas une convention, mais &amp;#xE7;a peut &amp;#xEA;tre un bon moyen de les rep&amp;#xE9;rer.\n  public Ville(String pNom, int pNbre, String pPays)\n  {\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville avec des param&amp;#xE8;tres !&amp;#x22;);\n    nomVille = pNom;\n    nomPays = pPays;\n    nbreHabitants = pNbre;\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
@@ -1050,8 +1045,8 @@ Un modèle de définition pour les objets
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<h3>Les getters et les setters</h3>
-<p>Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture, et un mutateur (setter) nous permettra d'en faire de même en écriture ! Grâce aux accesseurs, vous pourrez afficher les variables de vos objets, et grâce aux mutateurs, vous pourrez les modifier.</p>
+### Les getters et les setters
+Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture, et un mutateur (setter) nous permettra d'en faire de même en écriture ! Grâce aux accesseurs, vous pourrez afficher les variables de vos objets, et grâce aux mutateurs, vous pourrez les modifier.
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n\n  //Les variables et les constructeurs n&amp;#x27;ont pas chang&amp;#xE9;&amp;#x2026;\n          \n  //*************   ACCESSEURS *************\n    \n  //Retourne le nom de la ville\n  public String getNom()  {  \n    return nomVille;\n  }\n\n  //Retourne le nom du pays\n  public String getNomPays()\n  {\n    return nomPays;\n  }\n\n  // Retourne le nombre d&amp;#x27;habitants\n  public int getNombreHabitants()\n  {\n    return nbreHabitants;\n  } \n \n  //*************   MUTATEURS   *************\n\n  //D&amp;#xE9;finit le nom de la ville\n  public void setNom(String pNom)\n  {\n    nomVille = pNom;\n  }\n\n  //D&amp;#xE9;finit le nom du pays\n  public void setNomPays(String pPays)\n  {\n    nomPays = pPays;\n  }\n\n  //D&amp;#xE9;finit le nombre d&amp;#x27;habitants\n  public void setNombreHabitants(int nbre)\n  {\n    nbreHabitants = nbre;\n  }  \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
@@ -1099,6 +1094,7 @@ Un modèle de définition pour les objets
 </div></div></div></code></pre>
 
 <p>À présent, essayez ce code dans votre méthode <strong><i>main</i></strong> :</p>
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();\nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 123456, &amp;#x22;France&amp;#x22;);       \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);\n\nSystem.out.println(&amp;#x22;\\n v = &amp;#x22;+v.getNom()+&amp;#x22; ville de  &amp;#x22;+v.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v.getNomPays());\nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);\n        \n/*\n  Nous allons interchanger les Villes v1 et v2\n  tout &amp;#xE7;a par l&amp;#x27;interm&amp;#xE9;diaire d&amp;#x27;un autre objet Ville.        \n*/       \nVille temp = new Ville();\ntemp = v1;\nv1 = v2;\nv2 = temp;\n       \nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);\n\n/*       \n  Nous allons maintenant interchanger leurs noms\n  cette fois par le biais de leurs mutateurs.\n*/   \nv1.setNom(&amp;#x22;Hong Kong&amp;#x22;);\nv2.setNom(&amp;#x22;Djibouti&amp;#x22;);\n      \nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">123456</span>, <span class="ace_string">"France"</span>);       
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Rio"</span>, <span class="ace_constant ace_numeric">321654</span>, <span class="ace_string">"Brésil"</span>);
@@ -1253,8 +1249,8 @@ Un modèle de définition pour les objets
 <p>Ce qui devrait donner le résultat de la figure suivante.</p>
 <img src="Images/ville3.jpg" />
 
-<h3>Les variables de classe</h3>
-<p>La particularité de ce type de variables, c'est qu'elles seront communes à toutes les instances de la classe. Afin qu'une variable soit une variable de classe, elle doit être précédée du mot clé <strong><i>static</i></strong>. Cela donnerait dans notre classe Ville:</p>
+### Les variables de classe
+La particularité de ce type de variables, c'est qu'elles seront communes à toutes les instances de la classe. Afin qu'une variable soit une variable de classe, elle doit être précédée du mot clé <strong><i>static</i></strong>. Cela donnerait dans notre classe Ville:
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n   \n  //Variables publiques qui comptent les instances\n  public static int nbreInstances = 0;\n\n  //Variable priv&amp;#xE9;e qui comptera aussi les instances\n  private static int nbreInstancesBis = 0;        \n  \n  //Les autres variables n&amp;#x27;ont pas chang&amp;#xE9;\n\n  public Ville(){\n    //On incr&amp;#xE9;mente nos variables &amp;#xE0; chaque appel aux constructeurs\n    nbreInstances++;\n    nbreInstancesBis++;          \n    //Le reste ne change pas.\n  }\n\n  public Ville(String pNom, int pNbre, String pPays)\n  {  \n    //On incr&amp;#xE9;mente nos variables &amp;#xE0; chaque appel aux constructeurs\n    nbreInstances++;\n    nbreInstancesBis++;          \n    //Le reste ne change pas\n  }\n  public static int getNombreInstancesBis()\n  {\n    return nbreInstancesBis;\n  }  \n  //Le reste du code est le m&amp;#xEA;me qu&amp;#x27;avant\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
@@ -1289,6 +1285,7 @@ Un modèle de définition pour les objets
 </div></div></div></code></pre>
 
 <p>À présent, testez le code suivant :</p>
+
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();                \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());\n&amp;#x9;                        \nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 1236, &amp;#x22;France&amp;#x22;);        \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());\n                \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);        \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();                
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">nbreInstances</span>);
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">getNombreInstancesBis</span>());
@@ -1305,13 +1302,15 @@ Un modèle de définition pour les objets
 <p>Le résultat, visible à la figure suivante, montre que le nombre augmente à chaque instanciation.</p>
 <img src="Images/static.jpg" />
 
-<h3>Le principe d’encapsulation</h3>
-<p>Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !</p>
+### Le principe d’encapsulation
+Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !
 
-<p>En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.</p>
+En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.
 
-<h3><a name="heritage">L'héritage</a></h3>
-<p>Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !</p>
+<!--
+
+### <a name="heritage">L'héritage</a>
+Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>

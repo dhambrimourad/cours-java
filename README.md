@@ -721,6 +721,7 @@ System.out.println("Au revoir !");
 ```
 
 Le résultat de ce code se trouve à la figure suivante.
+
 ![Tableaux](Images/tableaux1.jpg)
 
 ### Parcourir un tableau multidimensionnel

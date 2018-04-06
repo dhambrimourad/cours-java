@@ -659,6 +659,8 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
+<!--
+
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -843,6 +845,8 @@ n = mot.indexOf("ti");          //n vaut 2
 n = mot.lastIndexOf("ti");      //n vaut 12
 n = mot.indexOf('x');           //n vaut -1
 ```
+
+### La classe java.lang.Math
 
 ```java
 double X = 0.0;
@@ -1127,7 +1131,7 @@ Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux vari
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v2 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNomPays</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);</div></div></div></code></pre>
 
 <p>À la compilation, vous devriez obtenir la figure suivante.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/ville2.jpg" />
+<img src="Images/ville2.jpg" />
 
 <p>Avec nos objets Ville, nous voulons :</p>
 <ul>
@@ -1307,8 +1311,6 @@ La particularité de ce type de variables, c'est qu'elles seront communes à tou
 Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !
 
 En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.
-
-<!--
 
 ### <a name="heritage">L'héritage</a>
 Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !

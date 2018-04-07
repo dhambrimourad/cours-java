@@ -950,307 +950,335 @@ Une classe est un modèle de définition pour des objets ayant le même ensemble
 <Modificateur de visibilité> = « public » ou « private »
 
 ### <a name="classe">Votre première classe</a>
-<p>Créons une classe « Ville ». Allez dans File > New > Class.</p>
-<img src="Images/ville.png" />
+Créons une classe « Ville ». Allez dans File > New > Class.
 
-<h3>Les constructeurs</h3>
-<p>L'objectif est de construire un objet <strong><i>Ville</i></strong>, Un objet <strong><i>Ville</i></strong> possède :
-<ul>
-  <li>un nom, sous la forme d'une chaîne de caractères ;</li>
-  <li>un nombre d'habitants, sous la forme d'un entier ;</li>
-  <li>un pays apparenté, sous la forme d'une chaîne de caractères.</li>
-</ul>
+![Ville](Images/ville.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville{\n  String nomVille;\n  String nomPays;\n  int nbreHabitants; \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>; 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### Les constructeurs
+L'objectif est de construire un objet <strong><i>Ville</i></strong>, Un objet <strong><i>Ville</i></strong> possède :
+* un nom, sous la forme d'une chaîne de caractères ;
+* un nombre d'habitants, sous la forme d'un entier ;
+* un pays apparenté, sous la forme d'une chaîne de caractères.
 
-<p>Un constructeur est une méthode d'instance qui va se charger de créer un objet et, le cas échéant, d'initialiser ses variables de classe ! Cette méthode a pour rôle de signaler à la JVM (Java Virtual Machine) qu'il faut réserver de la mémoire pour notre futur objet et donc, par extension, d'en réserver pour toutes ses variables.</p>
+```java
+public class Ville{
+  String nomVille;
+  String nomPays;
+  int nbreHabitants; 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville{   \n  //Stocke le nom de notre ville\n  String nomVille;\n  //Stocke le nom du pays de notre ville\n  String nomPays;\n  //Stocke le nombre d&amp;#x27;habitants de notre ville\n  int nbreHabitants;\n     \n  //Constructeur par d&amp;#xE9;faut\n  public Ville(){\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville !&amp;#x22;);      \n    nomVille = &amp;#x22;Inconnu&amp;#x22;;\n    nomPays = &amp;#x22;Inconnu&amp;#x22;;\n    nbreHabitants = 0;\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span>{   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom du pays de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nombre d'habitants de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville !"</span>);      
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Un constructeur est une méthode d'instance qui va se charger de créer un objet et, le cas échéant, d'initialiser ses variables de classe ! Cette méthode a pour rôle de signaler à la JVM (Java Virtual Machine) qu'il faut réserver de la mémoire pour notre futur objet et donc, par extension, d'en réserver pour toutes ses variables.
 
-<p>Allons dans notre classe contenant la méthode <strong><i>main</i></strong> et instancions un objet <strong><i>Ville</i></strong>.</p>
+```java
+public class Ville{   
+  //Stocke le nom de notre ville
+  String nomVille;
+  //Stocke le nom du pays de notre ville
+  String nomPays;
+  //Stocke le nombre d'habitants de notre ville
+  int nbreHabitants;
+     
+  //Constructeur par défaut
+  public Ville(){
+    System.out.println("Création d'une ville !");      
+    nomVille = "Inconnu";
+    nomPays = "Inconnu";
+    nbreHabitants = 0;
+  } 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test1{ \n  public static void main(String[] args){   \n    Ville ville = new Ville(); \n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test1</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Ville</span> <span class="ace_identifier">ville</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Allons dans notre classe contenant la méthode <strong><i>main</i></strong> et instancions un objet <strong><i>Ville</i></strong>.
 
-<p>Exécutez ce code, vous devriez avoir l'équivalent de la figure suivante.</p>
-<img src="Images/ville1.jpg" />
+```java
+public class Test1{ 
+  public static void main(String[] args){   
+    Ville ville = new Ville(); 
+  } 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  //Stocke le nom de notre ville\n  String nomVille;\n  //Stocke le nom du pays de notre ville\n  String nomPays;\n  //Stocke le nombre d&amp;#x27;habitants de notre ville\n  int nbreHabitants;\n \n  //Constructeur par d&amp;#xE9;faut\n  public Ville(){\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville !&amp;#x22;);          \n    nomVille = &amp;#x22;Inconnu&amp;#x22;;\n    nomPays = &amp;#x22;Inconnu&amp;#x22;;\n    nbreHabitants = 0;\n  }\n \n  //Constructeur avec param&amp;#xE8;tres\n  //J&amp;#x27;ai ajout&amp;#xE9; un &amp;#xAB; p &amp;#xBB; en premi&amp;#xE8;re lettre des param&amp;#xE8;tres.\n  //Ce n&amp;#x27;est pas une convention, mais &amp;#xE7;a peut &amp;#xEA;tre un bon moyen de les rep&amp;#xE9;rer.\n  public Ville(String pNom, int pNbre, String pPays)\n  {\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville avec des param&amp;#xE8;tres !&amp;#x22;);\n    nomVille = pNom;\n    nomPays = pPays;\n    nbreHabitants = pNbre;\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nom du pays de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Stocke le nombre d'habitants de notre ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville !"</span>);          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur avec paramètres</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//J'ai ajouté un « p » en première lettre des paramètres.</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Ce n'est pas une convention, mais ça peut être un bon moyen de les repérer.</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville avec des paramètres !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Exécutez ce code, vous devriez avoir l'équivalent de la figure suivante.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//L&amp;#x27;ordre est respect&amp;#xE9; -&amp;#x3E; aucun souci\nVille ville1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 123456789, &amp;#x22;France&amp;#x22;);\n//Erreur dans l&amp;#x27;ordre des param&amp;#xE8;tres -&amp;#x3E; erreur de compilation au final\nVille ville2 = new Ville(12456, &amp;#x22;France&amp;#x22;, &amp;#x22;Lille&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//L'ordre est respecté -&gt; aucun souci</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">ville1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">123456789</span>, <span class="ace_string">"France"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Erreur dans l'ordre des paramètres -&gt; erreur de compilation au final</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">ville2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_constant ace_numeric">12456</span>, <span class="ace_string">"France"</span>, <span class="ace_string">"Lille"</span>);
-</div></div></div></code></pre>
+![Ville1](Images/ville1.jpg)
 
-<p>Dans la majorité des cas, nous allons contrôler les modifications des variables de classe, de manière à ce qu'un code extérieur ne fasse pas n'importe quoi avec nos objets. C'est pour cela que nous protégeons nos variables d'instance en les déclarant <strong><i>private</i></strong>, comme ceci :</p>
+```java
+public class Ville {
+ 
+  //Stocke le nom de notre ville
+  String nomVille;
+  //Stocke le nom du pays de notre ville
+  String nomPays;
+  //Stocke le nombre d'habitants de notre ville
+  int nbreHabitants;
+ 
+  //Constructeur par défaut
+  public Ville(){
+    System.out.println("Création d'une ville !");          
+    nomVille = "Inconnu";
+    nomPays = "Inconnu";
+    nbreHabitants = 0;
+  }
+ 
+  //Constructeur avec paramètres
+  //J'ai ajouté un « p » en première lettre des paramètres.
+  //Ce n'est pas une convention, mais ça peut être un bon moyen de les repérer.
+  public Ville(String pNom, int pNbre, String pPays)
+  {
+    System.out.println("Création d'une ville avec des paramètres !");
+    nomVille = pNom;
+    nomPays = pPays;
+    nbreHabitants = pNbre;
+  }        
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n\n  private String nomVille;\n  private String nomPays;\n  private int nbreHabitants;\n   \n  //&amp;#x2026;     \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//…     </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+//L'ordre est respecté -> aucun souci
+Ville ville1 = new Ville("Marseille", 123456789, "France");
+//Erreur dans l'ordre des paramètres -> erreur de compilation au final
+Ville ville2 = new Ville(12456, "France", "Lille");
+```
+
+Dans la majorité des cas, nous allons contrôler les modifications des variables de classe, de manière à ce qu'un code extérieur ne fasse pas n'importe quoi avec nos objets. C'est pour cela que nous protégeons nos variables d'instance en les déclarant <strong><i>private</i></strong>, comme ceci :
+
+```java
+public class Ville {
+
+  private String nomVille;
+  private String nomPays;
+  private int nbreHabitants;
+   
+  //…     
+}
+```
 
 ### Les getters et les setters
 Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture, et un mutateur (setter) nous permettra d'en faire de même en écriture ! Grâce aux accesseurs, vous pourrez afficher les variables de vos objets, et grâce aux mutateurs, vous pourrez les modifier.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n\n  //Les variables et les constructeurs n&amp;#x27;ont pas chang&amp;#xE9;&amp;#x2026;\n          \n  //*************   ACCESSEURS *************\n    \n  //Retourne le nom de la ville\n  public String getNom()  {  \n    return nomVille;\n  }\n\n  //Retourne le nom du pays\n  public String getNomPays()\n  {\n    return nomPays;\n  }\n\n  // Retourne le nombre d&amp;#x27;habitants\n  public int getNombreHabitants()\n  {\n    return nbreHabitants;\n  } \n \n  //*************   MUTATEURS   *************\n\n  //D&amp;#xE9;finit le nom de la ville\n  public void setNom(String pNom)\n  {\n    nomVille = pNom;\n  }\n\n  //D&amp;#xE9;finit le nom du pays\n  public void setNomPays(String pPays)\n  {\n    nomPays = pPays;\n  }\n\n  //D&amp;#xE9;finit le nombre d&amp;#x27;habitants\n  public void setNombreHabitants(int nbre)\n  {\n    nbreHabitants = nbre;\n  }  \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Les variables et les constructeurs n'ont pas changé…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//*************   ACCESSEURS *************</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNom</span>()  {  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom du pays</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNomPays</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">// Retourne le nombre d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getNombreHabitants</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//*************   MUTATEURS   *************</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNom</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom du pays</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNomPays</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nombre d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNombreHabitants</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">nbre</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
 
-<p>À présent, essayez ce code dans votre méthode <strong><i>main</i></strong> :</p>
+```java
+public class Ville {
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();\nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 123456, &amp;#x22;France&amp;#x22;);       \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);\n\nSystem.out.println(&amp;#x22;\\n v = &amp;#x22;+v.getNom()+&amp;#x22; ville de  &amp;#x22;+v.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v.getNomPays());\nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);\n        \n/*\n  Nous allons interchanger les Villes v1 et v2\n  tout &amp;#xE7;a par l&amp;#x27;interm&amp;#xE9;diaire d&amp;#x27;un autre objet Ville.        \n*/       \nVille temp = new Ville();\ntemp = v1;\nv1 = v2;\nv2 = temp;\n       \nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);\n\n/*       \n  Nous allons maintenant interchanger leurs noms\n  cette fois par le biais de leurs mutateurs.\n*/   \nv1.setNom(&amp;#x22;Hong Kong&amp;#x22;);\nv2.setNom(&amp;#x22;Djibouti&amp;#x22;);\n      \nSystem.out.println(&amp;#x22; v1 = &amp;#x22;+v1.getNom()+&amp;#x22; ville de  &amp;#x22;+v1.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v1.getNomPays());\nSystem.out.println(&amp;#x22; v2 = &amp;#x22;+v2.getNom()+&amp;#x22; ville de  &amp;#x22;+v2.getNombreHabitants()+ &amp;#x22; habitants se situant en &amp;#x22;+v2.getNomPays()+&amp;#x22;\\n\\n&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">123456</span>, <span class="ace_string">"France"</span>);       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Rio"</span>, <span class="ace_constant ace_numeric">321654</span>, <span class="ace_string">"Brésil"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n v = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v</span>.<span class="ace_identifier">getNomPays</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v1 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNomPays</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v2 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNomPays</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">/*</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  Nous allons interchanger les Villes v1 et v2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  tout ça par l'intermédiaire d'un autre objet Ville.        </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">*/</span>       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">temp</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">temp</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">v1</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">v2</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">temp</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v1 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNomPays</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v2 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNomPays</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">/*       </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  Nous allons maintenant interchanger leurs noms</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">  cette fois par le biais de leurs mutateurs.</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">*/</span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">v1</span>.<span class="ace_identifier">setNom</span>(<span class="ace_string">"Hong Kong"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">v2</span>.<span class="ace_identifier">setNom</span>(<span class="ace_string">"Djibouti"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v1 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNomPays</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">" v2 = "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" ville de  "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNombreHabitants</span>()<span class="ace_keyword ace_operator">+</span> <span class="ace_string">" habitants se situant en "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v2</span>.<span class="ace_identifier">getNomPays</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);</div></div></div></code></pre>
+  //Les variables et les constructeurs n'ont pas changé…
+  
+  private String nomVille;
+  private String nomPays;
+  private int nbreHabitants;
+  
+  public Ville() {
+    System.out.println("Création d'une ville !");          
+    nomVille = "Inconnu";
+    nomPays = "Inconnu";
+    nbreHabitants = 0;
+  }
+  
+  public Ville(String pNom, int pNbre, String pPays) {
+    System.out.println("Création d'une ville avec des paramètres !");
+    nomVille = pNom;
+    nomPays = pPays;
+    nbreHabitants = pNbre;
+  }   
+          
+  //*************   ACCESSEURS *************
+    
+  //Retourne le nom de la ville
+  public String getNom()  {  
+    return nomVille;
+  }
 
-<p>À la compilation, vous devriez obtenir la figure suivante.</p>
-<img src="Images/ville2.jpg" />
+  //Retourne le nom du pays
+  public String getNomPays()
+  {
+    return nomPays;
+  }
 
-<p>Avec nos objets Ville, nous voulons :</p>
-<ul>
-   <li>faire un système de catégories de villes par rapport à leur nombre d'habitants ( <1000 -> A, <10 000 -> B…) ;</li>
-   <li>faire une méthode de description de notre objet Ville ;</li>
-   <li>une méthode pour comparer deux objets par rapport à leur nombre d'habitants.</li>
-</ul>
+  // Retourne le nombre d'habitants
+  public int getNombreHabitants()
+  {
+    return nbreHabitants;
+  } 
+ 
+  //*************   MUTATEURS   *************
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  private String nomVille;\n  private String nomPays;\n  private int nbreHabitants;\n  private char categorie;\n   \n  public Ville(){\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville !&amp;#x22;);          \n    nomVille = &amp;#x22;Inconnu&amp;#x22;;\n    nomPays = &amp;#x22;Inconnu&amp;#x22;;\n    nbreHabitants = 0;\n    this.setCategorie();\n  }\n \n  public Ville(String pNom, int pNbre, String pPays)\n  {\n    System.out.println(&amp;#x22;Cr&amp;#xE9;ation d&amp;#x27;une ville avec des param&amp;#xE8;tres !&amp;#x22;);\n    nomVille = pNom;\n    nomPays = pPays;\n    nbreHabitants = pNbre;\n    this.setCategorie();\n  }  \n    \n  //Retourne le nom de la ville\n  public String getNom()  {  \n    return nomVille;\n  }\n\n  //Retourne le nom du pays\n  public String getNomPays()\n  {\n    return nomPays;\n  }\n\n  // Retourne le nombre d&amp;#x27;habitants\n  public int getNombreHabitants()\n  {\n    return nbreHabitants;\n  } \n\n  //Retourne la cat&amp;#xE9;gorie de la ville\n  public char getCategorie()\n  {\n    return categorie;\n  } \n \n  //D&amp;#xE9;finit le nom de la ville\n  public void setNom(String pNom)\n  {\n    nomVille = pNom;\n  }\n\n  //D&amp;#xE9;finit le nom du pays\n  public void setNomPays(String pPays)\n  {\n    nomPays = pPays;\n  }\n\n  //D&amp;#xE9;finit le nombre d&amp;#x27;habitants\n  public void setNombreHabitants(int nbre)\n  {\n    nbreHabitants = nbre;\n    this.setCategorie();\n  }  \n \n  //D&amp;#xE9;finit la cat&amp;#xE9;gorie de la ville\n  private void setCategorie() {\n \n    int bornesSuperieures[] = {0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000};\n    char categories[] = {&amp;#x27;?&amp;#x27;, &amp;#x27;A&amp;#x27;, &amp;#x27;B&amp;#x27;, &amp;#x27;C&amp;#x27;, &amp;#x27;D&amp;#x27;, &amp;#x27;E&amp;#x27;, &amp;#x27;F&amp;#x27;, &amp;#x27;G&amp;#x27;, &amp;#x27;H&amp;#x27;};\n\n    int i = 0;\n    while (i &amp;#x3C; bornesSuperieures.length &amp;#x26;&amp;#x26; this.nbreHabitants &amp;#x3E; bornesSuperieures[i])\n      i++;\n\n    this.categorie = categories[i];\n  }\n\n  //Retourne la description de la ville\n  public String decrisToi(){\n    return &amp;#x22;\\t&amp;#x22;+this.nomVille+&amp;#x22; est une ville de &amp;#x22;+this.nomPays+ &amp;#x22;, elle comporte : &amp;#x22;+this.nbreHabitants+&amp;#x22; habitant(s) =&amp;#x3E; elle est donc de cat&amp;#xE9;gorie : &amp;#x22;+this.categorie;\n  }\n\n  //Retourne une cha&amp;#xEE;ne de caract&amp;#xE8;res selon le r&amp;#xE9;sultat de la comparaison\n  public String comparer(Ville v1){\n    String str = new String();\n\n    if (v1.getNombreHabitants() &amp;#x3E; this.nbreHabitants)\n      str = v1.getNom()+&amp;#x22; est une ville plus peupl&amp;#xE9;e que &amp;#x22;+this.nomVille;\n     \n    else\n      str = this.nomVille+&amp;#x22; est une ville plus peupl&amp;#xE9;e que &amp;#x22;+v1.getNom();\n     \n    return str;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">char</span> <span class="ace_identifier">categorie</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville !"</span>);          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Inconnu"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setCategorie</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Création d'une ville avec des paramètres !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setCategorie</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNom</span>()  {  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne le nom du pays</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getNomPays</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">// Retourne le nombre d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getNombreHabitants</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne la catégorie de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">char</span> <span class="ace_identifier">getCategorie</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">categorie</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNom</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom du pays</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNomPays</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nombre d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setNombreHabitants</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">nbre</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setCategorie</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit la catégorie de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setCategorie</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">bornesSuperieures</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">0</span>, <span class="ace_constant ace_numeric">1000</span>, <span class="ace_constant ace_numeric">10000</span>, <span class="ace_constant ace_numeric">100000</span>, <span class="ace_constant ace_numeric">500000</span>, <span class="ace_constant ace_numeric">1000000</span>, <span class="ace_constant ace_numeric">5000000</span>, <span class="ace_constant ace_numeric">10000000</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">char</span> <span class="ace_identifier">categories</span>[] <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">'?'</span>, <span class="ace_string">'A'</span>, <span class="ace_string">'B'</span>, <span class="ace_string">'C'</span>, <span class="ace_string">'D'</span>, <span class="ace_string">'E'</span>, <span class="ace_string">'F'</span>, <span class="ace_string">'G'</span>, <span class="ace_string">'H'</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">while</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">bornesSuperieures</span>.<span class="ace_identifier">length</span> <span class="ace_keyword ace_operator">&amp;&amp;</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">nbreHabitants</span> <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_identifier">bornesSuperieures</span>[<span class="ace_identifier">i</span>])
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">categorie</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">categories</span>[<span class="ace_identifier">i</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne la description de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">decrisToi</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_string">"\t"</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" est une ville de "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nomPays</span><span class="ace_keyword ace_operator">+</span> <span class="ace_string">", elle comporte : "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nbreHabitants</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" habitant(s) =&gt; elle est donc de catégorie : "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">categorie</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Retourne une chaîne de caractères selon le résultat de la comparaison</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">comparer</span>(<span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_support ace_function">String</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span> (<span class="ace_identifier">v1</span>.<span class="ace_identifier">getNombreHabitants</span>() <span class="ace_keyword ace_operator">&gt;</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">nbreHabitants</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">v1</span>.<span class="ace_identifier">getNom</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">" est une ville plus peuplée que "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" est une ville plus peuplée que "</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">getNom</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">str</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+  //Définit le nom de la ville
+  public void setNom(String pNom)
+  {
+    nomVille = pNom;
+  }
 
-<p>Le mot <strong><i>this</i></strong> fait référence à l'objet courant. À l'intérieur d'un objet, ce mot clé permet de désigner une de ses variables ou une de ses méthodes.</p>
+  //Définit le nom du pays
+  public void setNomPays(String pPays)
+  {
+    nomPays = pPays;
+  }
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();\nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 1236, &amp;#x22;France&amp;#x22;);       \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);\n        \nSystem.out.println(&amp;#x22;\\n\\n&amp;#x22;+v1.decrisToi());\nSystem.out.println(v.decrisToi());\nSystem.out.println(v2.decrisToi()+&amp;#x22;\\n\\n&amp;#x22;);\nSystem.out.println(v1.comparer(v2));&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">1236</span>, <span class="ace_string">"France"</span>);       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Rio"</span>, <span class="ace_constant ace_numeric">321654</span>, <span class="ace_string">"Brésil"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n\n"</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">v1</span>.<span class="ace_identifier">decrisToi</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v</span>.<span class="ace_identifier">decrisToi</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v2</span>.<span class="ace_identifier">decrisToi</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v1</span>.<span class="ace_identifier">comparer</span>(<span class="ace_identifier">v2</span>));
-</div></div></div></code></pre>
+  //Définit le nombre d'habitants
+  public void setNombreHabitants(int nbre)
+  {
+    nbreHabitants = nbre;
+  }  
+  
+}
+```
 
-<p>Ce qui devrait donner le résultat de la figure suivante.</p>
-<img src="Images/ville3.jpg" />
+À présent, essayez ce code dans votre méthode <strong><i>main</i></strong> :
+
+```java
+Ville v = new Ville();
+Ville v1 = new Ville("Marseille", 123456, "France");       
+Ville v2 = new Ville("Rio", 321654, "Brésil");
+
+System.out.println("\n v = "+v.getNom()+" ville de "+v.getNombreHabitants()+ " habitants se situant en "+v.getNomPays());
+System.out.println(" v1 = "+v1.getNom()+" ville de "+v1.getNombreHabitants()+ " habitants se situant en "+v1.getNomPays());
+System.out.println(" v2 = "+v2.getNom()+" ville de "+v2.getNombreHabitants()+ " habitants se situant en "+v2.getNomPays()+"\n\n");
+        
+// Nous allons interchanger les Villes v1 et v2 tout ça par l'intermédiaire d'un autre objet Ville.        
+     
+Ville temp = new Ville();
+temp = v1;
+v1 = v2;
+v2 = temp;
+       
+System.out.println(" v1 = "+v1.getNom()+" ville de  "+v1.getNombreHabitants()+ " habitants se situant en "+v1.getNomPays());
+System.out.println(" v2 = "+v2.getNom()+" ville de  "+v2.getNombreHabitants()+ " habitants se situant en "+v2.getNomPays()+"\n\n");
+
+     
+// Nous allons maintenant interchanger leurs noms cette fois par le biais de leurs mutateurs.
+  
+v1.setNom("Hong Kong");
+v2.setNom("Djibouti");
+      
+System.out.println(" v1 = "+v1.getNom()+" ville de  "+v1.getNombreHabitants()+ " habitants se situant en "+v1.getNomPays());
+System.out.println(" v2 = "+v2.getNom()+" ville de  "+v2.getNombreHabitants()+ " habitants se situant en "+v2.getNomPays()+"\n\n");
+```
+
+À la compilation, vous devriez obtenir la figure suivante.
+
+
+![Ville2](Images/ville2.jpg)
+
+Avec nos objets Ville, nous voulons :
+* faire un système de catégories de villes par rapport à leur nombre d'habitants ( <1000 -> A, <10 000 -> B…) ;
+* faire une méthode de description de notre objet Ville ;
+* une méthode pour comparer deux objets par rapport à leur nombre d'habitants.
+
+```java
+public class Ville {
+ 
+  private String nomVille;
+  private String nomPays;
+  private int nbreHabitants;
+  private char categorie;
+   
+  public Ville() {
+    System.out.println("Création d'une ville !");          
+    nomVille = "Inconnu";
+    nomPays = "Inconnu";
+    nbreHabitants = 0;
+    this.setCategorie();
+  }
+ 
+  public Ville(String pNom, int pNbre, String pPays) {
+    System.out.println("Création d'une ville avec des paramètres !");
+    nomVille = pNom;
+    nomPays = pPays;
+    nbreHabitants = pNbre;
+    this.setCategorie();
+  }  
+    
+  //Retourne le nom de la ville
+  public String getNom()  {  
+    return nomVille;
+  }
+
+  //Retourne le nom du pays
+  public String getNomPays()
+  {
+    return nomPays;
+  }
+
+  // Retourne le nombre d'habitants
+  public int getNombreHabitants()
+  {
+    return nbreHabitants;
+  } 
+
+  //Retourne la catégorie de la ville
+  public char getCategorie()
+  {
+    return categorie;
+  } 
+ 
+  //Définit le nom de la ville
+  public void setNom(String pNom)
+  {
+    nomVille = pNom;
+  }
+
+  //Définit le nom du pays
+  public void setNomPays(String pPays)
+  {
+    nomPays = pPays;
+  }
+
+  //Définit le nombre d'habitants
+  public void setNombreHabitants(int nbre)
+  {
+    nbreHabitants = nbre;
+    this.setCategorie();
+  }  
+ 
+  //Définit la catégorie de la ville
+  private void setCategorie() {
+ 
+    int bornesSuperieures[] = {0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000};
+    char categories[] = {'?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+
+    int i = 0;
+    while (i < bornesSuperieures.length && this.nbreHabitants > bornesSuperieures[i])
+      i++;
+
+    this.categorie = categories[i];
+  }
+
+  //Retourne la description de la ville
+  public String decrisToi(){
+    return "\t"+this.nomVille+" est une ville de "+this.nomPays+ ", elle comporte : "+this.nbreHabitants+" habitant(s) => elle est donc de catégorie : "+this.categorie;
+  }
+
+  //Retourne une chaîne de caractères selon le résultat de la comparaison
+  public String comparer(Ville v1){
+    String str = new String();
+
+    if (v1.getNombreHabitants() > this.nbreHabitants)
+      str = v1.getNom()+" est une ville plus peuplée que "+this.nomVille;
+     
+    else
+      str = this.nomVille+" est une ville plus peuplée que "+v1.getNom();
+     
+    return str;
+  }
+}
+```
+
+Le mot <strong><i>this</i></strong> fait référence à l'objet courant. À l'intérieur d'un objet, ce mot clé permet de désigner une de ses variables ou une de ses méthodes.
+
+```java
+Ville v = new Ville();
+Ville v1 = new Ville("Marseille", 1236, "France");       
+Ville v2 = new Ville("Rio", 321654, "Brésil");
+        
+System.out.println("\n\n"+v1.decrisToi());
+System.out.println(v.decrisToi());
+System.out.println(v2.decrisToi()+"\n\n");
+System.out.println(v1.comparer(v2));
+```
+
+Ce qui devrait donner le résultat de la figure suivante.
+
+![Ville3](Images/ville3.jpg)
 
 ### Les variables de classe
 La particularité de ce type de variables, c'est qu'elles seront communes à toutes les instances de la classe. Afin qu'une variable soit une variable de classe, elle doit être précédée du mot clé <strong><i>static</i></strong>. Cela donnerait dans notre classe Ville:

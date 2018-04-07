@@ -659,8 +659,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -1323,7 +1321,7 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale();\nSystem.out.println(cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>();
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale.jpg" />
+<img src="Images/capitale.jpg" />
 
 <p>Notre classe « Capitale » hérite de la classe « Ville », par conséquent, le constructeur de notre objet appelle, de façon tacite, le constructeur de la classe mère. C'est pour cela que les variables d'instance ont pu être initialisées ! Par contre, essayez ceci dans votre classe :</p>
 
@@ -1397,7 +1395,7 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale(&amp;#x22;Paris&amp;#x22;, 654987, &amp;#x22;France&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n  System.out.println(&amp;#x22;\\n&amp;#x22;+cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>(<span class="ace_string">"Paris"</span>, <span class="ace_constant ace_numeric">654987</span>, <span class="ace_string">"France"</span>, <span class="ace_string">"la tour Eiffel"</span>);
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n"</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/capitale1.png" />
+<img src="Images/capitale1.png" />
 
 <h3><a name="polymorphisme">Le polymorphisme</a></h3>
 <p>Ce concept complète parfaitement celui de l'héritage. Nous pouvons le définir en disant qu'il permet de manipuler des objets sans vraiment connaître leur type.</p>
@@ -1432,7 +1430,7 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 </div></div></div></code></pre>
 
 <p>La figure suivante vous montre le résultat.</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/polymorphisme.png" />
+<img src="Images/polymorphisme.png" />
 
 <p>Je n'ai utilisé que des objets <strong>Ville</strong> dans ma boucle : on appelle ceci la <strong>covariance des variables !</strong> Cela signifie qu'une variable objet peut contenir un objet qui hérite du type de cette variable. Dans notre cas, un objet de type <strong>Ville</strong> peut contenir un objet de type <strong>Capitale</strong>. Dans ce cas, on dit que Ville est la superclasse de Capitale. La covariance est efficace dans le cas où la classe héritant redéfinit certaines méthodes de sa superclasse.</p>
 
@@ -1505,10 +1503,10 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 </ul>
 
 <p>Voici un exemple de diagramme de use case décrivant le fonctionnement d'un guichet automatique de banque :</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/case.png" />
+<img src="Images/case.png" />
 
 <p>Ainsi que son diagramme de séquences :</p>
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/sequence.png" />
+<img src="Images/sequence.png" />
 
 <p>Voici une classe nommée <strong>ObjetA</strong> qui a comme attributs :</p>
 <ul>
@@ -1523,16 +1521,16 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
   <li>afficher() qui renvoie également une chaîne de caractères.</li>
 </ul>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/objeta.png" />
+<img src="Images/objeta.png" />
 
 <h3>Modéliser les liens entre les objets</h3>
 <p>Sur le diagramme représenté à la figure suivante, vous remarquez un deuxième objet qui dispose, lui aussi, de paramètres. <strong>ObjetB</strong> possède également les attributs et les méthodes de la classe <strong>ObjetA</strong>. C'est parce que la flèche qui relie nos deux objets signifie « extends ». En gros, vous pouvez lire ce diagramme comme suit : l'ObjetB hérite de l'ObjetA.</p>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml2.png" />
+<img src="Images/uml2.png" />
 
 <p>Dans l'exemple suivant, nous avons toujours notre héritage entre un objet A et un objet B, mais dans ce cas, l'ObjetA (et donc l'ObjetB) possède une variable de classe de type <strong>ObjetC</strong>, ainsi qu'une méthode dont le type de retour est <strong>ObjetC</strong>. Vous pouvez lire ce diagramme comme suit : l'ObjetA a un ObjetC.</p>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml3.png" />
+<img src="Images/uml3.png" />
 
 <p>Voici le code Java correspondant à ce diagramme.</p>
 
@@ -1555,7 +1553,7 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<img src="https://github.com/dhambrimourad/java1/blob/master/Images/uml4.png" />
+<img src="Images/uml4.png" />
 
 <p>Ce diagramme est identique au précédent, à l'exception de l'ObjetD. Nous devons le lire comme ceci : l'ObjetA est composé de plusieurs instances d'ObjetD. Vous pouvez d'ailleurs remarquer que la variable d'instance correspondante est de type tableau.</p>
 
@@ -1917,6 +1915,8 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
+
+<!--
 
 <h3><a name="exceptions">Les exceptions</a></h3>
 

@@ -659,6 +659,8 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
+<!--
+
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -1283,55 +1285,60 @@ Ce qui devrait donner le résultat de la figure suivante.
 ### Les variables de classe
 La particularité de ce type de variables, c'est qu'elles seront communes à toutes les instances de la classe. Afin qu'une variable soit une variable de classe, elle doit être précédée du mot clé <strong><i>static</i></strong>. Cela donnerait dans notre classe Ville:
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n   \n  //Variables publiques qui comptent les instances\n  public static int nbreInstances = 0;\n\n  //Variable priv&amp;#xE9;e qui comptera aussi les instances\n  private static int nbreInstancesBis = 0;        \n  \n  //Les autres variables n&amp;#x27;ont pas chang&amp;#xE9;\n\n  public Ville(){\n    //On incr&amp;#xE9;mente nos variables &amp;#xE0; chaque appel aux constructeurs\n    nbreInstances++;\n    nbreInstancesBis++;          \n    //Le reste ne change pas.\n  }\n\n  public Ville(String pNom, int pNbre, String pPays)\n  {  \n    //On incr&amp;#xE9;mente nos variables &amp;#xE0; chaque appel aux constructeurs\n    nbreInstances++;\n    nbreInstancesBis++;          \n    //Le reste ne change pas\n  }\n  public static int getNombreInstancesBis()\n  {\n    return nbreInstancesBis;\n  }  \n  //Le reste du code est le m&amp;#xEA;me qu&amp;#x27;avant\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Variables publiques qui comptent les instances</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstances</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Variable privée qui comptera aussi les instances</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstancesBis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Les autres variables n'ont pas changé</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On incrémente nos variables à chaque appel aux constructeurs</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstances</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstancesBis</span><span class="ace_keyword ace_operator">++</span>;          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Le reste ne change pas.</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On incrémente nos variables à chaque appel aux constructeurs</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstances</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstancesBis</span><span class="ace_keyword ace_operator">++</span>;          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Le reste ne change pas</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">getNombreInstancesBis</span>()
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">nbreInstancesBis</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Le reste du code est le même qu'avant</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class Ville {
+   
+  //Variables publiques qui comptent les instances
+  public static int nbreInstances = 0;
 
-<p>À présent, testez le code suivant :</p>
+  //Variable privée qui comptera aussi les instances
+  private static int nbreInstancesBis = 0;        
+  
+  //Les autres variables n'ont pas changé
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = new Ville();                \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());\n&amp;#x9;                        \nVille v1 = new Ville(&amp;#x22;Marseille&amp;#x22;, 1236, &amp;#x22;France&amp;#x22;);        \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());\n                \nVille v2 = new Ville(&amp;#x22;Rio&amp;#x22;, 321654, &amp;#x22;Br&amp;#xE9;sil&amp;#x22;);        \nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.nbreInstances);\nSystem.out.println(&amp;#x22;Le nombre d&amp;#x27;instances de la classe Ville est : &amp;#x22; + Ville.getNombreInstancesBis());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">nbreInstances</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">getNombreInstancesBis</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>                            
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Marseille"</span>, <span class="ace_constant ace_numeric">1236</span>, <span class="ace_string">"France"</span>);        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">nbreInstances</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">getNombreInstancesBis</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Rio"</span>, <span class="ace_constant ace_numeric">321654</span>, <span class="ace_string">"Brésil"</span>);        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">nbreInstances</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Le nombre d'instances de la classe Ville est : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">Ville</span>.<span class="ace_identifier">getNombreInstancesBis</span>());
-</div></div></div></code></pre>
+  public Ville(){
+    //On incrémente nos variables à chaque appel aux constructeurs
+    nbreInstances++;
+    nbreInstancesBis++;          
+    //Le reste ne change pas.
+  }
 
-<p>Le résultat, visible à la figure suivante, montre que le nombre augmente à chaque instanciation.</p>
-<img src="Images/static.jpg" />
+  public Ville(String pNom, int pNbre, String pPays)
+  {  
+    //On incrémente nos variables à chaque appel aux constructeurs
+    nbreInstances++;
+    nbreInstancesBis++;          
+    //Le reste ne change pas
+  }
+  public static int getNombreInstancesBis()
+  {
+    return nbreInstancesBis;
+  }  
+  
+  //Le reste du code est le même qu'avant
+  
+}
+```
+
+À présent, testez le code suivant :
+
+```java
+Ville v = new Ville();                
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.nbreInstances);
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.getNombreInstancesBis());
+                            
+Ville v1 = new Ville("Marseille", 1236, "France");        
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.nbreInstances);
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.getNombreInstancesBis());
+                
+Ville v2 = new Ville("Rio", 321654, "Brésil");        
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.nbreInstances);
+System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.getNombreInstancesBis());
+```
+
+Le résultat, visible à la figure suivante, montre que le nombre augmente à chaque instanciation.
+
+![Static](Images/static.jpg)
 
 ### Le principe d’encapsulation
 Vous venez de créer un objet dont les variables sont protégées de l'extérieur. En effet, depuis l'extérieur de la classe, elles ne sont accessibles que via les accesseurs et mutateurs que nous avons défini. C'est le principe d'encapsulation !
@@ -1341,94 +1348,103 @@ En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement inter
 ### <a name="heritage">L'héritage</a>
 Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class Capitale extends Ville {\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+class Capitale extends Ville {
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale();\nSystem.out.println(cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
+}
+```
 
-<img src="Images/capitale.jpg" />
+```java
+Capitale cap = new Capitale();
+System.out.println(cap.decrisToi());
+```
 
-<p>Notre classe « Capitale » hérite de la classe « Ville », par conséquent, le constructeur de notre objet appelle, de façon tacite, le constructeur de la classe mère. C'est pour cela que les variables d'instance ont pu être initialisées ! Par contre, essayez ceci dans votre classe :</p>
+![Capitale](Images/capitale.jpg)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Capitale extends Ville{ \n  public Capitale(){\n    this.nomVille = &amp;#x22;Tunis&amp;#x22;;\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Tunis"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Notre classe « Capitale » hérite de la classe « Ville », par conséquent, le constructeur de notre objet appelle, de façon tacite, le constructeur de la classe mère. C'est pour cela que les variables d'instance ont pu être initialisées ! Par contre, essayez ceci dans votre classe :
 
-<p>Vous allez avoir une erreur de compilation ! Dans notre classe <strong>« Capitale »</strong>, nous ne pouvons pas utiliser directement les attributs de la classe <strong>« Ville »</strong> qui sont déclarées <strong>« private »</strong>. C'est ici que le nouveau mot clé <strong>« protected »</strong> fait son entrée. Seules les méthodes et les variables déclarées <strong>« public »</strong> ou <strong>« protected »</strong> peuvent être utilisées dans une classe héritée.</p>
+```java
+public class Capitale extends Ville{ 
+  public Capitale(){
+    this.nomVille = "Tunis";
+  } 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Ville {\n \n  public static int nbreInstances = 0;\n  protected static int nbreInstancesBis = 0;\n  protected String nomVille;\n  protected String nomPays;\n  protected int nbreHabitants;\n  protected char categorie;\n  \n  //Tout le reste est identique. \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstances</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreInstancesBis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomVille</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nomPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">int</span> <span class="ace_identifier">nbreHabitants</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">char</span> <span class="ace_identifier">categorie</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Tout le reste est identique. </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Vous allez avoir une erreur de compilation ! Dans notre classe <strong>« Capitale »</strong>, nous ne pouvons pas utiliser directement les attributs de la classe <strong>« Ville »</strong> qui sont déclarées <strong>« private »</strong>. C'est ici que le nouveau mot clé <strong>« protected »</strong> fait son entrée. Seules les méthodes et les variables déclarées <strong>« public »</strong> ou <strong>« protected »</strong> peuvent être utilisées dans une classe héritée.
 
-<p>Ce qui va différencier nos objets <strong><i>Capitale</i></strong> de nos objets <strong><i>Ville</i></strong> sera la présence d'un nouveau champ : le nom d'un monument. Cela implique que nous devons créer un constructeur par défaut et un constructeur d'initialisation pour notre objet <strong><i>Capitale</i></strong>.</p>
+```java
+public class Ville {
+ 
+  public static int nbreInstances = 0;
+  protected static int nbreInstancesBis = 0;
+  protected String nomVille;
+  protected String nomPays;
+  protected int nbreHabitants;
+  protected char categorie;
+  
+  //Tout le reste est identique. 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Capitale extends Ville {\n     \n  private String monument;\n    \n  //Constructeur par d&amp;#xE9;faut\n  public Capitale(){\n    //Ce mot cl&amp;#xE9; appelle le constructeur de la classe m&amp;#xE8;re\n    super();\n    monument = &amp;#x22;aucun&amp;#x22;;\n  }    \n      \n  //Constructeur d&amp;#x27;initialisation de capitale\n  public Capitale(String nom, int hab, String pays, String monument){\n    super(nom, hab, pays);\n    this.monument = monument;\n  }    \n     \n  /**\n    * Description d&amp;#x27;une capitale\n    * @return String retourne la description de l&amp;#x27;objet\n  */\n  public String decrisToi(){\n    String str = super.decrisToi() + &amp;#x22;\\n \\t ==&amp;#x3E;&amp;#x3E;&amp;#x22; + this.monument + &amp;#x22;en est un monument&amp;#x22;;\n\n    return str;\n    } \n\n  /**\n    * @return le nom du monument\n  */\n  public String getMonument() {\n    return monument;\n  } \n\n  //D&amp;#xE9;finit le nom du monument\n  public void setMonument(String monument) {\n    this.monument = monument;\n  }   \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Capitale</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Ville</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">monument</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur par défaut</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Ce mot clé appelle le constructeur de la classe mère</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">super</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"aucun"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Constructeur d'initialisation de capitale</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Capitale</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">nom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">hab</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pays</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">monument</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">super</span>(<span class="ace_identifier">nom</span>, <span class="ace_identifier">hab</span>, <span class="ace_identifier">pays</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">monument</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment ace_doc">/**</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">    * Description d'une capitale</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">    * </span><span class="ace_comment ace_doc ace_tag">@return</span><span class="ace_comment ace_doc"> String retourne la description de l'objet</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">  */</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">decrisToi</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">super</span>.<span class="ace_identifier">decrisToi</span>() <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"\n \t ==&gt;&gt;"</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"en est un monument"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">str</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment ace_doc">/**</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">    * </span><span class="ace_comment ace_doc ace_tag">@return</span><span class="ace_comment ace_doc"> le nom du monument</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">  */</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">getMonument</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">monument</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Définit le nom du monument</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">setMonument</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">monument</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">monument</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Ce qui va différencier nos objets <strong><i>Capitale</i></strong> de nos objets <strong><i>Ville</i></strong> sera la présence d'un nouveau champ : le nom d'un monument. Cela implique que nous devons créer un constructeur par défaut et un constructeur d'initialisation pour notre objet <strong><i>Capitale</i></strong>.
 
-<p>Testez le code ci-dessous, il aura pour résultat la figure suivante.</p>
+```java
+public class Capitale extends Ville {
+     
+  private String monument;
+    
+  //Constructeur par défaut
+  public Capitale(){
+    //Ce mot clé appelle le constructeur de la classe mère
+    super();
+    monument = "aucun";
+  }    
+      
+  //Constructeur d'initialisation de capitale
+  public Capitale(String nom, int hab, String pays, String monument){
+    super(nom, hab, pays);
+    this.monument = monument;
+  }    
+     
+  /**
+    * Description d'une capitale
+    * @return String retourne la description de l'objet
+  */
+  public String decrisToi(){
+    String str = super.decrisToi() + "\n \t ==>>" + this.monument + "en est un monument";
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Capitale cap = new Capitale(&amp;#x22;Paris&amp;#x22;, 654987, &amp;#x22;France&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n  System.out.println(&amp;#x22;\\n&amp;#x22;+cap.decrisToi());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Capitale</span> <span class="ace_identifier">cap</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>(<span class="ace_string">"Paris"</span>, <span class="ace_constant ace_numeric">654987</span>, <span class="ace_string">"France"</span>, <span class="ace_string">"la tour Eiffel"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n"</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">cap</span>.<span class="ace_identifier">decrisToi</span>());</div></div></div></code></pre>
+    return str;
+    } 
 
-<img src="Images/capitale1.png" />
+  /**
+    * @return le nom du monument
+  */
+  public String getMonument() {
+    return monument;
+  } 
 
-<h3><a name="polymorphisme">Le polymorphisme</a></h3>
-<p>Ce concept complète parfaitement celui de l'héritage. Nous pouvons le définir en disant qu'il permet de manipuler des objets sans vraiment connaître leur type.</p>
+  //Définit le nom du monument
+  public void setMonument(String monument) {
+    this.monument = monument;
+  }   
+}
+```
 
-<p>Dans notre exemple, vous avez vu qu'il suffisait d'utiliser la méthode <strong><i>« decrisToi() »</i></strong> sur un objet <strong><i>« Ville »</i></strong> ou sur un objet <strong><i>« Capitale »</i></strong>. On pourrait construire un tableau d'objets et appeler <strong><i>« decrisToi() »</i></strong> sans se soucier de son contenu : villes, capitales, ou les deux.</p>
+Testez le code ci-dessous, il aura pour résultat la figure suivante.
+
+```java
+Capitale cap = new Capitale("Paris", 654987, "France", "la tour Eiffel");
+System.out.println("\n"+cap.decrisToi());
+```
+
+![Capitale1](Images/capitale1.png)
+
+### <a name="polymorphisme">Le polymorphisme</a>
+Ce concept complète parfaitement celui de l'héritage. Nous pouvons le définir en disant qu'il permet de manipuler des objets sans vraiment connaître leur type.
+
+Dans notre exemple, vous avez vu qu'il suffisait d'utiliser la méthode <strong><i>« decrisToi() »</i></strong> sur un objet <strong><i>« Ville »</i></strong> ou sur un objet <strong><i>« Capitale »</i></strong>. On pourrait construire un tableau d'objets et appeler <strong><i>« decrisToi() »</i></strong> sans se soucier de son contenu : villes, capitales, ou les deux.
+
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//D&amp;#xE9;finition d&amp;#x27;un tableau de villes null\nVille[] tableau = new Ville[6];\n        \n//D&amp;#xE9;finition d&amp;#x27;un tableau de noms de villes et un autre de nombres d&amp;#x27;habitants\nString[] tab = {&amp;#x22;Marseille&amp;#x22;, &amp;#x22;lille&amp;#x22;, &amp;#x22;caen&amp;#x22;, &amp;#x22;lyon&amp;#x22;, &amp;#x22;paris&amp;#x22;, &amp;#x22;nantes&amp;#x22;};\nint[] tab2 = {123456, 78456, 654987, 75832165, 1594, 213};\n         \n//Les trois premiers &amp;#xE9;l&amp;#xE9;ments du tableau seront des villes,\n//et le reste, des capitales\nfor(int i = 0; i &amp;#x3C; 6; i++){\n  if (i &amp;#x3C;3){\n    Ville V = new Ville(tab[i], tab2[i], &amp;#x22;france&amp;#x22;);\n    tableau[i] = V;\n  }\n         \n  else{\n    Capitale C = new Capitale(tab[i], tab2[i], &amp;#x22;france&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n    tableau[i] = C;\n  }\n}\n                 \n//Il ne nous reste plus qu&amp;#x27;&amp;#xE0; d&amp;#xE9;crire tout notre tableau !\nfor(Ville V : tableau){\n  System.out.println(V.decrisToi()+&amp;#x22;\\n&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Définition d'un tableau de villes null</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span>[] <span class="ace_identifier">tableau</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>[<span class="ace_constant ace_numeric">6</span>];
@@ -1944,7 +1960,7 @@ Nous allons créer une nouvelle classe, nommée « Capitale », héritée de �
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
-<!--
+
 
 <h3><a name="exceptions">Les exceptions</a></h3>
 

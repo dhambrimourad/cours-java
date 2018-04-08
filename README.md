@@ -779,7 +779,7 @@ for(String sousTab[] : tab)
 #### Méthodes pour copier des tableaux
 
 ```java
-import java.util;
+import java.util.Arrays;
 
 class ArrayCopyOfDemo {
 
@@ -796,7 +796,7 @@ class ArrayCopyOfDemo {
 * binarySearch: recherche un élément et retourne l’index associé.
 * equals : compare deux tableaux
 * sort : tri d’un tableau d’une manière séquentielle
-* paralllelSort : tri d’un tableau d’une manière parallèle dans des machines multi-processeur (plus rapide que sort), existe depuis Java 1.8
+* parallelSort : tri d’un tableau d’une manière parallèle dans des machines multi-processeur (plus rapide que sort), existe depuis Java 1.8
 
 ### Des méthodes concernant les chaînes de caractères
 

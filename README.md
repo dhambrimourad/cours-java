@@ -10,7 +10,8 @@ Présenté par : Mourad DHAMBRI
 * [Récupérer ce que vous tapez](#scanner)
 * [Les conditions](#conditions)
 * [Les boucles](#boucles)
-* [Votre première classe](#classe)
+* [Les tableaux](#tableaux)
+* [Les classes](#classes)
 * [L'héritage](#heritage)
 * [Le polymorphisme](#polymorphisme)
 * [Modéliser ses objets grâce à UML](#uml)
@@ -660,7 +661,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 ![Celsius](Images/celsius.png)
 
 
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -927,7 +927,7 @@ parcourirTableau(tabInt);
 parcourirTableau(tabStr2);
 ```
 
-### Les classes
+### <a name="classes">Les classes</a>
 
 #### Définition :
 Une classe est un modèle de définition pour des objets ayant le même ensemble d'attributs, et le même ensemble d'opérations. A partir d'une classe on peut créer un ou plusieurs objets par instanciation ; chaque objet est une instance d'une seule classe.
@@ -951,7 +951,6 @@ Une classe est un modèle de définition pour des objets ayant le même ensemble
 
 <Modificateur de visibilité> = « public » ou « private »
 
-### <a name="classe">Votre première classe</a>
 Créons une classe « Ville ». Allez dans File > New > Class.
 
 ![Ville](Images/ville.png)

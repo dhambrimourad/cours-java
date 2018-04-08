@@ -927,7 +927,7 @@ parcourirTableau(tabInt);
 parcourirTableau(tabStr2);
 ```
 
-### Classes
+### Les classes
 
 #### Définition :
 Une classe est un modèle de définition pour des objets ayant le même ensemble d'attributs, et le même ensemble d'opérations. A partir d'une classe on peut créer un ou plusieurs objets par instanciation ; chaque objet est une instance d'une seule classe.
@@ -1058,7 +1058,6 @@ public class Ville {
 
 ### Les getters et les setters
 Un accesseur (getter) est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture, et un mutateur (setter) nous permettra d'en faire de même en écriture ! Grâce aux accesseurs, vous pourrez afficher les variables de vos objets, et grâce aux mutateurs, vous pourrez les modifier.
-
 
 ```java
 public class Ville {

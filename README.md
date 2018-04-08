@@ -1445,397 +1445,432 @@ Ce concept complète parfaitement celui de l'héritage. Nous pouvons le définir
 
 Dans notre exemple, vous avez vu qu'il suffisait d'utiliser la méthode <strong><i>« decrisToi() »</i></strong> sur un objet <strong><i>« Ville »</i></strong> ou sur un objet <strong><i>« Capitale »</i></strong>. On pourrait construire un tableau d'objets et appeler <strong><i>« decrisToi() »</i></strong> sans se soucier de son contenu : villes, capitales, ou les deux.
 
+```java
+//Définition d'un tableau de villes null
+Ville[] tableau = new Ville[6];
+        
+//Définition d'un tableau de noms de villes et un autre de nombres d'habitants
+String[] tab = {"Marseille", "lille", "caen", "lyon", "paris", "nantes"};
+int[] tab2 = {123456, 78456, 654987, 75832165, 1594, 213};
+         
+//Les trois premiers éléments du tableau seront des villes,
+//et le reste, des capitales
+for(int i = 0; i < 6; i++){
+  if (i <3){
+    Ville V = new Ville(tab[i], tab2[i], "france");
+    tableau[i] = V;
+  }
+         
+  else{
+    Capitale C = new Capitale(tab[i], tab2[i], "france", "la tour Eiffel");
+    tableau[i] = C;
+  }
+}
+                 
+//Il ne nous reste plus qu'à décrire tout notre tableau !
+for(Ville V : tableau){
+  System.out.println(V.decrisToi()+"\n");
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//D&amp;#xE9;finition d&amp;#x27;un tableau de villes null\nVille[] tableau = new Ville[6];\n        \n//D&amp;#xE9;finition d&amp;#x27;un tableau de noms de villes et un autre de nombres d&amp;#x27;habitants\nString[] tab = {&amp;#x22;Marseille&amp;#x22;, &amp;#x22;lille&amp;#x22;, &amp;#x22;caen&amp;#x22;, &amp;#x22;lyon&amp;#x22;, &amp;#x22;paris&amp;#x22;, &amp;#x22;nantes&amp;#x22;};\nint[] tab2 = {123456, 78456, 654987, 75832165, 1594, 213};\n         \n//Les trois premiers &amp;#xE9;l&amp;#xE9;ments du tableau seront des villes,\n//et le reste, des capitales\nfor(int i = 0; i &amp;#x3C; 6; i++){\n  if (i &amp;#x3C;3){\n    Ville V = new Ville(tab[i], tab2[i], &amp;#x22;france&amp;#x22;);\n    tableau[i] = V;\n  }\n         \n  else{\n    Capitale C = new Capitale(tab[i], tab2[i], &amp;#x22;france&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n    tableau[i] = C;\n  }\n}\n                 \n//Il ne nous reste plus qu&amp;#x27;&amp;#xE0; d&amp;#xE9;crire tout notre tableau !\nfor(Ville V : tableau){\n  System.out.println(V.decrisToi()+&amp;#x22;\\n&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Définition d'un tableau de villes null</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span>[] <span class="ace_identifier">tableau</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>[<span class="ace_constant ace_numeric">6</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Définition d'un tableau de noms de villes et un autre de nombres d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"Marseille"</span>, <span class="ace_string">"lille"</span>, <span class="ace_string">"caen"</span>, <span class="ace_string">"lyon"</span>, <span class="ace_string">"paris"</span>, <span class="ace_string">"nantes"</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span>[] <span class="ace_identifier">tab2</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">123456</span>, <span class="ace_constant ace_numeric">78456</span>, <span class="ace_constant ace_numeric">654987</span>, <span class="ace_constant ace_numeric">75832165</span>, <span class="ace_constant ace_numeric">1594</span>, <span class="ace_constant ace_numeric">213</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Les trois premiers éléments du tableau seront des villes,</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//et le reste, des capitales</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">6</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">if</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span><span class="ace_constant ace_numeric">3</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Ville</span> <span class="ace_identifier">V</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_identifier">tab</span>[<span class="ace_identifier">i</span>], <span class="ace_identifier">tab2</span>[<span class="ace_identifier">i</span>], <span class="ace_string">"france"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">tableau</span>[<span class="ace_identifier">i</span>] <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">V</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">else</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Capitale</span> <span class="ace_identifier">C</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>(<span class="ace_identifier">tab</span>[<span class="ace_identifier">i</span>], <span class="ace_identifier">tab2</span>[<span class="ace_identifier">i</span>], <span class="ace_string">"france"</span>, <span class="ace_string">"la tour Eiffel"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">tableau</span>[<span class="ace_identifier">i</span>] <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">C</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Il ne nous reste plus qu'à décrire tout notre tableau !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_identifier">Ville</span> <span class="ace_identifier">V</span> : <span class="ace_identifier">tableau</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">V</span>.<span class="ace_identifier">decrisToi</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+La figure suivante vous montre le résultat.
 
-<p>La figure suivante vous montre le résultat.</p>
-<img src="Images/polymorphisme.png" />
+![Polymorphisme](Images/polymorphisme.png)
 
-<p>Je n'ai utilisé que des objets <strong>Ville</strong> dans ma boucle : on appelle ceci la <strong>covariance des variables !</strong> Cela signifie qu'une variable objet peut contenir un objet qui hérite du type de cette variable. Dans notre cas, un objet de type <strong>Ville</strong> peut contenir un objet de type <strong>Capitale</strong>. Dans ce cas, on dit que Ville est la superclasse de Capitale. La covariance est efficace dans le cas où la classe héritant redéfinit certaines méthodes de sa superclasse.</p>
+Je n'ai utilisé que des objets <strong>Ville</strong> dans ma boucle : on appelle ceci la <strong>covariance des variables !</strong> Cela signifie qu'une variable objet peut contenir un objet qui hérite du type de cette variable. Dans notre cas, un objet de type <strong>Ville</strong> peut contenir un objet de type <strong>Capitale</strong>. Dans ce cas, on dit que Ville est la superclasse de Capitale. La covariance est efficace dans le cas où la classe héritant redéfinit certaines méthodes de sa superclasse.
 
-<p>Lorsque vous créez une classe (Ville, par exemple), celle-ci hérite, de façon tacite, de la classe <strong>« Object »</strong> présente dans Java.</p>
+Lorsque vous créez une classe (Ville, par exemple), celle-ci hérite, de façon tacite, de la classe <strong>« Object »</strong> présente dans Java.
 
-<p>La méthode de la classe <strong>« Object »</strong> la plus souvent redéfinie est <strong><i>toString()</i></strong> : elle retourne un String décrivant l'objet en question. Nous allons donc copier la procédure de la méthode <strong><i>decrisToi()</i></strong> dans une nouvelle méthode de la classe Ville : <strong><i>toString()</i></strong>. Voici son code :</p>
+La méthode de la classe <strong>« Object »</strong> la plus souvent redéfinie est <strong><i>toString()</i></strong> : elle retourne un String décrivant l'objet en question. Nous allons donc copier la procédure de la méthode <strong><i>decrisToi()</i></strong> dans une nouvelle méthode de la classe Ville : <strong><i>toString()</i></strong>. Voici son code :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public String toString(){\n  return &amp;#x22;\\t&amp;#x22;+this.nomVille+&amp;#x22; est une ville de &amp;#x22;+this.nomPays+&amp;#x22;, elle comporte : &amp;#x22;+this.nbreHabitants+&amp;#x22; =&amp;#x3E; elle est donc de cat&amp;#xE9;gorie : &amp;#x22;+this.categorie;\n  }&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">return</span> <span class="ace_string">"\t"</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nomVille</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" est une ville de "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nomPays</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">", elle comporte : "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">nbreHabitants</span><span class="ace_keyword ace_operator">+</span><span class="ace_string">" =&gt; elle est donc de catégorie : "</span><span class="ace_keyword ace_operator">+</span><span class="ace_keyword">this</span>.<span class="ace_identifier">categorie</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div></div></div></code></pre>
+```java
+public String toString(){
+  return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "+this.nbreHabitants+" => elle est donc de catégorie : "+this.categorie;
+}
+```
 
-<p>Nous faisons de même dans la classe Capitale:</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public String toString(){\n  String str = super.toString() + &amp;#x22;\\n \\t ==&amp;#x3E;&amp;#x3E;&amp;#x22; + this.monument + &amp;#x22; en est un monument&amp;#x22;;\n  return str;\n  }&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">super</span>.<span class="ace_identifier">toString</span>() <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"\n \t ==&gt;&gt;"</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">monument</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">" en est un monument"</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">return</span> <span class="ace_identifier">str</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div></div></div></code></pre>
+Nous faisons de même dans la classe Capitale:
 
-<p>Maintenant, testez ce code :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//D&amp;#xE9;finition d&amp;#x27;un tableau de villes null\nVille[] tableau = new Ville[6];\n        \n//D&amp;#xE9;finition d&amp;#x27;un tableau de noms de Villes et un autre de nombres d&amp;#x27;habitants\nString[] tab = {&amp;#x22;Marseille&amp;#x22;, &amp;#x22;lille&amp;#x22;, &amp;#x22;caen&amp;#x22;, &amp;#x22;lyon&amp;#x22;, &amp;#x22;paris&amp;#x22;, &amp;#x22;nantes&amp;#x22;};\nint[] tab2 = {123456, 78456, 654987, 75832165, 1594, 213};\n         \n//Les trois premiers &amp;#xE9;l&amp;#xE9;ments du tableau seront des Villes\n//et le reste des capitales\nfor(int i = 0; i &amp;#x3C; 6; i++){\n  if (i &amp;#x3C;3){\n    Ville V = new Ville(tab[i], tab2[i], &amp;#x22;france&amp;#x22;);\n    tableau[i] = V;\n  }\n         \n  else{\n    Capitale C = new Capitale(tab[i], tab2[i], &amp;#x22;france&amp;#x22;, &amp;#x22;la tour Eiffel&amp;#x22;);\n    tableau[i] = C;\n  }\n}\n                 \n//Il ne nous reste plus qu&amp;#x27;&amp;#xE0; d&amp;#xE9;crire tout notre tableau !\nfor(Object obj : tableau){\n  System.out.println(obj.toString()+&amp;#x22;\\n&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Définition d'un tableau de villes null</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span>[] <span class="ace_identifier">tableau</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>[<span class="ace_constant ace_numeric">6</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Définition d'un tableau de noms de Villes et un autre de nombres d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">String</span>[] <span class="ace_identifier">tab</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"Marseille"</span>, <span class="ace_string">"lille"</span>, <span class="ace_string">"caen"</span>, <span class="ace_string">"lyon"</span>, <span class="ace_string">"paris"</span>, <span class="ace_string">"nantes"</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span>[] <span class="ace_identifier">tab2</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_constant ace_numeric">123456</span>, <span class="ace_constant ace_numeric">78456</span>, <span class="ace_constant ace_numeric">654987</span>, <span class="ace_constant ace_numeric">75832165</span>, <span class="ace_constant ace_numeric">1594</span>, <span class="ace_constant ace_numeric">213</span>};
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Les trois premiers éléments du tableau seront des Villes</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//et le reste des capitales</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">6</span>; <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">if</span> (<span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span><span class="ace_constant ace_numeric">3</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Ville</span> <span class="ace_identifier">V</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_identifier">tab</span>[<span class="ace_identifier">i</span>], <span class="ace_identifier">tab2</span>[<span class="ace_identifier">i</span>], <span class="ace_string">"france"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">tableau</span>[<span class="ace_identifier">i</span>] <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">V</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">else</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Capitale</span> <span class="ace_identifier">C</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Capitale</span>(<span class="ace_identifier">tab</span>[<span class="ace_identifier">i</span>], <span class="ace_identifier">tab2</span>[<span class="ace_identifier">i</span>], <span class="ace_string">"france"</span>, <span class="ace_string">"la tour Eiffel"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">tableau</span>[<span class="ace_identifier">i</span>] <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">C</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Il ne nous reste plus qu'à décrire tout notre tableau !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">for</span>(<span class="ace_support ace_function">Object</span> <span class="ace_identifier">obj</span> : <span class="ace_identifier">tableau</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">obj</span>.<span class="ace_identifier">toString</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public String toString(){
+  String str = super.toString() + "\n \t ==>>" + this.monument + " en est un monument";
+  return str;
+}
+```
 
-<p><strong>Attention :</strong> si vous ne redéfinissez pas ou ne «&nbsp;polymorphez&nbsp;» pas la méthode d'une classe mère dans une classe fille (exemple de<code data-claire-semantic="text">toString()</code>), à l'appel de celle-ci avec un objet fille, c'est la méthode de la classe mère qui sera invoquée !</p>
+Maintenant, testez ce code :
 
-<p>Il existe encore un type de méthodes : le type <strong>« final »</strong>. Une méthode signée <strong>final</strong> est figée, vous ne pourrez jamais la redéfinir (la méthode <strong>getClass()</strong> de la classe <strong>Object</strong> est un exemple de ce type de méthode : vous ne pourrez pas la redéfinir).</p>
+```java
+//Définition d'un tableau de villes null
+Ville[] tableau = new Ville[6];
+        
+//Définition d'un tableau de noms de Villes et un autre de nombres d'habitants
+String[] tab = {"Marseille", "lille", "caen", "lyon", "paris", "nantes"};
+int[] tab2 = {123456, 78456, 654987, 75832165, 1594, 213};
+         
+//Les trois premiers éléments du tableau seront des Villes
+//et le reste des capitales
+for(int i = 0; i < 6; i++){
+  if (i <3){
+    Ville V = new Ville(tab[i], tab2[i], "france");
+    tableau[i] = V;
+  }
+         
+  else{
+    Capitale C = new Capitale(tab[i], tab2[i], "france", "la tour Eiffel");
+    tableau[i] = C;
+  }
+}
+                 
+//Il ne nous reste plus qu'à décrire tout notre tableau !
+for(Object obj : tableau){
+  System.out.println(obj.toString()+"\n");
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public final int maMethode(){\n  //M&amp;#xE9;thode ne pouvant pas &amp;#xEA;tre surcharg&amp;#xE9;e\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">final</span> <span class="ace_keyword">int</span> <span class="ace_identifier">maMethode</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Méthode ne pouvant pas être surchargée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+**Attention :** si vous ne redéfinissez pas ou ne «&nbsp;polymorphez&nbsp;» pas la méthode d'une classe mère dans une classe fille (exemple de<code data-claire-semantic="text">toString()</code>), à l'appel de celle-ci avec un objet fille, c'est la méthode de la classe mère qui sera invoquée !
 
-<p>Il existe aussi des classes déclarées <strong>final</strong>. Ces classes sont immuables, et vous ne pouvez donc pas faire hériter un objet d'une classe déclarée <strong>final</strong>.</p>
+Il existe encore un type de méthodes : le type **« final »**. Une méthode signée **final** est figée, vous ne pourrez jamais la redéfinir (la méthode **getClass()** de la classe **Object** est un exemple de ce type de méthode : vous ne pourrez pas la redéfinir).
 
-<h3><a name="uml">Modéliser ses objets grâce à UML</a></h3>
-<p>Avec UML, vous pouvez modéliser toutes les étapes du développement d'une application informatique, de sa conception à la mise en route, grâce à des diagrammes.</p>
+```java
+public final int maMethode(){
+  //Méthode ne pouvant pas être redéfinie
+}
+```
 
-<p>Il existe plusieurs outils de modélisation pour créer de tels diagrammes (PowerDesigner, ArgoUML, ...).</p>
+Il existe aussi des classes déclarées <strong>final</strong>. Ces classes sont immuables, et vous ne pouvez donc pas faire hériter un objet d'une classe déclarée <strong>final</strong>.
 
-<p>Avec ces outils, vous pouvez réaliser les différents diagrammes qu'UML vous propose :</p>
-<ul>
-  <li>Le diagramme de use case (cas d'utilisation) permet de déterminer les différents cas d'utilisation d'un programme informatique ;</li>
-  <li>Le diagramme de classes ; c'est de celui-là que nous allons nous servir. Il permet de modéliser des classes ainsi que les interactions entre elles ;</li>
-  <li>Les diagrammes de séquences, eux, permettent de visualiser le déroulement d'une application dans un contexte donné ;</li>
-  <li>et d'autres encore…</li>
-</ul>
+### <a name="uml">Modéliser ses objets grâce à UML</a>
+Avec UML, vous pouvez modéliser toutes les étapes du développement d'une application informatique, de sa conception à la mise en route, grâce à des diagrammes.
 
-<p>Voici un exemple de diagramme de use case décrivant le fonctionnement d'un guichet automatique de banque :</p>
-<img src="Images/case.png" />
+Il existe plusieurs outils de modélisation pour créer de tels diagrammes (PowerDesigner, ArgoUML, ...).
 
-<p>Ainsi que son diagramme de séquences :</p>
-<img src="Images/sequence.png" />
+Avec ces outils, vous pouvez réaliser les différents diagrammes qu'UML vous propose :
 
-<p>Voici une classe nommée <strong>ObjetA</strong> qui a comme attributs :</p>
-<ul>
-  <li>numero de type int ;</li>
-  <li>nom de type String ;</li>
-  <li>bool de type boolean.</li>
-</ul>
-<p>Ses méthodes sont :</p>
-<ul>
-  <li>getNom() qui retourne une chaîne de caractères ;</li>
-  <li>setNom() qui ne renvoie rien ;</li>
-  <li>afficher() qui renvoie également une chaîne de caractères.</li>
-</ul>
+* Le diagramme de use case (cas d'utilisation) permet de déterminer les différents cas d'utilisation d'un programme informatique ;
+* Le diagramme de classes ; c'est de celui-là que nous allons nous servir. Il permet de modéliser des classes ainsi que les interactions entre elles ;
+* Les diagrammes de séquences, eux, permettent de visualiser le déroulement d'une application dans un contexte donné ;</li>
+  <li>et d'autres encore…
 
-<img src="Images/objeta.png" />
+Voici un exemple de diagramme de use case décrivant le fonctionnement d'un guichet automatique de banque :
 
-<h3>Modéliser les liens entre les objets</h3>
-<p>Sur le diagramme représenté à la figure suivante, vous remarquez un deuxième objet qui dispose, lui aussi, de paramètres. <strong>ObjetB</strong> possède également les attributs et les méthodes de la classe <strong>ObjetA</strong>. C'est parce que la flèche qui relie nos deux objets signifie « extends ». En gros, vous pouvez lire ce diagramme comme suit : l'ObjetB hérite de l'ObjetA.</p>
+![UseCase](Images/case.png)
 
-<img src="Images/uml2.png" />
+Ainsi que son diagramme de séquences :
 
-<p>Dans l'exemple suivant, nous avons toujours notre héritage entre un objet A et un objet B, mais dans ce cas, l'ObjetA (et donc l'ObjetB) possède une variable de classe de type <strong>ObjetC</strong>, ainsi qu'une méthode dont le type de retour est <strong>ObjetC</strong>. Vous pouvez lire ce diagramme comme suit : l'ObjetA a un ObjetC.</p>
+![Sequence](Images/sequence.png)
 
-<img src="Images/uml3.png" />
+Voici une classe nommée <strong>ObjetA</strong> qui a comme attributs :
+* numero de type int ;
+* nom de type String ;
+* bool de type boolean.
 
-<p>Voici le code Java correspondant à ce diagramme.</p>
+Ses méthodes sont :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetA{\n  protected ObjetC obj = new ObjetC();\n   \n  public ObjetC getObject(){      \n    return obj;    \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetA</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_identifier">ObjetC</span> <span class="ace_identifier">obj</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ObjetC</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">ObjetC</span> <span class="ace_identifier">getObject</span>(){      
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">obj</span>;    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+* getNom() qui retourne une chaîne de caractères ;
+* setNom() qui ne renvoie rien ;
+* afficher() qui renvoie également une chaîne de caractères.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetB extends ObjetA{ \n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetB</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">ObjetA</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![Objet](Images/objeta.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetC{ \n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetC</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### Modéliser les liens entre les objets
+Sur le diagramme représenté à la figure suivante, vous remarquez un deuxième objet qui dispose, lui aussi, de paramètres. <strong>ObjetB</strong> possède également les attributs et les méthodes de la classe <strong>ObjetA</strong>. C'est parce que la flèche qui relie nos deux objets signifie « extends ». En gros, vous pouvez lire ce diagramme comme suit : l'ObjetB hérite de l'ObjetA.
 
-<img src="Images/uml4.png" />
+![UML2](Images/uml2.png)
 
-<p>Ce diagramme est identique au précédent, à l'exception de l'ObjetD. Nous devons le lire comme ceci : l'ObjetA est composé de plusieurs instances d'ObjetD. Vous pouvez d'ailleurs remarquer que la variable d'instance correspondante est de type tableau.</p>
+Dans l'exemple suivant, nous avons toujours notre héritage entre un objet A et un objet B, mais dans ce cas, l'ObjetA (et donc l'ObjetB) possède une variable de classe de type <strong>ObjetC</strong>, ainsi qu'une méthode dont le type de retour est <strong>ObjetC</strong>. Vous pouvez lire ce diagramme comme suit : l'ObjetA a un ObjetC.
 
-<p>Voici le code Java correspondant :</p>
+![UML3](Images/uml3.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetA{\n  protected ObjetC obj = new ObjetC();\n  protected ObjetD[] objD = new ObjetD[10];\n \n  public ObjetC getObject(){\n    return obj;\n  } \n  public ObjetD[] getObjectD(){\n    return objD;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetA</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_identifier">ObjetC</span> <span class="ace_identifier">obj</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ObjetC</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_identifier">ObjetD</span>[] <span class="ace_identifier">objD</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ObjetD</span>[<span class="ace_constant ace_numeric">10</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">ObjetC</span> <span class="ace_identifier">getObject</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">obj</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">ObjetD</span>[] <span class="ace_identifier">getObjectD</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">objD</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Voici le code Java correspondant à ce diagramme.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetB extends ObjetA{\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetB</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">ObjetA</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class ObjetA{
+  protected ObjetC obj = new ObjetC();
+   
+  public ObjetC getObject(){      
+    return obj;    
+  }
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetC{\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetC</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class ObjetB extends ObjetA{ 
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class ObjetD{\n\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ObjetD</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+}
+```
 
-<h3>Les packages</h3>
-<p>Le fonctionnement des packages est simple à comprendre : ce sont comme des dossiers permettant de ranger nos classes. Charger un package nous permet d'utiliser les classes qu'il contient. Pour créer un nouveau package, cliquez simplement sur cette icône comme à la figure suivante (vous pouvez aussi effectuer un clic droit puis <strong><i>New > Package</i></strong>).</p>
+```java
+public class ObjetC{ 
 
-<img src="Images/packages.png" />
-<img src="Images/packages1.png" />
+}
+```
 
-<h3><a name="abstraites">Les classes abstraites</a></h3>
-<p>Une classe abstraite est une classe que vous ne pouvez pas instancier. Imaginons que nous ayons une classe A déclarée abstraite. Voici un code qui ne compilera pas :</p>
+![UML4](Images/uml4.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test{\n  public static void main(String[] args){\n    A obj = new A(); //Erreur de compilation !  \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">A</span> <span class="ace_identifier">obj</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">A</span>(); <span class="ace_comment">//Erreur de compilation !  </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Ce diagramme est identique au précédent, à l'exception de l'ObjetD. Nous devons le lire comme ceci : l'ObjetA est composé de plusieurs instances d'ObjetD. Vous pouvez d'ailleurs remarquer que la variable d'instance correspondante est de type tableau.
 
-<h4>exemple</h4>
-<p>Imaginez que vous êtes en train de réaliser un programme qui gère différents types d'animaux.</p>
-<img src="Images/abstraite.png" />
-<p>Ce type de classe permet de définir des méthodes abstraites qui présentent une particularité : elle n'ont pas de corps ! En voici un exemple :</p>
+Voici le code Java correspondant :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;abstract class Animal{\n  abstract void manger(); //Une m&amp;#xE9;thode abstraite\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">abstract</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Animal</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">abstract</span> <span class="ace_keyword">void</span> <span class="ace_identifier">manger</span>(); <span class="ace_comment">//Une méthode abstraite</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class ObjetA{
+  protected ObjetC obj = new ObjetC();
+  protected ObjetD[] objD = new ObjetD[10];
+ 
+  public ObjetC getObject(){
+    return obj;
+  } 
+  public ObjetD[] getObjectD(){
+    return objD;
+  }
+}
+```
 
-<p>Une méthode abstraite ne peut exister que dans une classe abstraite. Si, dans une classe, vous avez une méthode déclarée abstraite, vous devez déclarer cette classe comme étant abstraite.</p>
+```java
+public class ObjetB extends ObjetA{
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test{\n  public static void main(String args[]){\n    Animal loup = new Loup();\n    Animal chien = new Chien();\n    loup.manger();\n    chien.crier(); \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">args</span>[]){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Animal</span> <span class="ace_identifier">loup</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Loup</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Animal</span> <span class="ace_identifier">chien</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Chien</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">loup</span>.<span class="ace_identifier">manger</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">chien</span>.<span class="ace_identifier">crier</span>(); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+}
+```
 
-<p>Nous allons ajouter des morceaux de code à nos classes.</p>
+```java
+public class ObjetC{
 
-<ul>
-  <li>Nos objets seront tous de couleur et de poids différents. Nos classes auront donc le droit de modifier ceux-ci.</li>
-  <li>Nous partons du principe que tous nos animaux mangent de la viande. La méthode manger() sera donc définie dans la classe Animal.</li>
-  <li>Idem pour la méthode boire(). Ils boiront tous de l'eau.</li>
-  <li>Ils ne crieront pas et ne se déplaceront pas de la même manière. Nous emploierons donc des méthodes polymorphes et déclarerons les méthodes deplacement() et crier() abstraites dans la classe Animal.</li>
-</ul>
+}
+```
 
-<img src="Images/abstraite2.png" />
-<img src="Images/abstraite3.png" />
+```java
+public class ObjetD{
 
-<h5>Animal.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;abstract class Animal {\n\n  protected String couleur;\n  protected int poids;\n\n  protected void manger(){\n    System.out.println(&amp;#x22;Je mange de la viande.&amp;#x22;);\n  }\n        \n  protected void boire(){\n    System.out.println(&amp;#x22;Je bois de l&amp;#x27;eau !&amp;#x22;);\n  }\n        \n  abstract void deplacement();\n        \n  abstract void crier();\n        \n  public String toString(){\n    String str = &amp;#x22;Je suis un objet de la &amp;#x22; + this.getClass() + &amp;#x22;, je suis &amp;#x22; + this.couleur + &amp;#x22;, je p&amp;#xE8;se &amp;#x22; + this.poids;\n    return str;\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">abstract</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Animal</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">void</span> <span class="ace_identifier">manger</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je mange de la viande."</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">protected</span> <span class="ace_keyword">void</span> <span class="ace_identifier">boire</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je bois de l'eau !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">abstract</span> <span class="ace_keyword">void</span> <span class="ace_identifier">deplacement</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">abstract</span> <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span> <span class="ace_identifier">str</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_string">"Je suis un objet de la "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">getClass</span>() <span class="ace_keyword ace_operator">+</span> <span class="ace_string">", je suis "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">", je pèse "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">str</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+}
+```
 
-<h5>Felin.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public abstract class Felin extends Animal {\n  void deplacement() {\n    System.out.println(&amp;#x22;Je me d&amp;#xE9;place seul !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">abstract</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Felin</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Animal</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">deplacement</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je me déplace seul !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Les packages
+Ce sont des dossiers permettant de ranger nos classes. Charger un package nous permet d'utiliser les classes qu'il contient. Pour créer un nouveau package, cliquez simplement sur cette icône comme à la figure suivante (vous pouvez aussi effectuer un clic droit puis <strong><i>New > Package</i></strong>).
 
-<h5>Canin.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public abstract class Canin extends Animal {\n  void deplacement() {\n    System.out.println(&amp;#x22;Je me d&amp;#xE9;place en meute !&amp;#x22;);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">abstract</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Canin</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Animal</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">deplacement</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je me déplace en meute !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![Packages](Images/packages.png)
+![Packages1](Images/packages1.png)
 
-<h5>Chien.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Chien extends Canin {\n \n  public Chien(){\n\n  }\n\n  public Chien(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }       \n\n  void crier() {\n    System.out.println(&amp;#x22;J&amp;#x27;aboie sans raison !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Chien</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Canin</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chien</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chien</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"J'aboie sans raison !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### <a name="abstraites">Les classes abstraites</a>
+Une classe abstraite est une classe que vous ne pouvez pas instancier. Imaginons que nous ayons une classe A déclarée abstraite. Voici un code qui ne compilera pas :
 
-<h5>Loup.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Loup extends Canin {\n \n  public Loup(){\n                \n  }\n\n  public Loup(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }       \n \n  void crier() {\n    System.out.println(&amp;#x22;Je hurle &amp;#xE0; la Lune en faisant ouhouh !&amp;#x22;); \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Loup</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Canin</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Loup</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Loup</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je hurle à la Lune en faisant ouhouh !"</span>); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class Test{
+  public static void main(String[] args){
+    A obj = new A(); //Erreur de compilation !  
+  }
+}
+```
 
-<h5>Lion.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Lion extends Felin {\n \n  public Lion(){\n\n  }\n\n  public Lion(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }       \n \n  void crier() {\n    System.out.println(&amp;#x22;Je rugis dans la savane !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Lion</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Felin</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Lion</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Lion</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je rugis dans la savane !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+#### Exemple
+Imaginez que vous êtes en train de réaliser un programme qui gère différents types d'animaux.
 
-<h5>Tigre.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Tigre extends Felin {\n \n  public Tigre(){\n\n  }\n  public Tigre(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }\n        \n  void crier() {\n    System.out.println(&amp;#x22;Je grogne tr&amp;#xE8;s fort !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Tigre</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Felin</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Tigre</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Tigre</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je grogne très fort !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![Abstraite](Images/abstraite.png)
 
-<h5>Chat.java</h5>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Chat extends Felin {\n \n  public Chat(){\n\n  }\n  public Chat(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }\n        \n  void crier() {\n    System.out.println(&amp;#x22;Je miaule sur les toits !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Chat</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Felin</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chat</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chat</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je miaule sur les toits !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Ce type de classe permet de définir des méthodes abstraites qui présentent une particularité : elle n'ont pas de corps ! En voici un exemple :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test { \n  public static void main(String[] args) {\n    Loup l = new Loup(&amp;#x22;Gris bleut&amp;#xE9;&amp;#x22;, 20);\n    l.boire();\n    l.manger();\n    l.deplacement();\n    l.crier();\n    System.out.println(l.toString());\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> { 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Loup</span> <span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Loup</span>(<span class="ace_string">"Gris bleuté"</span>, <span class="ace_constant ace_numeric">20</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">boire</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">manger</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">deplacement</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">crier</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">l</span>.<span class="ace_identifier">toString</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+abstract class Animal{
+  abstract void manger(); //Une méthode abstraite
+}
+```
 
-<img src="Images/abstraite4.png" />
+Une méthode abstraite ne peut exister que dans une classe abstraite. Si, dans une classe, vous avez une méthode déclarée abstraite, vous devez déclarer cette classe comme étant abstraite.
 
-<p>Dans cet exemple, nous avons un objet Loup :</p>
-<ul>
-  <li>À l'appel de la méthode boire() : l'objet appelle la méthode de la classe Animal.</li>
-  <li>À l'appel de la méthode manger() : idem.</li>
-  <li>À l'appel de la méthode toString() : idem.</li>
-  <li>À l'appel de la méthode deplacement() : c'est la méthode de la classe Canin qui est invoquée ici.</li>
-  <li>À l'appel de la méthode crier() : c'est la méthode de la classe Loup qui est appelée.</li>
-</ul>
+```java
+public class Test{
+  public static void main(String args[]){
+    Animal loup = new Loup();
+    Animal chien = new Chien();
+    loup.manger();
+    chien.crier(); 
+  }
+}
+```
 
-<h3><a name="interfaces">Les interfaces</a></h3>
+Nous allons ajouter des morceaux de code à nos classes.
 
-<p>L'héritage multiple étant interdit en Java, pour y remédier nous faisons appel aux interfaces. Ces dernières permettent de créer un nouveau supertype ; on peut même en ajouter autant que l'on le veut dans une seule classe. Une interface n'est rien d'autre qu'une classe 100 % abstraite.</p>
+* Nos objets seront tous de couleur et de poids différents. Nos classes auront donc le droit de modifier ceux-ci.
+* Nous partons du principe que tous nos animaux mangent de la viande. La méthode manger() sera donc définie dans la classe Animal.
+* Idem pour la méthode boire(). Ils boiront tous de l'eau.
+* Ils ne crieront pas et ne se déplaceront pas de la même manière. Nous emploierons donc des méthodes polymorphes et déclarerons les méthodes deplacement() et crier() abstraites dans la classe Animal.
+
+![Abstraite2](Images/abstraite2.png)
+![Abstraite3](Images/abstraite3.png)
+
+##### Animal.java
+
+```java
+abstract class Animal {
+
+  protected String couleur;
+  protected int poids;
+
+  protected void manger(){
+    System.out.println("Je mange de la viande.");
+  }
+        
+  protected void boire(){
+    System.out.println("Je bois de l'eau !");
+  }
+        
+  abstract void deplacement();
+        
+  abstract void crier();
+        
+  public String toString(){
+    String str = "Je suis un objet de la " + this.getClass() + ", je suis " + this.couleur + ", je pèse " + this.poids;
+    return str;
+  }        
+}
+```
+
+##### Felin.java
+
+```java
+public abstract class Felin extends Animal {
+  void deplacement() {
+    System.out.println("Je me déplace seul !");
+  } 
+}
+```
+
+##### Canin.java
+
+```java
+public abstract class Canin extends Animal {
+  void deplacement() {
+    System.out.println("Je me déplace en meute !");
+  }
+}
+```
+
+##### Chien.java
+
+```java
+public class Chien extends Canin {
+ 
+  public Chien(){
+
+  }
+
+  public Chien(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }       
+
+  void crier() {
+    System.out.println("J'aboie sans raison !");
+  } 
+}
+```
+
+##### Loup.java
+
+```java
+public class Loup extends Canin {
+ 
+  public Loup(){
+                
+  }
+
+  public Loup(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }       
+ 
+  void crier() {
+    System.out.println("Je hurle à la Lune !"); 
+  }
+}
+```
+
+##### Lion.java
+
+```java
+public class Lion extends Felin {
+ 
+  public Lion(){
+
+  }
+
+  public Lion(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }       
+ 
+  void crier() {
+    System.out.println("Je rugis dans la savane !");
+  } 
+}
+```
+
+##### Tigre.java
+
+```java
+public class Tigre extends Felin {
+ 
+  public Tigre(){
+
+  }
+  public Tigre(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }
+        
+  void crier() {
+    System.out.println("Je grogne très fort !");
+  } 
+}
+```
+
+##### Chat.java
+
+```java
+public class Chat extends Felin {
+ 
+  public Chat(){
+
+  }
+  public Chat(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }
+        
+  void crier() {
+    System.out.println("Je miaule sur les toits !");
+  } 
+}
+```
+
+Et voici le code pour tester nos classes :
+
+```java
+public class Test { 
+  public static void main(String[] args) {
+    Loup l = new Loup("Gris bleuté", 20);
+    l.boire();
+    l.manger();
+    l.deplacement();
+    l.crier();
+    System.out.println(l.toString());
+  } 
+}
+```
+
+![Abstraite4](Images/abstraite4.png)
+
+Dans cet exemple, nous avons un objet Loup :
+* À l'appel de la méthode boire() : l'objet appelle la méthode de la classe Animal.
+* À l'appel de la méthode manger() : idem.
+* À l'appel de la méthode toString() : idem.
+* À l'appel de la méthode deplacement() : c'est la méthode de la classe Canin qui est invoquée ici.
+* À l'appel de la méthode crier() : c'est la méthode de la classe Loup qui est appelée.
+
+### <a name="interfaces">Les interfaces</a>
+
+L'héritage multiple étant interdit en Java, pour y remédier nous faisons appel aux interfaces. Ces dernières permettent de créer un nouveau supertype ; on peut même en ajouter autant que l'on le veut dans une seule classe. Une interface n'est rien d'autre qu'une classe 100 % abstraite.
+
+
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public interface I{ \n  public void A();\n  public String B(); \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">interface</span> <span class="ace_identifier">I</span>{ 
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">A</span>();

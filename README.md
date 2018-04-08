@@ -660,6 +660,7 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
+<!--
 
 ### <a name="tableaux">Tableaux à une dimension</a>
 
@@ -1992,8 +1993,6 @@ public class Test {
   
 }
 ```
-
-<!--
 
 ### <a name="exceptions">Les exceptions</a>
 

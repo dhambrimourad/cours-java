@@ -1381,7 +1381,7 @@ public class Rectangle extends Forme {
 
 En revanche, la classe **Carre** peut bénéficier de la classe **Rectangle** et ne nécessite pas la réécriture de ces méthodes si celles-ci conviennent à la sous-classe. Toutes les méthodes et variables de la classe Rectangle ne sont néanmoins pas accessibles dans la classe Carre. Pour qu’un attribut puisse être utilisé dans une sous-classe, il faut que son type d’accès soit **public** ou **protected**.
 
-#### Redéfinition
+#### La redéfinition de méthodes
 
 L’héritage intégral des attributs de la classe Rectangle pose deux problèmes :
 1. il faut que chaque carré ait une longueur et une largeur égales ;
@@ -1409,6 +1409,7 @@ public class Carre extends Rectangle {
 }
 ```
 
+#### Revenons à notre classe « Ville »
 Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !
 
 ```java

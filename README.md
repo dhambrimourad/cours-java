@@ -660,8 +660,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -1345,6 +1343,72 @@ Vous venez de créer un objet dont les variables sont protégées de l'extérieu
 En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.
 
 ### <a name="heritage">L'héritage</a>
+L’idée principale de l’héritage est d’organiser les classes de manière hiérarchique. La relation d’héritage est unidirectionnelle et, si une classe B hérite d’une classe A, on dira que B est une sousclasse de A. Cette notion de sous-classe signifie que la classe B est un cas particulier de la classe A et donc que les objets instanciant la classe B instancient également la classe A.
+
+![Forme](Images/forme.png)
+
+Pour le moment, nous considérerons la classe Forme comme vide (c’est-à-dire sans aucune variable ni méthode) et nous nous intéressons plus particulièrement aux classes Rectangle et Carre.
+
+La classe Rectangle héritant d’une classe vide, elle ne peut profiter d’aucun de ses attributs et doit définir toutes ses variables et méthodes. Une relation d’héritage se définit en Java par le mot-clé extends utilisé comme dans l’exemple suivant :
+
+```java
+public class Rectangle extends Forme {
+    private int largeur ;
+    private int longueur ;
+    
+    public Rectangle(int x, int y) {
+        this.largeur = x ;
+        this.longueur = y ;
+    }
+    
+    public int getLargeur() {
+        return this.largeur ;
+    }
+    
+    public int getLongueur() {
+        return this.longueur ;
+    }
+    
+    public int surface() {
+        return this.longueur * this.largeur ;
+    }
+    
+    public void affiche() {
+        System.out.println(”rectangle ” + longueur + ”x” + largeur);
+    }
+}
+```
+
+En revanche, la classe **Carre** peut bénéficier de la classe **Rectangle** et ne nécessite pas la réécriture de ces méthodes si celles-ci conviennent à la sous-classe. Toutes les méthodes et variables de la classe Rectangle ne sont néanmoins pas accessibles dans la classe Carre. Pour qu’un attribut puisse être utilisé dans une sous-classe, il faut que son type d’accès soit **public** ou **protected**.
+
+#### Redéfinition
+
+L’héritage intégral des attributs de la classe Rectangle pose deux problèmes :
+1. il faut que chaque carré ait une longueur et une largeur égales ;
+2. la méthode affiche écrit le mot « rectangle » en début de chaîne. Il serait souhaitable que ce soit « carré » qui s’affiche.
+
+Pour résoudre le premier problème, il faut écrire un constructeur spécifique pour **Carre** qui ne prend qu’un paramètre qui sera affecté à la longueur et à la largeur. Pour attribuer une valeur à ces variables (qui sont privées), le constructeur de **Carre** doit faire appel au constructeur de **Rectangle** en utilisant le mot-clé **super** qui fait appel au constructeur de la classe supérieure comme suit :
+
+```java
+public Carre(int cote) {
+    super(cote,cote);
+}
+```
+
+Le second problème peut être résolu par une redéfinition de méthode. On dit qu’une méthode d’une sous-classe redéfinit une méthode de sa classe supérieure, si elles ont la même signature mais que le traitement effectué est ré-écrit dans la sous-classe. Voici le code de la classe **Carre** où sont résolus les deux problèmes soulevés :
+
+```java
+public class Carre extends Rectangle {
+    public Carre(int cote) {
+        super(cote, cote);
+    }
+    
+    public void affiche() {
+        System.out.println(”carré ” + this.getLongueur());
+    }
+}
+```
+
 Nous allons créer une nouvelle classe, nommée « Capitale », héritée de « Ville ». Les objets « Capitale » auront tous les attributs et toutes les méthodes associés aux objets « Ville » !
 
 ```java
@@ -1370,7 +1434,7 @@ public class Capitale extends Ville{
 }
 ```
 
-Vous allez avoir une erreur de compilation ! Dans notre classe <strong>« Capitale »</strong>, nous ne pouvons pas utiliser directement les attributs de la classe <strong>« Ville »</strong> qui sont déclarées <strong>« private »</strong>. C'est ici que le nouveau mot clé <strong>« protected »</strong> fait son entrée. Seules les méthodes et les variables déclarées <strong>« public »</strong> ou <strong>« protected »</strong> peuvent être utilisées dans une classe héritée.
+Vous allez avoir une erreur de compilation ! Dans notre classe **« Capitale »**, nous ne pouvons pas utiliser directement les attributs de la classe **« Ville »** qui sont déclarées **« private »**. Seules les méthodes et les variables déclarées **« public »** ou **« protected »** peuvent être utilisées dans une classe héritée.
 
 ```java
 public class Ville {
@@ -1993,6 +2057,8 @@ public class Test {
   
 }
 ```
+
+<!--
 
 ### <a name="exceptions">Les exceptions</a>
 

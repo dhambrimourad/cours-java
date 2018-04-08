@@ -659,7 +659,7 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
+
 
 ### <a name="tableaux">Tableaux à une dimension</a>
 
@@ -1960,11 +1960,11 @@ Dans notre exemple, vous avez vu qu'il suffisait d'utiliser la méthode <strong>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
 </div></div></div></code></pre>
 
+<!--
 
+### <a name="exceptions">Les exceptions</a>
 
-<h3><a name="exceptions">Les exceptions</a></h3>
-
-<p>Java contient une classe nommée <stromg><i>Exception</i></strong> dans laquelle sont répertoriés différents cas d'erreur. La division par zéro en fait partie ! Si vous créez un nouveau projet avec seulement la classe main et y mettez le code suivant :</p>
+Java contient une classe nommée <stromg><i>Exception</i></strong> dans laquelle sont répertoriés différents cas d'erreur. La division par zéro en fait partie ! Si vous créez un nouveau projet avec seulement la classe main et y mettez le code suivant :
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int j = 20, i = 0;\nSystem.out.println(j/i);\nSystem.out.println(&amp;#x22;bonjour tout le monde !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">20</span>, <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">j</span>/<span class="ace_identifier">i</span>);

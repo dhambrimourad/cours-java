@@ -1701,7 +1701,6 @@ Nous allons ajouter des morceaux de code à nos classes.
 
 ```java
 abstract class Animal {
-
   protected String couleur;
   protected int poids;
 
@@ -1720,7 +1719,7 @@ abstract class Animal {
   public String toString(){
     String str = "Je suis un objet de la " + this.getClass() + ", je suis " + this.couleur + ", je pèse " + this.poids;
     return str;
-  }        
+  }  
 }
 ```
 
@@ -1748,7 +1747,6 @@ public abstract class Canin extends Animal {
 
 ```java
 public class Chien extends Canin {
- 
   public Chien(){
 
   }
@@ -1768,7 +1766,6 @@ public class Chien extends Canin {
 
 ```java
 public class Loup extends Canin {
- 
   public Loup(){
                 
   }
@@ -1788,7 +1785,6 @@ public class Loup extends Canin {
 
 ```java
 public class Lion extends Felin {
- 
   public Lion(){
 
   }
@@ -1800,7 +1796,7 @@ public class Lion extends Felin {
  
   void crier() {
     System.out.println("Je rugis dans la savane !");
-  } 
+  }  
 }
 ```
 
@@ -1808,7 +1804,6 @@ public class Lion extends Felin {
 
 ```java
 public class Tigre extends Felin {
- 
   public Tigre(){
 
   }
@@ -1827,7 +1822,6 @@ public class Tigre extends Felin {
 
 ```java
 public class Chat extends Felin {
- 
   public Chat(){
 
   }
@@ -1870,130 +1864,136 @@ Dans cet exemple, nous avons un objet Loup :
 
 L'héritage multiple étant interdit en Java, pour y remédier nous faisons appel aux interfaces. Ces dernières permettent de créer un nouveau supertype ; on peut même en ajouter autant que l'on le veut dans une seule classe. Une interface n'est rien d'autre qu'une classe 100 % abstraite.
 
+```java
+public interface I{ 
+  public void A();
+  public String B(); 
+}
+```
 
+```java
+public interface I2{ 
+  public void C();
+  public String D(); 
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public interface I{ \n  public void A();\n  public String B(); \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">interface</span> <span class="ace_identifier">I</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">A</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">B</span>(); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class X implements I{
+  public void A(){
+    //…
+  } 
+  public String B(){
+    //…
+  }
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public interface I2{ \n  public void C();\n  public String D(); \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">interface</span> <span class="ace_identifier">I2</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">C</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">D</span>(); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public class X implements I, I2{
+  public void A(){
+    //…
+  } 
+  public String B(){
+    //…
+  } 
+  public void C(){
+    //…
+  } 
+  public String D(){
+    //…
+  }
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class X implements I{\n  public void A(){\n    //&amp;#x2026;\n  } \n  public String B(){\n    //&amp;#x2026;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">X</span> <span class="ace_keyword">implements</span> <span class="ace_identifier">I</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">A</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">B</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Le polymorphisme vous permet de faire ceci :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class X implements I, I2{\n  public void A(){\n    //&amp;#x2026;\n  } \n  public String B(){\n    //&amp;#x2026;\n  } \n  public void C(){\n    //&amp;#x2026;\n  } \n  public String D(){\n    //&amp;#x2026;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">X</span> <span class="ace_keyword">implements</span> <span class="ace_identifier">I</span>, <span class="ace_identifier">I2</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">A</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">B</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">C</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">D</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//…</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public static void main(String[] args){
+  //Avec cette référence, vous pouvez utiliser les méthodes de l'interface I
+  I var = new X();
+  //Avec cette référence, vous pouvez utiliser les méthodes de l'interface I2
+  I2 var2 = new X();
+  var.A();
+  var2.C();   
+}
+```
 
-<p>Le polymorphisme vous permet de faire ceci :</p>
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args){\n  //Avec cette r&amp;#xE9;f&amp;#xE9;rence, vous pouvez utiliser les m&amp;#xE9;thodes de l&amp;#x27;interface I\n  I var = new X();\n  //Avec cette r&amp;#xE9;f&amp;#xE9;rence, vous pouvez utiliser les m&amp;#xE9;thodes de l&amp;#x27;interface I2\n  I2 var2 = new X();\n  var.A();\n  var2.C();   \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Avec cette référence, vous pouvez utiliser les méthodes de l'interface I</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">I</span> <span class="ace_identifier">var</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">X</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_comment">//Avec cette référence, vous pouvez utiliser les méthodes de l'interface I2</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">I2</span> <span class="ace_identifier">var2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">X</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">var</span>.<span class="ace_identifier">A</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">var2</span>.<span class="ace_identifier">C</span>();   
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Implémentation de l'interface ChienDresse
 
-<h4>Implémentation de l'interface SuperChien</h4>
-<ul>
-  <li>Nous voulons que nos chiens puissent être amicaux ;</li>
-  <li>Nous voulons définir un supertype pour utiliser le polymorphisme ;</li>
-  <li>Nous voulons pouvoir continuer à utiliser nos objets comme avant.</li>
-</ul>
-<p>Nous allons donc créer l'interface SuperChien pour ensuite l'implémenter dans notre objet Chien.</p>
+* Nous voulons que nos chiens puissent être amicaux ;
+* Nous voulons définir un supertype pour utiliser le polymorphisme ;
+* Nous voulons pouvoir continuer à utiliser nos objets comme avant.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public interface SuperChien{\n  public void saluer();\n  public void sauter();\n  public void faireLeBeau();\n \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">interface</span> <span class="ace_identifier">SuperChien</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">saluer</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">sauter</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">faireLeBeau</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Nous allons donc créer l'interface SuperChien pour ensuite l'implémenter dans notre objet Chien.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Chien extends Canin implements SuperChien {\n \n  public Chien(){\n\n  }\n  public Chien(String couleur, int poids){\n    this.couleur = couleur;\n    this.poids = poids;\n  }                \n\n  void crier() {\n    System.out.println(&amp;#x22;J&amp;#x27;aboie sans raison !&amp;#x22;);\n  }        \n\n  public void saluer() {\n    System.out.println(&amp;#x22;Je salue comme un homme !&amp;#x22;);               \n  }\n\n  public void faireLeBeau() {\n    System.out.println(&amp;#x22;Je fais le beau !&amp;#x22;);\n  }\n\n  public void sauter() {\n    System.out.println(&amp;#x22;Je peux sauter tres haut !&amp;#x22;);\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Chien</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">Canin</span> <span class="ace_keyword">implements</span> <span class="ace_identifier">SuperChien</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chien</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Chien</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">couleur</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">poids</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">couleur</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">couleur</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">poids</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">poids</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">void</span> <span class="ace_identifier">crier</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"J'aboie sans raison !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">saluer</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je salue comme un homme !"</span>);               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">faireLeBeau</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je fais le beau !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">sauter</span>() {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je peux sauter tres haut !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public interface ChienDresse {
+  public void saluer();
+  public void sauter();
+  public void faireLeBeau();
+}
+```
 
-<p>Voici un code que vous pouvez utiliser pour tester le polymorphisme de notre implémentation :</p>
+```java
+public class Chien extends Canin implements ChienDresse {
+  public Chien(){
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class Test {\n \n  public static void main(String[] args) {\n\n    //Les m&amp;#xE9;thodes d&amp;#x27;un chien \n    Chien c = new Chien(&amp;#x22;Gris bleut&amp;#xE9;&amp;#x22;, 20);\n    c.boire();\n    c.manger();\n    c.deplacement();\n    c.crier();\n    System.out.println(c.toString());\n&amp;#x9;&amp;#x9;&amp;#x9;\n    System.out.println(&amp;#x22;--------------------------------------------&amp;#x22;);\n    //Les m&amp;#xE9;thodes de l&amp;#x27;interface\n    c.saluer();\n    c.faireLeBeau();\n    c.sauter();\n&amp;#x9;&amp;#x9;\n    System.out.println(&amp;#x22;--------------------------------------------&amp;#x22;);\n    //Utilisons le polymorphisme de notre interface\n    SuperChien r = new Chien();\n    r.faireLeBeau();\n    r.saluer();\n    r.sauter();\n  } \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Les méthodes d'un chien </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Chien</span> <span class="ace_identifier">c</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Chien</span>(<span class="ace_string">"Gris bleuté"</span>, <span class="ace_constant ace_numeric">20</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">boire</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">manger</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">deplacement</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">crier</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">c</span>.<span class="ace_identifier">toString</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"--------------------------------------------"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Les méthodes de l'interface</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">saluer</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">faireLeBeau</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">c</span>.<span class="ace_identifier">sauter</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"--------------------------------------------"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Utilisons le polymorphisme de notre interface</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">SuperChien</span> <span class="ace_identifier">r</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Chien</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">r</span>.<span class="ace_identifier">faireLeBeau</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">r</span>.<span class="ace_identifier">saluer</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">r</span>.<span class="ace_identifier">sauter</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+  }
+  
+  public Chien(String couleur, int poids){
+    this.couleur = couleur;
+    this.poids = poids;
+  }                
+
+  void crier() {
+    System.out.println("J'aboie sans raison !");
+  }        
+
+  public void saluer() {
+    System.out.println("Je salue comme un homme !");               
+  }
+
+  public void faireLeBeau() {
+    System.out.println("Je fais le beau !");
+  }
+
+  public void sauter() {
+    System.out.println("Je peux sauter tres haut !");
+  } 
+}
+```
+
+Voici un code que vous pouvez utiliser pour tester le polymorphisme de notre implémentation :
+
+```java
+public class Test {
+ 
+  public static void main(String[] args) {
+    //Les méthodes d'un chien 
+    Chien c = new Chien("Gris bleuté", 20);
+    c.boire();
+    c.manger();
+    c.deplacement();
+    c.crier();
+    System.out.println(c.toString());
+            
+    System.out.println("--------------------------------------------");
+    //Les méthodes de l'interface
+    c.saluer();
+    c.faireLeBeau();
+    c.sauter();
+        
+    System.out.println("--------------------------------------------");
+    //Utilisons le polymorphisme de notre interface
+    ChienDresse r = new Chien();
+    r.faireLeBeau();
+    r.saluer();
+    r.sauter();
+  } 
+  
+}
+```
 
 <!--
 

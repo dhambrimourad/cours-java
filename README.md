@@ -2063,579 +2063,608 @@ public class Test {
 
 Java contient une classe nommée <stromg><i>Exception</i></strong> dans laquelle sont répertoriés différents cas d'erreur. La division par zéro en fait partie ! Si vous créez un nouveau projet avec seulement la classe main et y mettez le code suivant :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;int j = 20, i = 0;\nSystem.out.println(j/i);\nSystem.out.println(&amp;#x22;bonjour tout le monde !&amp;#x22;);&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">int</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">20</span>, <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">j</span>/<span class="ace_identifier">i</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour tout le monde !"</span>);</div></div></div></code></pre>
+```java
+int j = 20, i = 0;
+System.out.println(j/i);
+System.out.println("bonjour tout le monde !");
+```
 
-<p>Vous verrez apparaître un message d'erreur Java comme celui de la figure suivante.</p>
-<img src="Images/exception.png" />
-<p>Nous savons donc maintenant qu'une division par zéro est une ArithmeticException. Nous allons pouvoir la capturer, avec un bloc <stromg><i>try{…}catch{…}</i></stromg>, puis réaliser un traitement en conséquence.</p>
+Vous verrez apparaître un message d'erreur Java comme celui de la figure suivante.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public static void main(String[] args) {\n                \n  int j = 20, i = 0;\n  try {\n    System.out.println(j/i);\n  } catch (ArithmeticException e) {\n    System.out.println(&amp;#x22;Division par z&amp;#xE9;ro !&amp;#x22;);\n  }\n  System.out.println(&amp;#x22;bonjour tout le monde !&amp;#x22;);\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">int</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">20</span>, <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">j</span>/<span class="ace_identifier">i</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">ArithmeticException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Division par zéro !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"bonjour tout le monde !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![Exception](Images/exception.png)
 
-<h3>Les exceptions personnalisées</h3>
-<p>Nous allons perfectionner un peu la gestion de nos objets Ville et Capitale. On se propose de mettre en œuvre une exception personnalisée afin d'interdire l'instanciation d'un objet Ville ou Capitale présentant un nombre négatif d'habitants.</p>
+Nous savons donc maintenant qu'une division par zéro est une ArithmeticException. Nous allons pouvoir la capturer, avec un bloc <stromg><i>try{…}catch{…}</i></stromg>, puis réaliser un traitement en conséquence.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;class NombreHabitantException extends Exception{ \n  public NombreHabitantException(){\n    System.out.println(&amp;#x22;Vous essayez d&amp;#x27;instancier une classe Ville avec un nombre d&amp;#x27;habitants n&amp;#xE9;gatif !&amp;#x22;);\n  }  \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">class</span> <span class="ace_identifier">NombreHabitantException</span> <span class="ace_keyword">extends</span> <span class="ace_support ace_function">Exception</span>{ 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">NombreHabitantException</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Vous essayez d'instancier une classe Ville avec un nombre d'habitants négatif !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public static void main(String[] args) {
+  int j = 20, i = 0;
+  try {
+    System.out.println(j/i);
+  } catch (ArithmeticException e) {
+    System.out.println("Division par zéro !");
+  }
+  System.out.println("bonjour tout le monde !");
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public Ville(String pNom, int pNbre, String pPays) \n  throws  NombreHabitantException\n  {  \n    if(pNbre &amp;#x3C; 0)\n      throw new NombreHabitantException();\n    else\n    {\n      nbreInstance++;  \n      nbreInstanceBis++;\n\n      nomVille = pNom;\n      nomPays = pPays;\n      nbreHabitant = pNbre;\n      this.setCategorie();\n    }\n  }&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>) 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">throws</span>  <span class="ace_identifier">NombreHabitantException</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">if</span>(<span class="ace_identifier">pNbre</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">0</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">throw</span> <span class="ace_keyword">new</span> <span class="ace_identifier">NombreHabitantException</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">nbreInstance</span><span class="ace_keyword ace_operator">++</span>;  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">nbreInstanceBis</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">nbreHabitant</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">this</span>.<span class="ace_identifier">setCategorie</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div></div></div></code></pre>
+### Les exceptions personnalisées
+Nous allons perfectionner un peu la gestion de nos objets Ville et Capitale. On se propose de mettre en œuvre une exception personnalisée afin d'interdire l'instanciation d'un objet Ville ou Capitale présentant un nombre négatif d'habitants.
 
-<img src="Images/exception1.jpg" />
+```java
+class NombreHabitantException extends Exception{ 
+  public NombreHabitantException(){
+    System.out.println("Vous essayez d'instancier une classe Ville avec un nombre d'habitants négatif !");
+  }  
+}
+```
 
-<h3>La gestion de plusieurs exceptions</h3>
-<p>Supposons que nous voulons lever une exception si le nom de la ville fait moins de 3 caractères.</p>
+```java
+public Ville(String pNom, int pNbre, String pPays) 
+  throws  NombreHabitantException
+  {  
+    if(pNbre < 0)
+      throw new NombreHabitantException();
+    else
+    {
+      nbreInstance++;  
+      nbreInstanceBis++;
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public class NomVilleException extends Exception { \n  public NomVilleException(String message){\n    super(message);\n  }        \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">NomVilleException</span> <span class="ace_keyword">extends</span> <span class="ace_support ace_function">Exception</span> { 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">NomVilleException</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">message</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">super</span>(<span class="ace_identifier">message</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+      nomVille = pNom;
+      nomPays = pPays;
+      nbreHabitant = pNbre;
+      this.setCategorie();
+    }
+  }
+```
 
-<p>Dans le code suivant, nous ajoutons une condition dans le constructeur Ville :</p>
+![Exception1](Images/exception1.jpg)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;public Ville(String pNom, int pNbre, String pPays) throws  NombreHabitantException, NomVilleException\n{  \n  if(pNbre &amp;#x3C; 0)\n    throw new NombreHabitantException(pNbre);\n          \n  if(pNom.length() &amp;#x3C; 3)\n    throw new NomVilleException(&amp;#x22;le nom de la ville est inf&amp;#xE9;rieur &amp;#xE0; 3 caract&amp;#xE8;res ! nom = &amp;#x22; + pNom);\n  else\n  {\n    nbreInstance++;  \n    nbreInstanceBis++;\n\n    nomVille = pNom;\n    nomPays = pPays;\n    nbreHabitant = pNbre;\n    this.setCategorie();\n  }          \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_identifier">Ville</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">pNom</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">pNbre</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">pPays</span>) <span class="ace_keyword">throws</span>  <span class="ace_identifier">NombreHabitantException</span>, <span class="ace_identifier">NomVilleException</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>{  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">if</span>(<span class="ace_identifier">pNbre</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">0</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">throw</span> <span class="ace_keyword">new</span> <span class="ace_identifier">NombreHabitantException</span>(<span class="ace_identifier">pNbre</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">if</span>(<span class="ace_identifier">pNom</span>.<span class="ace_identifier">length</span>() <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_constant ace_numeric">3</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">throw</span> <span class="ace_keyword">new</span> <span class="ace_identifier">NomVilleException</span>(<span class="ace_string">"le nom de la ville est inférieur à 3 caractères ! nom = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">pNom</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">else</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstance</span><span class="ace_keyword ace_operator">++</span>;  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreInstanceBis</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomVille</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nomPays</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pPays</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">nbreHabitant</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">pNbre</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setCategorie</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### La gestion de plusieurs exceptions
+Supposons que nous voulons lever une exception si le nom de la ville fait moins de 3 caractères.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Ville v = null;\n\ntry {\n  v = new Ville(&amp;#x22;Re&amp;#x22;, 12000, &amp;#x22;France&amp;#x22;);\n}\n\n//Gestion de l&amp;#x27;exception sur le nombre d&amp;#x27;habitants\ncatch (NombreHabitantException e) {\n  e.printStackTrace();\n}\n\n//Gestion de l&amp;#x27;exception sur le nom de la ville\ncatch(NomVilleException e2){\n  System.out.println(e2.getMessage());\n}\nfinally{\n  if(v == null)\n    v = new Ville();\n}\n      \nSystem.out.println(v.toString());&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Ville</span> <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language">null</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>(<span class="ace_string">"Re"</span>, <span class="ace_constant ace_numeric">12000</span>, <span class="ace_string">"France"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Gestion de l'exception sur le nombre d'habitants</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">catch</span> (<span class="ace_identifier">NombreHabitantException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Gestion de l'exception sur le nom de la ville</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">catch</span>(<span class="ace_identifier">NomVilleException</span> <span class="ace_identifier">e2</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">e2</span>.<span class="ace_identifier">getMessage</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">finally</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">if</span>(<span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">==</span> <span class="ace_constant ace_language">null</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">v</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Ville</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">v</span>.<span class="ace_identifier">toString</span>());
-</div></div></div></code></pre>
+```java
+public class NomVilleException extends Exception { 
+  public NomVilleException(String message){
+    super(message);
+  }        
+}
+```
 
-<h3><a name="collections">Les collections d'objets</a></h3>
-<img src="Images/collection.png" />
-<h3>Les objets List</h3>
-<p>Les objets appartenant à la catégorie List sont des tableaux extensibles à volonté. On y trouve les objets <strong>Vector</strong>, <strong>LinkedList</strong> et <strong>ArrayList</strong>. Vous pouvez y insérer autant d'éléments que vous le souhaitez sans craindre de dépasser la taille de votre tableau.</p>
-<h4>L'objet LinkedList</h4>
-<p>Une liste chaînée est une liste dont chaque élément est lié aux éléments adjacents par une référence à ces derniers. Chaque élément contient une référence à l'élément précédent et à l'élément suivant, exceptés le premier, dont l'élément précédent vaut null, et le dernier, dont l'élément suivant vaut également null.</p>
-<img src="Images/linkedlist.png" />
+Dans le code suivant, nous ajoutons une condition dans le constructeur Ville :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.util.LinkedList;\nimport java.util.List;\nimport java.util.ListIterator;\n \npublic class Test {\n \n  public static void main(String[] args) {\n    List l = new LinkedList();\n    l.add(12);\n    l.add(&amp;#x22;toto ! !&amp;#x22;);\n    l.add(12.20f);\n\n    for(int i = 0; i &amp;#x3C; l.size(); i++)\n      System.out.println(&amp;#x22;&amp;#xC9;l&amp;#xE9;ment &amp;#xE0; l&amp;#x27;index &amp;#x22; + i + &amp;#x22; = &amp;#x22; + l.get(i));\n\n      System.out.println(&amp;#x22;\\n \\tParcours avec un it&amp;#xE9;rateur &amp;#x22;);\n      System.out.println(&amp;#x22;-----------------------------------&amp;#x22;);\n      ListIterator li = l.listIterator();\n\n      while(li.hasNext())\n        System.out.println(li.next());\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">LinkedList</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">List</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">ListIterator</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">List</span> <span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">LinkedList</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">add</span>(<span class="ace_constant ace_numeric">12</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">add</span>(<span class="ace_string">"toto ! !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">l</span>.<span class="ace_identifier">add</span>(<span class="ace_constant ace_numeric">12.20f</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">l</span>.<span class="ace_identifier">size</span>(); <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Élément à l'index "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">" = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">l</span>.<span class="ace_identifier">get</span>(<span class="ace_identifier">i</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n \tParcours avec un itérateur "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"-----------------------------------"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">ListIterator</span> <span class="ace_identifier">li</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">l</span>.<span class="ace_identifier">listIterator</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">li</span>.<span class="ace_identifier">hasNext</span>())
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">li</span>.<span class="ace_identifier">next</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+public Ville(String pNom, int pNbre, String pPays) throws  NombreHabitantException, NomVilleException
+{  
+  if(pNbre < 0)
+    throw new NombreHabitantException(pNbre);
+          
+  if(pNom.length() < 3)
+    throw new NomVilleException("le nom de la ville est inférieur à 3 caractères ! nom = " + pNom);
+  else
+  {
+    nbreInstance++;  
+    nbreInstanceBis++;
 
-<p>Attention : vu que tous les éléments contiennent une référence à l'élément suivant, de telles listes risquent de devenir particulièrement lourdes en grandissant ! Cependant, elles sont adaptées lorsqu'il faut beaucoup manipuler une collection en supprimant ou en ajoutant des objets en milieu de liste.</p>
+    nomVille = pNom;
+    nomPays = pPays;
+    nbreHabitant = pNbre;
+    this.setCategorie();
+  }          
+}
+```
 
-<h4>L'objet ArrayList</h4>
-<p>ArrayList est un objet qui n'a pas de taille limite et qui accepte n'importe quel type de données, y compris null ! Nous pouvons mettre tout ce que nous voulons dans un ArrayList, voici un morceau de code qui le prouve :</p>
+```java
+Ville v = null;
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.util.ArrayList;\n \npublic class Test {\n \n  public static void main(String[] args) {\n         \n    ArrayList al = new ArrayList();\n    al.add(12);\n    al.add(&amp;#x22;Une cha&amp;#xEE;ne de caract&amp;#xE8;res !&amp;#x22;);\n    al.add(12.20f);\n    al.add(&amp;#x27;d&amp;#x27;);\n                \n    for(int i = 0; i &amp;#x3C; al.size(); i++)\n    {\n      System.out.println(&amp;#x22;donn&amp;#xE9;e &amp;#xE0; l&amp;#x27;indice &amp;#x22; + i + &amp;#x22; = &amp;#x22; + al.get(i));\n    }               \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">ArrayList</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ArrayList</span> <span class="ace_identifier">al</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ArrayList</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">al</span>.<span class="ace_identifier">add</span>(<span class="ace_constant ace_numeric">12</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">al</span>.<span class="ace_identifier">add</span>(<span class="ace_string">"Une chaîne de caractères !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">al</span>.<span class="ace_identifier">add</span>(<span class="ace_constant ace_numeric">12.20f</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">al</span>.<span class="ace_identifier">add</span>(<span class="ace_string">'d'</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>; <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">al</span>.<span class="ace_identifier">size</span>(); <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"donnée à l'indice "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">" = "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">al</span>.<span class="ace_identifier">get</span>(<span class="ace_identifier">i</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+try {
+  v = new Ville("Re", 12000, "France");
+}
 
-<p>Si vous exécutez ce code, vous obtiendrez la figure suivante.</p>
-<img src="Images/arraylist.jpg" />
-<p>Il existe tout un panel de méthodes fournies avec cet objet :</p>
-<ul>
-  <li>add() permet d'ajouter un élément ;</li>
-  <li>get(int index) retourne l'élément à l'indice demandé ;</li>
-  <li>remove(int index) efface l'entrée à l'indice demandé ;</li>
-  <li>isEmpty() renvoie « vrai » si l'objet est vide ;</li>
-  <li>removeAll() efface tout le contenu de l'objet ;</li>
-  <li>contains(Object element) retourne « vrai » si l'élément passé en paramètre est dans l'ArrayList.</li>
-</ul>
-<p>Contrairement aux LinkedList, les ArrayList sont rapides en lecture, même avec un gros volume d'objets. Elles sont cependant plus lentes si vous devez ajouter ou supprimer des données en milieu de liste. Pour résumer, si vous effectuez beaucoup de lectures sans vous soucier de l'ordre des éléments, optez pour une ArrayList ; en revanche, si vous insérez beaucoup de données au milieu de la liste, optez pour une Linkedlist.</p>
+//Gestion de l'exception sur le nombre d'habitants
+catch (NombreHabitantException e) {
+  e.printStackTrace();
+}
 
-<h3>Les objets Map</h3>
-<p>Une collection de type Map est une collection qui fonctionne avec un couple <strong>clé - valeur</strong>. On y trouve les objets <strong>Hashtable, HashMap, TreeMap, WeakHashMap…</strong> La clé, qui sert à identifier une entrée dans notre collection, est unique. La valeur, au contraire, peut être associée à plusieurs clés.</p>
-<h4>L'objet Hashtable</h4>
+//Gestion de l'exception sur le nom de la ville
+catch(NomVilleException e2){
+  System.out.println(e2.getMessage());
+}
+finally{
+  if(v == null)
+    v = new Ville();
+}
+      
+System.out.println(v.toString());
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.util.Enumeration;\nimport java.util.Hashtable;\n\npublic class Test {\n\n  public static void main(String[] args) {\n\n    Hashtable ht = new Hashtable();\n    ht.put(1, &amp;#x22;printemps&amp;#x22;);\n    ht.put(10, &amp;#x22;&amp;#xE9;t&amp;#xE9;&amp;#x22;);\n    ht.put(12, &amp;#x22;automne&amp;#x22;);\n    ht.put(45, &amp;#x22;hiver&amp;#x22;);\n\n    Enumeration e = ht.elements();\n\n    while(e.hasMoreElements())\n      System.out.println(e.nextElement());\n\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">Enumeration</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">Hashtable</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Hashtable</span> <span class="ace_identifier">ht</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Hashtable</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ht</span>.<span class="ace_identifier">put</span>(<span class="ace_constant ace_numeric">1</span>, <span class="ace_string">"printemps"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ht</span>.<span class="ace_identifier">put</span>(<span class="ace_constant ace_numeric">10</span>, <span class="ace_string">"été"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ht</span>.<span class="ace_identifier">put</span>(<span class="ace_constant ace_numeric">12</span>, <span class="ace_string">"automne"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ht</span>.<span class="ace_identifier">put</span>(<span class="ace_constant ace_numeric">45</span>, <span class="ace_string">"hiver"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Enumeration</span> <span class="ace_identifier">e</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">ht</span>.<span class="ace_identifier">elements</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">while</span>(<span class="ace_identifier">e</span>.<span class="ace_identifier">hasMoreElements</span>())
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">e</span>.<span class="ace_identifier">nextElement</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### <a name="collections">Les collections d'objets</a>
 
-<h3>Les objets Set</h3>
-<p>Un Set est une collection qui n'accepte pas les doublons. Par exemple, elle n'accepte qu'une seule fois null, car deux valeurs null sont considérées comme un doublon. On trouve parmi les Set les objets <strong>HashSet, TreeSet, LinkedHashSet…</strong></p>
-<h4>L'objet HashSet</h4>
+![Collection](Images/collection.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.util.HashSet;\nimport java.util.Iterator;\n \npublic class Test { \n  public static void main(String[] args) {         \n    HashSet hs = new HashSet();\n    hs.add(&amp;#x22;toto&amp;#x22;);\n    hs.add(12);\n    hs.add(&amp;#x27;d&amp;#x27;);\n\n    Iterator it = hs.iterator();\n    while(it.hasNext())\n      System.out.println(it.next());\n \n    System.out.println(&amp;#x22;\\nParcours avec un tableau d&amp;#x27;objet&amp;#x22;);\n    System.out.println(&amp;#x22;-----------------------------------&amp;#x22;);\n                \n    Object[] obj = hs.toArray();\n    for(Object o : obj)\n      System.out.println(o);                \n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">HashSet</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">Iterator</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Test</span> { 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {         
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">HashSet</span> <span class="ace_identifier">hs</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">HashSet</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">hs</span>.<span class="ace_identifier">add</span>(<span class="ace_string">"toto"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">hs</span>.<span class="ace_identifier">add</span>(<span class="ace_constant ace_numeric">12</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">hs</span>.<span class="ace_identifier">add</span>(<span class="ace_string">'d'</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Iterator</span> <span class="ace_identifier">it</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">hs</span>.<span class="ace_identifier">iterator</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">while</span>(<span class="ace_identifier">it</span>.<span class="ace_identifier">hasNext</span>())
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">it</span>.<span class="ace_identifier">next</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\nParcours avec un tableau d'objet"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"-----------------------------------"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">Object</span>[] <span class="ace_identifier">obj</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">hs</span>.<span class="ace_identifier">toArray</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_support ace_function">Object</span> <span class="ace_identifier">o</span> : <span class="ace_identifier">obj</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">o</span>);                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+### Les objets List
+Les objets appartenant à la catégorie List sont des tableaux extensibles à volonté. On y trouve les objets <strong>Vector</strong>, <strong>LinkedList</strong> et <strong>ArrayList</strong>. Vous pouvez y insérer autant d'éléments que vous le souhaitez sans craindre de dépasser la taille de votre tableau.
 
-<h3><a name="flux">Les flux d'entrée/sortie</a></h3>
-<h4>L'objet File</h4>
-<p>Créez un fichier avec l'extension que vous voulez et enregistrez-le à la racine de votre projet Eclipse.</p>
+#### L'objet LinkedList
+Une liste chaînée est une liste dont chaque élément est lié aux éléments adjacents par une référence à ces derniers. Chaque élément contient une référence à l'élément précédent et à l'élément suivant, exceptés le premier, dont l'élément précédent vaut null, et le dernier, dont l'élément suivant vaut également null.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Voici une ligne de test.\nVoici une autre ligne de test.\nEt en voici une troisi&amp;#xE8;me !&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Voici</span> <span class="ace_identifier">une</span> <span class="ace_identifier">ligne</span> <span class="ace_identifier">de</span> <span class="ace_identifier">test</span>.
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Voici</span> <span class="ace_identifier">une</span> <span class="ace_identifier">autre</span> <span class="ace_identifier">ligne</span> <span class="ace_identifier">de</span> <span class="ace_identifier">test</span>.
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Et en voici</span> <span class="ace_identifier">une</span> <span class="ace_identifier">troisi</span>è<span class="ace_identifier">me</span> <span class="ace_keyword ace_operator">!</span></div></div></div></code></pre>
+![LinkedList](Images/linkedlist.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Package &amp;#xE0; importer afin d&amp;#x27;utiliser l&amp;#x27;objet File\nimport java.io.File;\n\npublic class Main {\n  public static void main(String[] args) {\n    //Cr&amp;#xE9;ation de l&amp;#x27;objet File\n    File f = new File(&amp;#x22;test.txt&amp;#x22;);\n    System.out.println(&amp;#x22;Chemin absolu du fichier : &amp;#x22; + f.getAbsolutePath());\n    System.out.println(&amp;#x22;Nom du fichier : &amp;#x22; + f.getName());\n    System.out.println(&amp;#x22;Est-ce qu&amp;#x27;il existe ? &amp;#x22; + f.exists());\n    System.out.println(&amp;#x22;Est-ce un r&amp;#xE9;pertoire ? &amp;#x22; + f.isDirectory());\n    System.out.println(&amp;#x22;Est-ce un fichier ? &amp;#x22; + f.isFile());\n&amp;#x9;\n    System.out.println(&amp;#x22;Affichage des lecteurs &amp;#xE0; la racine du PC : &amp;#x22;);\n    for(File file : f.listRoots())\n    {\n      System.out.println(file.getAbsolutePath());\n      try {\n        int i = 1;&amp;#x9;\n        //On parcourt la liste des fichiers et r&amp;#xE9;pertoires\n        for(File nom : file.listFiles()){\n          //S&amp;#x27;il s&amp;#x27;agit d&amp;#x27;un dossier, on ajoute un &amp;#x22;/&amp;#x22;\n          System.out.print(&amp;#x22;\\t\\t&amp;#x22; + ((nom.isDirectory()) ? nom.getName()+&amp;#x22;/&amp;#x22; : nom.getName()));\n&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;\n          if((i%4) == 0){\n            System.out.print(&amp;#x22;\\n&amp;#x22;);\n          }\n          i++;\n        }\n        System.out.println(&amp;#x22;\\n&amp;#x22;);\n      } catch (NullPointerException e) {\n        //L&amp;#x27;instruction peut g&amp;#xE9;n&amp;#xE9;rer une NullPointerException\n        //s&amp;#x27;il n&amp;#x27;y a pas de sous-fichier !\n      }\n    }&amp;#x9;&amp;#x9;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Package à importer afin d'utiliser l'objet File</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Main</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Création de l'objet File</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">File</span> <span class="ace_identifier">f</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Chemin absolu du fichier : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">getAbsolutePath</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Nom du fichier : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">getName</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Est-ce qu'il existe ? "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">exists</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Est-ce un répertoire ? "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">isDirectory</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Est-ce un fichier ? "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">isFile</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Affichage des lecteurs à la racine du PC : "</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">for</span>(<span class="ace_identifier">File</span> <span class="ace_identifier">file</span> : <span class="ace_identifier">f</span>.<span class="ace_identifier">listRoots</span>())
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">file</span>.<span class="ace_identifier">getAbsolutePath</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">int</span> <span class="ace_identifier">i</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span>;  
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//On parcourt la liste des fichiers et répertoires</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">for</span>(<span class="ace_identifier">File</span> <span class="ace_identifier">nom</span> : <span class="ace_identifier">file</span>.<span class="ace_identifier">listFiles</span>()){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//S'il s'agit d'un dossier, on ajoute un "/"</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"\t\t"</span> <span class="ace_keyword ace_operator">+</span> ((<span class="ace_identifier">nom</span>.<span class="ace_identifier">isDirectory</span>()) ? <span class="ace_identifier">nom</span>.<span class="ace_identifier">getName</span>()<span class="ace_keyword ace_operator">+</span><span class="ace_string">"/"</span> : <span class="ace_identifier">nom</span>.<span class="ace_identifier">getName</span>()));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">if</span>((<span class="ace_identifier">i</span><span class="ace_keyword ace_operator">%</span><span class="ace_constant ace_numeric">4</span>) <span class="ace_keyword ace_operator">==</span> <span class="ace_constant ace_numeric">0</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">i</span><span class="ace_keyword ace_operator">++</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">NullPointerException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//L'instruction peut générer une NullPointerException</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//s'il n'y a pas de sous-fichier !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+ 
+public class Test {
+ 
+  public static void main(String[] args) {
+    List l = new LinkedList();
+    l.add(12);
+    l.add("toto ! !");
+    l.add(12.20f);
 
-<img src="Images/flux.png" />
+    for(int i = 0; i < l.size(); i++)
+      System.out.println("Élément à l'index " + i + " = " + l.get(i));
 
-<h4>Les objets FileInputStream et FileOutputStream</h4>
+      System.out.println("\n \tParcours avec un itérateur ");
+      System.out.println("-----------------------------------");
+      ListIterator li = l.listIterator();
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Packages &amp;#xE0; importer afin d&amp;#x27;utiliser les objets\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileNotFoundException;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\n\npublic class Main {\n   public static void main(String[] args) {\n      // Nous d&amp;#xE9;clarons nos objets en dehors du bloc try/catch\n      FileInputStream fis = null;\n      FileOutputStream fos = null;\n\n      try {\n         // On instancie nos objets :\n         // fis va lire le fichier\n         // fos va &amp;#xE9;crire dans le nouveau !\n         fis = new FileInputStream(new File(&amp;#x22;test.txt&amp;#x22;));\n         fos = new FileOutputStream(new File(&amp;#x22;test2.txt&amp;#x22;));\n\n         // On cr&amp;#xE9;e un tableau de byte pour indiquer le nombre de bytes lus &amp;#xE0;\n         // chaque tour de boucle\n         byte[] buf = new byte[8];\n\n         // On cr&amp;#xE9;e une variable de type int pour y affecter le r&amp;#xE9;sultat de\n         // la lecture\n         // Vaut -1 quand c&amp;#x27;est fini\n         int n = 0;\n\n         // Tant que l&amp;#x27;affectation dans la variable est possible, on boucle\n         // Lorsque la lecture du fichier est termin&amp;#xE9;e l&amp;#x27;affectation n&amp;#x27;est\n         // plus possible !\n         // On sort donc de la boucle\n         while ((n = fis.read(buf)) &amp;#x3E;= 0) {\n            // On &amp;#xE9;crit dans notre deuxi&amp;#xE8;me fichier avec l&amp;#x27;objet ad&amp;#xE9;quat\n            fos.write(buf);\n            // On affiche ce qu&amp;#x27;a lu notre boucle au format byte et au\n            // format char\n            for (byte bit : buf) {\n               System.out.print(&amp;#x22;\\t&amp;#x22; + bit + &amp;#x22;(&amp;#x22; + (char) bit + &amp;#x22;)&amp;#x22;);\n            }\n            System.out.println(&amp;#x22;&amp;#x22;);\n            //Nous r&amp;#xE9;initialisons le buffer &amp;#xE0; vide\n            //au cas o&amp;#xF9; les derniers byte lus ne soient pas un multiple de 8\n            //Ceci permet d&amp;#x27;avoir un buffer vierge &amp;#xE0; chaque lecture et ne pas avoir de doublon en fin de fichier\n            buf = new byte[8];\n\n         }\n         System.out.println(&amp;#x22;Copie termin&amp;#xE9;e !&amp;#x22;);\n\n      } catch (FileNotFoundException e) {\n         // Cette exception est lev&amp;#xE9;e si l&amp;#x27;objet FileInputStream ne trouve\n         // aucun fichier\n         e.printStackTrace();\n      } catch (IOException e) {\n         // Celle-ci se produit lors d&amp;#x27;une erreur d&amp;#x27;&amp;#xE9;criture ou de lecture\n         e.printStackTrace();\n      } finally {\n         // On ferme nos flux de donn&amp;#xE9;es dans un bloc finally pour s&amp;#x27;assurer\n         // que ces instructions seront ex&amp;#xE9;cut&amp;#xE9;es dans tous les cas m&amp;#xEA;me si\n         // une exception est lev&amp;#xE9;e !\n         try {\n            if (fis != null)\n               fis.close();\n         } catch (IOException e) {\n            e.printStackTrace();\n         }\n\n         try {\n            if (fos != null)\n               fos.close();\n         } catch (IOException e) {\n            e.printStackTrace();\n         }\n      }\n   }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Packages à importer afin d'utiliser les objets</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileNotFoundException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Main</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">// Nous déclarons nos objets en dehors du bloc try/catch</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">FileInputStream</span> <span class="ace_identifier">fis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language">null</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">FileOutputStream</span> <span class="ace_identifier">fos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_language">null</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// On instancie nos objets :</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// fis va lire le fichier</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// fos va écrire dans le nouveau !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_identifier">fis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_identifier">fos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">FileOutputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test2.txt"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// On crée un tableau de byte pour indiquer le nombre de bytes lus à</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// chaque tour de boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_keyword">byte</span>[] <span class="ace_identifier">buf</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">byte</span>[<span class="ace_constant ace_numeric">8</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// On crée une variable de type int pour y affecter le résultat de</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// la lecture</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// Vaut -1 quand c'est fini</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_keyword">int</span> <span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// Tant que l'affectation dans la variable est possible, on boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// Lorsque la lecture du fichier est terminée l'affectation n'est</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// plus possible !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// On sort donc de la boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_keyword">while</span> ((<span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">fis</span>.<span class="ace_identifier">read</span>(<span class="ace_identifier">buf</span>)) <span class="ace_keyword ace_operator">&gt;=</span> <span class="ace_constant ace_numeric">0</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">// On écrit dans notre deuxième fichier avec l'objet adéquat</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">fos</span>.<span class="ace_identifier">write</span>(<span class="ace_identifier">buf</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">// On affiche ce qu'a lu notre boucle au format byte et au</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">// format char</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">for</span> (<span class="ace_keyword">byte</span> <span class="ace_identifier">bit</span> : <span class="ace_identifier">buf</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"\t"</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_identifier">bit</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">"("</span> <span class="ace_keyword ace_operator">+</span> (<span class="ace_keyword">char</span>) <span class="ace_identifier">bit</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_string">")"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">""</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//Nous réinitialisons le buffer à vide</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//au cas où les derniers byte lus ne soient pas un multiple de 8</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_comment">//Ceci permet d'avoir un buffer vierge à chaque lecture et ne pas avoir de doublon en fin de fichier</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">buf</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">byte</span>[<span class="ace_constant ace_numeric">8</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Copie terminée !"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">catch</span> (<span class="ace_identifier">FileNotFoundException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// Cette exception est levée si l'objet FileInputStream ne trouve</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// aucun fichier</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// Celle-ci se produit lors d'une erreur d'écriture ou de lecture</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">finally</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// On ferme nos flux de données dans un bloc finally pour s'assurer</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// que ces instructions seront exécutées dans tous les cas même si</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_comment">// une exception est levée !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">if</span> (<span class="ace_identifier">fis</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_language">null</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_identifier">fis</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">if</span> (<span class="ace_identifier">fos</span> <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_language">null</span>)
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_identifier">fos</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>   }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+      while(li.hasNext())
+        System.out.println(li.next());
+  }
+}
+```
 
-<p>La figure suivante représente le résultat de ce code.</p>
-<img src="Images/flux1.png" />
-<p>Le bloc <strong>finally</strong> permet de s'assurer que nos objets ont bien fermé leurs liens avec leurs fichiers respectifs, ceci afin de permette à Java de détruire ces objets pour ainsi libérer de la mémoire.</p>
+**Attention :** vu que tous les éléments contiennent une référence à l'élément suivant, de telles listes risquent de devenir particulièrement lourdes en grandissant ! Cependant, elles sont adaptées lorsqu'il faut beaucoup manipuler une collection en supprimant ou en ajoutant des objets en milieu de liste.
 
-<h4>Les objets FilterInputStream et FilterOutputStream</h4>
-<p>Ces deux classes sont des classes abstraites. Elles définissent un comportement global pour leurs classes filles qui, elles, permettent d'ajouter des fonctionnalités aux flux d'entrée/sortie.</p>
-<img src="Images/flux2.png" />
-<p>Afin de montrer les améliorations apportées par ces classes, nous allons lire un énorme fichier texte (3,6 Mo) de façon conventionnelle avec l'objet vu précédemment, puis grâce à un buffer.</p>
-<p>Voici un code qui permet de tester le temps d'exécution de la lecture :</p>
+#### L'objet ArrayList
+ArrayList est un objet qui n'a pas de taille limite et qui accepte n'importe quel type de données, y compris null ! Nous pouvons mettre tout ce que nous voulons dans un ArrayList, voici un morceau de code qui le prouve :
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Packages &amp;#xE0; importer afin d&amp;#x27;utiliser l&amp;#x27;objet File\nimport java.io.BufferedInputStream;\nimport java.io.DataInputStream;\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileNotFoundException;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\n\npublic class Main {\n  public static void main(String[] args) {\n    //Nous d&amp;#xE9;clarons nos objets en dehors du bloc try/catch\n    FileInputStream fis;\n    BufferedInputStream bis;        \n    try {\n      fis = new FileInputStream(new File(&amp;#x22;test.txt&amp;#x22;));\n      bis = new BufferedInputStream(new FileInputStream(new File(&amp;#x22;test.txt&amp;#x22;)));\n      byte[] buf = new byte[8];\n\n      //On r&amp;#xE9;cup&amp;#xE8;re le temps du syst&amp;#xE8;me\n      long startTime = System.currentTimeMillis();\n      //Inutile d&amp;#x27;effectuer des traitements dans notre boucle\n      while(fis.read(buf) != -1);\n      //On affiche le temps d&amp;#x27;ex&amp;#xE9;cution\n      System.out.println(&amp;#x22;Temps de lecture avec FileInputStream : &amp;#x22; + (System.currentTimeMillis() - startTime));\n                \n      //On r&amp;#xE9;initialise                \n      startTime = System.currentTimeMillis();\n      //Inutile d&amp;#x27;effectuer des traitements dans notre boucle\n      while(bis.read(buf) != -1);\n      //On r&amp;#xE9;affiche\n      System.out.println(&amp;#x22;Temps de lecture avec BufferedInputStream : &amp;#x22; + System.currentTimeMillis() - startTime));\n                \n      //On ferme nos flux de donn&amp;#xE9;es\n      fis.close();\n      bis.close();\n                \n    } catch (FileNotFoundException e) {\n      e.printStackTrace();\n    } catch (IOException e) {\n      e.printStackTrace();\n    }     &amp;#x9;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Packages à importer afin d'utiliser l'objet File</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">BufferedInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">DataInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileNotFoundException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Main</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Nous déclarons nos objets en dehors du bloc try/catch</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">FileInputStream</span> <span class="ace_identifier">fis</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">BufferedInputStream</span> <span class="ace_identifier">bis</span>;        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">BufferedInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>)));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">byte</span>[] <span class="ace_identifier">buf</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">byte</span>[<span class="ace_constant ace_numeric">8</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On récupère le temps du système</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">long</span> <span class="ace_identifier">startTime</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//Inutile d'effectuer des traitements dans notre boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">fis</span>.<span class="ace_identifier">read</span>(<span class="ace_identifier">buf</span>) <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_numeric">-1</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On affiche le temps d'exécution</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Temps de lecture avec FileInputStream : "</span> <span class="ace_keyword ace_operator">+</span> (<span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>() <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">startTime</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On réinitialise                </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">startTime</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//Inutile d'effectuer des traitements dans notre boucle</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">bis</span>.<span class="ace_identifier">read</span>(<span class="ace_identifier">buf</span>) <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_numeric">-1</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On réaffiche</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Temps de lecture avec BufferedInputStream : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>() <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">startTime</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On ferme nos flux de données</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fis</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bis</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">FileNotFoundException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.util.ArrayList;
+ 
+public class Test {
+ 
+  public static void main(String[] args) {
+         
+    ArrayList al = new ArrayList();
+    al.add(12);
+    al.add("Une chaîne de caractères !");
+    al.add(12.20f);
+    al.add('d');
+                
+    for(int i = 0; i < al.size(); i++)
+    {
+      System.out.println("donnée à l'indice " + i + " = " + al.get(i));
+    }               
+  }
+}
+```
 
-<img src="Images/flux3.png" />
+Si vous exécutez ce code, vous obtiendrez la figure suivante.
 
-<p>Et voici le test avec l’écriture :</p>
+![ArrayList](Images/arraylist.jpg)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Packages &amp;#xE0; importer afin d&amp;#x27;utiliser l&amp;#x27;objet File\nimport java.io.BufferedInputStream;\nimport java.io.BufferedOutputStream;\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileNotFoundException;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\n \npublic class Main {\n  public static void main(String[] args) {\n    //Nous d&amp;#xE9;clarons nos objets en dehors du bloc try/catch\n    FileInputStream fis;\n    FileOutputStream fos;\n    BufferedInputStream bis;\n    BufferedOutputStream bos; \n        \n    try {\n      fis = new FileInputStream(new File(&amp;#x22;test.txt&amp;#x22;));\n      fos = new FileOutputStream(new File(&amp;#x22;test2.txt&amp;#x22;));\n      bis = new BufferedInputStream(new FileInputStream(new File(&amp;#x22;test.txt&amp;#x22;)));\n      bos = new BufferedOutputStream(new FileOutputStream(new File(&amp;#x22;test3.txt&amp;#x22;)));\n      byte[] buf = new byte[8];\n \n      //On r&amp;#xE9;cup&amp;#xE8;re le temps du syst&amp;#xE8;me\n      long startTime = System.currentTimeMillis();\n                \n      while(fis.read(buf) != -1){\n        fos.write(buf);\n      }\n      //On affiche le temps d&amp;#x27;ex&amp;#xE9;cution\n      System.out.println(&amp;#x22;Temps de lecture + &amp;#xE9;criture avec FileInputStream et FileOutputStream : &amp;#x22; + (System.currentTimeMillis() - startTime));\n                \n      //On r&amp;#xE9;initialise                \n      startTime = System.currentTimeMillis();\n \n      while(bis.read(buf) != -1){\n        bos.write(buf);\n      }\n      //On r&amp;#xE9;affiche\n      System.out.println(&amp;#x22;Temps de lecture + &amp;#xE9;criture avec BufferedInputStream et BufferedOutputStream : &amp;#x22; + (System.currentTimeMillis() - startTime));\n                \n      //On ferme nos flux de donn&amp;#xE9;es\n      fis.close();\n      bis.close();\n      fos.close();\n      bos.close();\n                \n    } catch (FileNotFoundException e) {\n      e.printStackTrace();\n    } catch (IOException e) {\n      e.printStackTrace();\n    }     &amp;#x9;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Packages à importer afin d'utiliser l'objet File</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">BufferedInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">BufferedOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileNotFoundException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Main</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Nous déclarons nos objets en dehors du bloc try/catch</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">FileInputStream</span> <span class="ace_identifier">fis</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">FileOutputStream</span> <span class="ace_identifier">fos</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">BufferedInputStream</span> <span class="ace_identifier">bis</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">BufferedOutputStream</span> <span class="ace_identifier">bos</span>; 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">FileOutputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test2.txt"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bis</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">BufferedInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test.txt"</span>)));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">BufferedOutputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">FileOutputStream</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"test3.txt"</span>)));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">byte</span>[] <span class="ace_identifier">buf</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_keyword">byte</span>[<span class="ace_constant ace_numeric">8</span>];
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On récupère le temps du système</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">long</span> <span class="ace_identifier">startTime</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">fis</span>.<span class="ace_identifier">read</span>(<span class="ace_identifier">buf</span>) <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_numeric">-1</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">fos</span>.<span class="ace_identifier">write</span>(<span class="ace_identifier">buf</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On affiche le temps d'exécution</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Temps de lecture + écriture avec FileInputStream et FileOutputStream : "</span> <span class="ace_keyword ace_operator">+</span> (<span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>() <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">startTime</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On réinitialise                </span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">startTime</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">while</span>(<span class="ace_identifier">bis</span>.<span class="ace_identifier">read</span>(<span class="ace_identifier">buf</span>) <span class="ace_keyword ace_operator">!=</span> <span class="ace_constant ace_numeric">-1</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">bos</span>.<span class="ace_identifier">write</span>(<span class="ace_identifier">buf</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On réaffiche</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Temps de lecture + écriture avec BufferedInputStream et BufferedOutputStream : "</span> <span class="ace_keyword ace_operator">+</span> (<span class="ace_support ace_function">System</span>.<span class="ace_identifier">currentTimeMillis</span>() <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">startTime</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On ferme nos flux de données</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fis</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bis</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">fos</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">bos</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">FileNotFoundException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+Il existe tout un panel de méthodes fournies avec cet objet :
+* add() permet d'ajouter un élément ;
+* get(int index) retourne l'élément à l'indice demandé ;
+* remove(int index) efface l'entrée à l'indice demandé ;
+* isEmpty() renvoie « vrai » si l'objet est vide ;
+* removeAll() efface tout le contenu de l'objet ;
+* contains(Object element) retourne « vrai » si l'élément passé en paramètre est dans l'ArrayList.
 
-<img src="Images/flux4.png" />
+Contrairement aux LinkedList, les ArrayList sont rapides en lecture, même avec un gros volume d'objets. Elles sont cependant plus lentes si vous devez ajouter ou supprimer des données en milieu de liste. Pour résumer, si vous effectuez beaucoup de lectures sans vous soucier de l'ordre des éléments, optez pour une ArrayList ; en revanche, si vous insérez beaucoup de données au milieu de la liste, optez pour une Linkedlist.
 
-<h4>Les objets ObjectInputStream et ObjectOutputStream</h4>
-<p>Lorsqu'on veut écrire des objets dans des fichiers, on appelle ça la « sérialisation » : c'est le nom que porte l'action de sauvegarder des objets.</p>
+### Les objets Map
+Une collection de type Map est une collection qui fonctionne avec un couple <strong>clé - valeur</strong>. On y trouve les objets <strong>Hashtable, HashMap, TreeMap…</strong> La clé, qui sert à identifier une entrée dans notre collection, est unique. La valeur, au contraire, peut être associée à plusieurs clés.
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Package &amp;#xE0; importer\nimport java.io.Serializable;\n\npublic class Game implements Serializable{\n  private String nom, style;\n  private double prix;\n&amp;#x9;\n  public Game(String nom, String style, double prix) {\n    this.nom = nom;\n    this.style = style;\n    this.prix = prix;\n  }\n&amp;#x9;\n  public String toString(){\n    return &amp;#x22;Nom du jeu : &amp;#x22; + this.nom + &amp;#x22;\\n\n            Style de jeu : &amp;#x22; + this.style + &amp;#x22;\\n\n            Prix du jeu : &amp;#x22; + this.prix + &amp;#x22;\\n&amp;#x22;;\n  }&amp;#x9;\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Package à importer</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">Serializable</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Game</span> <span class="ace_keyword">implements</span> <span class="ace_identifier">Serializable</span>{
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">nom</span>, <span class="ace_identifier">style</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">private</span> <span class="ace_keyword">double</span> <span class="ace_identifier">prix</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Game</span>(<span class="ace_support ace_function">String</span> <span class="ace_identifier">nom</span>, <span class="ace_support ace_function">String</span> <span class="ace_identifier">style</span>, <span class="ace_keyword">double</span> <span class="ace_identifier">prix</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">nom</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">nom</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">style</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">style</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">prix</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">prix</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_support ace_function">String</span> <span class="ace_identifier">toString</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_string">"Nom du jeu : "</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">nom</span> <span class="ace_keyword ace_operator">+</span> "\<span class="ace_identifier">n</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">Style</span> <span class="ace_identifier">de</span> <span class="ace_identifier">jeu</span> : <span class="ace_string">" + this.style + "</span>\<span class="ace_identifier">n</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">Prix</span> <span class="ace_identifier">du</span> <span class="ace_identifier">jeu</span> : <span class="ace_string">" + this.prix + "</span>\<span class="ace_identifier">n</span>";
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  } 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+#### L'objet Hashtable
 
-<ul>
-  <li>Nous allons créer deux ou trois objetsGame;</li>
-  <li>Nous allons les sérialiser dans un fichier de notre choix ;</li>
-  <li>Nous allons ensuite les désérialiser afin de pouvoir les réutiliser.</li>
-</ul>
+```java
+import java.util.Enumeration;
+import java.util.Hashtable;
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;//Packages &amp;#xE0; importer afin d&amp;#x27;utiliser l&amp;#x27;objet File\nimport java.io.BufferedInputStream;\nimport java.io.BufferedOutputStream;\nimport java.io.DataInputStream;\nimport java.io.DataOutputStream;\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileNotFoundException;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\nimport java.io.ObjectInputStream;\nimport java.io.ObjectOutputStream;\n\npublic class Main {\n  public static void main(String[] args) {\n    //Nous d&amp;#xE9;clarons nos objets en dehors du bloc try/catch\n    ObjectInputStream ois;\n    ObjectOutputStream oos;\n    try {\n      oos = new ObjectOutputStream(\n              new BufferedOutputStream(\n                new FileOutputStream(\n                  new File(&amp;#x22;game.txt&amp;#x22;))));\n        &amp;#x9;\n      //Nous allons &amp;#xE9;crire chaque objet Game dans le fichier\n      oos.writeObject(new Game(&amp;#x22;Assassin Creed&amp;#x22;, &amp;#x22;Aventure&amp;#x22;, 45.69));\n      oos.writeObject(new Game(&amp;#x22;Tomb Raider&amp;#x22;, &amp;#x22;Plateforme&amp;#x22;, 23.45));\n      oos.writeObject(new Game(&amp;#x22;Tetris&amp;#x22;, &amp;#x22;Strat&amp;#xE9;gie&amp;#x22;, 2.50));\n      //Ne pas oublier de fermer le flux !\n      oos.close();\n        &amp;#x9;\n      //On r&amp;#xE9;cup&amp;#xE8;re maintenant les donn&amp;#xE9;es !\n      ois = new ObjectInputStream(\n              new BufferedInputStream(\n                new FileInputStream(\n                  new File(&amp;#x22;game.txt&amp;#x22;))));\n            \n      try {\n        System.out.println(&amp;#x22;Affichage des jeux :&amp;#x22;);\n        System.out.println(&amp;#x22;*************************\\n&amp;#x22;);\n        System.out.println(((Game)ois.readObject()).toString());\n        System.out.println(((Game)ois.readObject()).toString());\n        System.out.println(((Game)ois.readObject()).toString());\n      } catch (ClassNotFoundException e) {\n        e.printStackTrace();\n      }\n&amp;#x9;\n      ois.close();\n        &amp;#x9;\n    } catch (FileNotFoundException e) {\n      e.printStackTrace();\n    } catch (IOException e) {\n      e.printStackTrace();\n    }     &amp;#x9;\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment">//Packages à importer afin d'utiliser l'objet File</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">BufferedInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">BufferedOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">DataInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">DataOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileNotFoundException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">FileOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">ObjectInputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">ObjectOutputStream</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Main</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Nous déclarons nos objets en dehors du bloc try/catch</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ObjectInputStream</span> <span class="ace_identifier">ois</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">ObjectOutputStream</span> <span class="ace_identifier">oos</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">oos</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ObjectOutputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">new</span> <span class="ace_identifier">BufferedOutputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">new</span> <span class="ace_identifier">FileOutputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"game.txt"</span>))));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//Nous allons écrire chaque objet Game dans le fichier</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">oos</span>.<span class="ace_identifier">writeObject</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">Game</span>(<span class="ace_string">"Assassin Creed"</span>, <span class="ace_string">"Aventure"</span>, <span class="ace_constant ace_numeric">45.69</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">oos</span>.<span class="ace_identifier">writeObject</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">Game</span>(<span class="ace_string">"Tomb Raider"</span>, <span class="ace_string">"Plateforme"</span>, <span class="ace_constant ace_numeric">23.45</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">oos</span>.<span class="ace_identifier">writeObject</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">Game</span>(<span class="ace_string">"Tetris"</span>, <span class="ace_string">"Stratégie"</span>, <span class="ace_constant ace_numeric">2.50</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//Ne pas oublier de fermer le flux !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">oos</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//On récupère maintenant les données !</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">ois</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">ObjectInputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">new</span> <span class="ace_identifier">BufferedInputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    <span class="ace_keyword">new</span> <span class="ace_identifier">FileInputStream</span>(
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"game.txt"</span>))));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Affichage des jeux :"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"*************************\n"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(((<span class="ace_identifier">Game</span>)<span class="ace_identifier">ois</span>.<span class="ace_identifier">readObject</span>()).<span class="ace_identifier">toString</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(((<span class="ace_identifier">Game</span>)<span class="ace_identifier">ois</span>.<span class="ace_identifier">readObject</span>()).<span class="ace_identifier">toString</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(((<span class="ace_identifier">Game</span>)<span class="ace_identifier">ois</span>.<span class="ace_identifier">readObject</span>()).<span class="ace_identifier">toString</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  } <span class="ace_keyword">catch</span> (<span class="ace_support ace_function">ClassNotFoundException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">ois</span>.<span class="ace_identifier">close</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">FileNotFoundException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+public class Test {
 
-<p>Et voci le résultat en figure suivante.</p>
-<img src="Images/flux5.png" />
+  public static void main(String[] args) {
 
-<!--
+    Hashtable ht = new Hashtable();
+    ht.put(1, "printemps");
+    ht.put(10, "été");
+    ht.put(12, "automne");
+    ht.put(45, "hiver");
 
-<h3><a name="jframe">L'objet JFrame</a></h3>
+    Enumeration e = ht.elements();
+
+    while(e.hasMoreElements())
+      System.out.println(e.nextElement());
+
+  }
+}
+```
+
+### Les objets Set
+Un Set est une collection qui n'accepte pas les doublons. Par exemple, elle n'accepte qu'une seule fois null, car deux valeurs null sont considérées comme un doublon. On trouve parmi les Set les objets <strong>HashSet, TreeSet, LinkedHashSet…</strong>
+
+#### L'objet HashSet
+
+```java
+import java.util.HashSet;
+import java.util.Iterator;
+ 
+public class Test { 
+  public static void main(String[] args) {         
+    HashSet hs = new HashSet();
+    hs.add("toto");
+    hs.add(12);
+    hs.add('d');
+
+    Iterator it = hs.iterator();
+    while(it.hasNext())
+      System.out.println(it.next());
+ 
+    System.out.println("\nParcours avec un tableau d'objet");
+    System.out.println("-----------------------------------");
+                
+    Object[] obj = hs.toArray();
+    for(Object o : obj)
+      System.out.println(o);                
+  }
+}
+```
+
+### <a name="flux">Les flux d'entrée/sortie</a>
+
+#### L'objet File
+Créez un fichier avec l'extension que vous voulez et enregistrez-le à la racine de votre projet Eclipse.
+
+```java
+Voici une ligne de test.
+Voici une autre ligne de test.
+Et en voici une troisième !
+```
+
+```java
+//Package à importer afin d'utiliser l'objet File
+import java.io.File;
+
+public class Main {
+  public static void main(String[] args) {
+    //Création de l'objet File
+    File f = new File("test.txt");
+    System.out.println("Chemin absolu du fichier : " + f.getAbsolutePath());
+    System.out.println("Nom du fichier : " + f.getName());
+    System.out.println("Est-ce qu'il existe ? " + f.exists());
+    System.out.println("Est-ce un répertoire ? " + f.isDirectory());
+    System.out.println("Est-ce un fichier ? " + f.isFile());
+    
+    System.out.println("Affichage des lecteurs à la racine du PC : ");
+    for(File file : f.listRoots())
+    {
+      System.out.println(file.getAbsolutePath());
+      try {
+        int i = 1;  
+        //On parcourt la liste des fichiers et répertoires
+        for(File nom : file.listFiles()){
+          //S'il s'agit d'un dossier, on ajoute un "/"
+          System.out.print("\t\t" + ((nom.isDirectory()) ? nom.getName()+"/" : nom.getName()));
+                    
+          if((i%4) == 0){
+            System.out.print("\n");
+          }
+          i++;
+        }
+        System.out.println("\n");
+      } catch (NullPointerException e) {
+        //L'instruction peut générer une NullPointerException
+        //s'il n'y a pas de sous-fichier !
+      }
+    }       
+  }
+}
+```
+
+![Flux](Images/flux.png)
+
+#### Les objets FileInputStream et FileOutputStream
+
+```java
+//Packages à importer afin d'utiliser les objets
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Main {
+   public static void main(String[] args) {
+      // Nous déclarons nos objets en dehors du bloc try/catch
+      FileInputStream fis = null;
+      FileOutputStream fos = null;
+
+      try {
+         // On instancie nos objets :
+         // fis va lire le fichier
+         // fos va écrire dans le nouveau !
+         fis = new FileInputStream(new File("test.txt"));
+         fos = new FileOutputStream(new File("test2.txt"));
+
+         // On crée un tableau de byte pour indiquer le nombre de bytes lus à
+         // chaque tour de boucle
+         byte[] buf = new byte[8];
+
+         // On crée une variable de type int pour y affecter le résultat de
+         // la lecture
+         // Vaut -1 quand c'est fini
+         int n = 0;
+
+         // Tant que l'affectation dans la variable est possible, on boucle
+         // Lorsque la lecture du fichier est terminée l'affectation n'est
+         // plus possible !
+         // On sort donc de la boucle
+         while ((n = fis.read(buf)) >= 0) {
+            // On écrit dans notre deuxième fichier avec l'objet adéquat
+            fos.write(buf);
+            // On affiche ce qu'a lu notre boucle au format byte et au
+            // format char
+            for (byte bit : buf) {
+               System.out.print("\t" + bit + "(" + (char) bit + ")");
+            }
+            System.out.println("");
+            //Nous réinitialisons le buffer à vide
+            //au cas où les derniers byte lus ne soient pas un multiple de 8
+            //Ceci permet d'avoir un buffer vierge à chaque lecture et ne pas avoir de doublon en fin de fichier
+            buf = new byte[8];
+
+         }
+         System.out.println("Copie terminée !");
+      } catch (FileNotFoundException e) {
+         // Cette exception est levée si l'objet FileInputStream ne trouve
+         // aucun fichier
+         e.printStackTrace();
+      } catch (IOException e) {
+         // Celle-ci se produit lors d'une erreur d'écriture ou de lecture
+         e.printStackTrace();
+      } finally {
+         // On ferme nos flux de données dans un bloc finally pour s'assurer
+         // que ces instructions seront exécutées dans tous les cas même si
+         // une exception est levée !
+         try {
+            if (fis != null)
+               fis.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+
+         try {
+            if (fos != null)
+               fos.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+   }
+}
+```
+
+La figure suivante représente le résultat de ce code.
+
+![Flux1](Images/flux1.png)
+
+Le bloc <strong>finally</strong> permet de s'assurer que nos objets ont bien fermé leurs liens avec leurs fichiers respectifs, ceci afin de permette à Java de détruire ces objets pour ainsi libérer de la mémoire.
+
+#### Les objets FilterInputStream et FilterOutputStream
+Ces deux classes sont des classes abstraites. Elles définissent un comportement global pour leurs classes filles qui, elles, permettent d'ajouter des fonctionnalités aux flux d'entrée/sortie.
+
+![Flux2](Images/flux2.png)
+
+Afin de montrer les améliorations apportées par ces classes, nous allons lire un énorme fichier texte (3,6 Mo) de façon conventionnelle avec l'objet vu précédemment, puis grâce à un buffer.
+Voici un code qui permet de tester le temps d'exécution de la lecture :
+
+```java
+//Packages à importer afin d'utiliser l'objet File
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Main {
+  public static void main(String[] args) {
+    //Nous déclarons nos objets en dehors du bloc try/catch
+    FileInputStream fis;
+    BufferedInputStream bis;        
+    try {
+      fis = new FileInputStream(new File("test.txt"));
+      bis = new BufferedInputStream(new FileInputStream(new File("test.txt")));
+      byte[] buf = new byte[8];
+
+      //On récupère le temps du système
+      long startTime = System.currentTimeMillis();
+      //Inutile d'effectuer des traitements dans notre boucle
+      while(fis.read(buf) != -1);
+      //On affiche le temps d'exécution
+      System.out.println("Temps de lecture avec FileInputStream : " + (System.currentTimeMillis() - startTime));
+                
+      //On réinitialise                
+      startTime = System.currentTimeMillis();
+      //Inutile d'effectuer des traitements dans notre boucle
+      while(bis.read(buf) != -1);
+      //On réaffiche
+      System.out.println("Temps de lecture avec BufferedInputStream : " + System.currentTimeMillis() - startTime));
+                
+      //On ferme nos flux de données
+      fis.close();
+      bis.close();
+                
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }       
+  }
+}
+```
+
+![Flux3](Images/flux3.png)
+
+Et voici le test avec l’écriture :
+
+```java
+//Packages à importer afin d'utiliser l'objet File
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+ 
+public class Main {
+  public static void main(String[] args) {
+    //Nous déclarons nos objets en dehors du bloc try/catch
+    FileInputStream fis;
+    FileOutputStream fos;
+    BufferedInputStream bis;
+    BufferedOutputStream bos; 
+        
+    try {
+      fis = new FileInputStream(new File("test.txt"));
+      fos = new FileOutputStream(new File("test2.txt"));
+      bis = new BufferedInputStream(new FileInputStream(new File("test.txt")));
+      bos = new BufferedOutputStream(new FileOutputStream(new File("test3.txt")));
+      byte[] buf = new byte[8];
+ 
+      //On récupère le temps du système
+      long startTime = System.currentTimeMillis();
+                
+      while(fis.read(buf) != -1){
+        fos.write(buf);
+      }
+      //On affiche le temps d'exécution
+      System.out.println("Temps de lecture + écriture avec FileInputStream et FileOutputStream : " + (System.currentTimeMillis() - startTime));
+                
+      //On réinitialise                
+      startTime = System.currentTimeMillis();
+ 
+      while(bis.read(buf) != -1){
+        bos.write(buf);
+      }
+      //On réaffiche
+      System.out.println("Temps de lecture + écriture avec BufferedInputStream et BufferedOutputStream : " + (System.currentTimeMillis() - startTime));
+                
+      //On ferme nos flux de données
+      fis.close();
+      bis.close();
+      fos.close();
+      bos.close();
+                
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }       
+  }
+}
+```
+
+![Flux4](Images/flux4.png)
+
+#### Les objets ObjectInputStream et ObjectOutputStream
+Lorsqu'on veut écrire des objets dans des fichiers, on appelle ça la « sérialisation » : c'est le nom que porte l'action de sauvegarder des objets.
+
+```java
+//Package à importer
+import java.io.Serializable;
+
+public class Game implements Serializable{
+  private String nom, style;
+  private double prix;
+    
+  public Game(String nom, String style, double prix) {
+    this.nom = nom;
+    this.style = style;
+    this.prix = prix;
+  }
+    
+  public String toString(){
+    return "Nom du jeu : " + this.nom + "\n
+            Style de jeu : " + this.style + "\n
+            Prix du jeu : " + this.prix + "\n";
+  } 
+}
+```
+
+* Nous allons créer deux ou trois objets **Game**;
+* Nous allons les sérialiser dans un fichier de notre choix ;
+* Nous allons ensuite les désérialiser afin de pouvoir les réutiliser.
+
+```java
+//Packages à importer afin d'utiliser l'objet File
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class Main {
+  public static void main(String[] args) {
+    //Nous déclarons nos objets en dehors du bloc try/catch
+    ObjectInputStream ois;
+    ObjectOutputStream oos;
+    try {
+      oos = new ObjectOutputStream(
+              new BufferedOutputStream(
+                new FileOutputStream(
+                  new File("game.txt"))));
+            
+      //Nous allons écrire chaque objet Game dans le fichier
+      oos.writeObject(new Game("Assassin Creed", "Aventure", 45.69));
+      oos.writeObject(new Game("Tomb Raider", "Plateforme", 23.45));
+      oos.writeObject(new Game("Tetris", "Stratégie", 2.50));
+      //Ne pas oublier de fermer le flux !
+      oos.close();
+            
+      //On récupère maintenant les données !
+      ois = new ObjectInputStream(
+              new BufferedInputStream(
+                new FileInputStream(
+                  new File("game.txt"))));
+            
+      try {
+        System.out.println("Affichage des jeux :");
+        System.out.println("*************************\n");
+        System.out.println(((Game)ois.readObject()).toString());
+        System.out.println(((Game)ois.readObject()).toString());
+        System.out.println(((Game)ois.readObject()).toString());
+      } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+      }
+    
+      ois.close();
+            
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }       
+  }
+}
+```
+
+Et voci le résultat en figure suivante.
+
+![Flux5](Images/flux5.png)
+
+### <a name="jframe">L'objet JFrame</a>
 
 <pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import javax.swing.JFrame;\n \npublic class Fenetre extends JFrame {\n  public Fenetre(){\n    this.setTitle(&amp;#x22;Ma premi&amp;#xE8;re fen&amp;#xEA;tre Java&amp;#x22;);\n    this.setSize(400, 500);\n    this.setLocationRelativeTo(null);\n    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             \n    this.setVisible(true);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JFrame</span>;
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
@@ -3483,7 +3512,7 @@ public class Bouton extends JButton implements MouseListener{
   }       
 }
 ```
-
+<!--
 -->
 
 

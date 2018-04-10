@@ -3552,6 +3552,353 @@ public void mouseReleased(MouseEvent event) {
 }
 ```
 
+#### Déclencher une action : l'interface ActionListener
+
+Notre but est de pouvoir lancer ou arrêter l'animation dans le `Panneau`.
+
+Créez une variable d'instance de type JLabel (appelez-la label) et initialisez-la avec le texte qui vous plaît ; ajoutez-la ensuite à votre content pane en position `BorderLayout.NORTH`.
+
+Le résultat se trouve en figure suivante.
+
+![ActionListener](Images/listener.png)
+
+```java
+public class Fenetre extends JFrame {
+  private Panneau pan = new Panneau();
+  private Bouton bouton = new Bouton("mon bouton");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+
+  public Fenetre(){
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+    container.setBackground(Color.white);
+    container.setLayout(new BorderLayout());
+    container.add(pan, BorderLayout.CENTER);
+    container.add(bouton, BorderLayout.SOUTH);
+    
+    //Définition d'une police d'écriture
+    Font police = new Font("Tahoma", Font.BOLD, 16);
+
+    //On l'applique au JLabel
+    label.setFont(police);
+
+    //Changement de la couleur du texte
+    label.setForeground(Color.blue);
+
+    //On modifie l'alignement du texte grâce aux attributs statiques de la classe JLabel
+    label.setHorizontalAlignment(JLabel.CENTER);
+    
+    container.add(label, BorderLayout.NORTH);
+    this.setContentPane(container);
+    this.setVisible(true);
+
+    go();
+  }
+
+  //Le reste ne change pas
+
+}
+```
+
+Nous allons maintenant informer notre objet `Bouton` que notre objet `Fenetre` l'écoute. Ajoutons notre Fenetre à la liste des objets qui écoutent notre Bouton grâce à la méthode `addActionListener(ActionListener obj)`.
+
+```java
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener; 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Fenetre extends JFrame implements ActionListener{
+  private Panneau pan = new Panneau();
+  private Bouton bouton = new Bouton("mon bouton");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+
+  //Compteur de clics
+  private int compteur = 0;
+
+  public Fenetre(){
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+    container.setBackground(Color.white);
+    container.setLayout(new BorderLayout());
+    container.add(pan, BorderLayout.CENTER);
+
+    //Nous ajoutons notre fenêtre à la liste des auditeurs de notre bouton
+    bouton.addActionListener(this);
+
+    container.add(bouton, BorderLayout.SOUTH);
+
+    Font police = new Font("Tahoma", Font.BOLD, 16);  
+    label.setFont(police);  
+    label.setForeground(Color.blue);  
+    label.setHorizontalAlignment(JLabel.CENTER);
+    container.add(label, BorderLayout.NORTH);
+    this.setContentPane(container);
+    this.setVisible(true);
+
+    go();
+  }
+
+  private void go(){
+    //Cette méthode ne change pas
+  }
+
+  public void actionPerformed(ActionEvent arg0) {
+    //Lorsque l'on clique sur le bouton, on met à jour le JLabel
+    this.compteur++;
+    label.setText("Vous avez cliqué " + this.compteur + " fois");
+  }      
+}
+```
+
+![ActionListener2](Images/listener2.png)
+
+Nous allons maintenant ajouter un deuxième bouton à notre `Fenetre`, à côté du premier.
+
+```java
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Fenetre extends JFrame implements ActionListener{
+  private Panneau pan = new Panneau();
+  private JButton bouton = new JButton("bouton 1");
+  private JButton bouton2 = new JButton("bouton 2");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+  private int compteur = 0;
+
+  public Fenetre(){
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+    container.setBackground(Color.white);
+    container.setLayout(new BorderLayout());
+    container.add(pan, BorderLayout.CENTER);
+
+    bouton.addActionListener(this);
+    bouton2.addActionListener(this);
+
+    JPanel south = new JPanel();
+    south.add(bouton);
+    south.add(bouton2);
+    container.add(south, BorderLayout.SOUTH);
+
+    Font police = new Font("Tahoma", Font.BOLD, 16);
+    label.setFont(police);
+    label.setForeground(Color.blue);
+    label.setHorizontalAlignment(JLabel.CENTER);
+    container.add(label, BorderLayout.NORTH);
+    this.setContentPane(container);
+    this.setVisible(true);
+
+    go();
+  }
+
+  //…
+
+}
+```
+
+![ActionListener3](Images/listener3.png)
+
+#### Classes internes
+En Java, on peut créer ce que l'on appelle des classes internes. Cela consiste à déclarer une classe à l'intérieur d'une autre classe. Les classes internes possèdent tous les avantages des classes normales, de l'héritage d'une superclasse à l'implémentation d'une interface. Elles bénéficient donc du polymorphisme et de la covariance des variables. En outre, elles ont l'avantage d'avoir accès aux attributs de la classe dans laquelle elles sont déclarées.
+
+Dans notre exemple, nous créerons deux classes internes implémentant chacune l'interface `ActionListeneret` redéfinissant la méthode `actionPerformed()` :
+
+* `BoutonListener` écoutera le premier bouton ;
+* `Bouton2Listener` écoutera le second.
+
+Une fois ces opérations effectuées, il ne nous reste plus qu'à indiquer à chaque bouton « qui l'écoute » grâce à la méthode `addActionListener()`.
+
+Voyez ci-dessous la classe Fenetre mise à jour.
+
+```java
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+ 
+public class Fenetre extends JFrame{
+  private Panneau pan = new Panneau();
+  private JButton bouton = new JButton("bouton 1");
+  private JButton bouton2 = new JButton("bouton 2");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+  private int compteur = 0;
+  
+  public Fenetre(){
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+ 
+    container.setBackground(Color.white);
+    container.setLayout(new BorderLayout());
+    container.add(pan, BorderLayout.CENTER);
+        
+    //Ce sont maintenant nos classes internes qui écoutent nos boutons 
+    bouton.addActionListener(new BoutonListener());
+    bouton2.addActionListener(new Bouton2Listener());
+        
+    JPanel south = new JPanel();
+    south.add(bouton);
+    south.add(bouton2);
+    container.add(south, BorderLayout.SOUTH);
+    Font police = new Font("Tahoma", Font.BOLD, 16);
+    label.setFont(police);
+    label.setForeground(Color.blue);
+    label.setHorizontalAlignment(JLabel.CENTER);
+    container.add(label, BorderLayout.NORTH);
+    this.setContentPane(container);
+    this.setVisible(true);
+    go();
+  }
+      
+  private void go(){
+    //Cette méthode ne change pas
+  }
+      
+  //Classe écoutant notre premier bouton
+  class BoutonListener implements ActionListener{
+    //Redéfinition de la méthode actionPerformed()
+    public void actionPerformed(ActionEvent arg0) {
+      label.setText("Vous avez cliqué sur le bouton 1");        
+    }
+  }
+      
+  //Classe écoutant notre second bouton
+  class Bouton2Listener implements ActionListener{
+    //Redéfinition de la méthode actionPerformed()
+    public void actionPerformed(ActionEvent e) {
+      label.setText("Vous avez cliqué sur le bouton 2");    
+    }
+  }      
+}
+```
+
+#### Contrôler son animation : lancement et arrêt
+Pour parvenir à gérer le lancement et l'arrêt de notre animation, nous allons devoir modifier un peu le code de notre classe `Fenetre`. Il va falloir changer le libellé des boutons de notre IHM : le premier affichera **Go** et le deuxième **Stop**.
+
+Afin de bien gérer notre animation, nous devons améliorer notre méthode `go()`. Sortons donc de cette méthode les deux entiers dont nous nous servions afin de recalculer les coordonnées de notre rond. La boucle infinie doit dorénavant pouvoir être interrompue ! Pour réussir cela, nous allons déclarer un booléen qui changera d'état selon le bouton sur lequel on cliquera ; nous l'utiliserons comme paramètre de notre boucle.
+
+Voyez ci-dessous le code de notre classe `Fenetre`.
+
+```java
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener; 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Fenetre extends JFrame {
+  private Panneau pan = new Panneau();
+  private JButton bouton = new JButton("Go");
+  private JButton bouton2 = new JButton("Stop");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+  private int compteur = 0;
+  private boolean animated = true;
+  private boolean backX, backY;
+  private int x, y;
+
+  public Fenetre(){
+    this.setTitle("Animation");
+    this.setSize(300, 300);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+
+    container.setBackground(Color.white);
+    container.setLayout(new BorderLayout());
+    container.add(pan, BorderLayout.CENTER);
+    bouton.addActionListener(new BoutonListener()); 
+    bouton.setEnabled(false);
+    bouton2.addActionListener(new Bouton2Listener());
+
+    JPanel south = new JPanel();
+    south.add(bouton);
+    south.add(bouton2);
+    container.add(south, BorderLayout.SOUTH);
+    Font police = new Font("Tahoma", Font.BOLD, 16);
+    label.setFont(police);
+    label.setForeground(Color.blue);
+    label.setHorizontalAlignment(JLabel.CENTER);
+    container.add(label, BorderLayout.NORTH);
+    this.setContentPane(container);
+    this.setVisible(true);
+    go();
+  }
+
+  private void go(){
+    //Les coordonnées de départ de notre rond
+    x = pan.getPosX();
+    y = pan.getPosY();
+    //Dans cet exemple, j'utilise une boucle while
+    //Vous verrez qu'elle fonctionne très bien
+    while(this.animated){
+      if(x < 1)backX = false;
+      if(x > pan.getWidth()-50)backX = true;          
+      if(y < 1)backY = false;
+      if(y > pan.getHeight()-50)backY = true;
+      if(!backX)pan.setPosX(++x);
+      else pan.setPosX(--x);
+      if(!backY) pan.setPosY(++y);
+      else pan.setPosY(--y);
+      pan.repaint();
+
+      try {
+        Thread.sleep(3);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }     
+  }
+
+  class BoutonListener implements ActionListener{
+    public void actionPerformed(ActionEvent arg0) {
+      animated = true;
+      bouton.setEnabled(false);
+      bouton2.setEnabled(true);
+      go();
+    }
+  }
+
+  class Bouton2Listener implements ActionListener{
+     public void actionPerformed(ActionEvent e) {
+      animated = false;     
+      bouton.setEnabled(true);
+      bouton2.setEnabled(false);
+    }
+  }     
+}
+```
 
 -->
 

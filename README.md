@@ -660,6 +660,8 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
+<!--
+
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -3523,7 +3525,34 @@ public class Bouton extends JButton implements MouseListener{
   }       
 }
 ```
-<!--
+
+**Problème :** Quand on clique sur le bouton et on relâche le clic en dehors, le fond du bouton deviendra orange, puisque c'est ce qui doit être effectué vu la méthode `mouseReleased()`. Afin de pallier ce problème, nous allons vérifier que lorsque le clic est relâché, la souris se trouve toujours sur le bouton.
+
+Voici le correctif e la méthode `mouseReleased()` de notre classe `Bouton` :
+
+```java
+public void mouseReleased(MouseEvent event) {
+  //Nous changeons le fond de notre image pour le orange lorsque nous relâchons le clic avec le fichier fondBoutonHover.png si la souris est toujours sur le bouton
+
+  if((event.getY() > 0 && event.getY() < this.getHeight()) && (event.getX() > 0 && event.getX() < this.getWidth())){
+    try {
+      img = ImageIO.read(new File("fondBoutonHover.png"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  //Si on se trouve à l'extérieur, on dessine le fond par défaut
+  else{
+    try {
+      img = ImageIO.read(new File("fondBouton.png"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }               
+}
+```
+
+
 -->
 
 

@@ -2666,187 +2666,197 @@ Et voci le résultat en figure suivante.
 
 ### <a name="jframe">L'objet JFrame</a>
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import javax.swing.JFrame;\n \npublic class Fenetre extends JFrame {\n  public Fenetre(){\n    this.setTitle(&amp;#x22;Ma premi&amp;#xE8;re fen&amp;#xEA;tre Java&amp;#x22;);\n    this.setSize(400, 500);\n    this.setLocationRelativeTo(null);\n    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             \n    this.setVisible(true);\n  }\n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JFrame</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Fenetre</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JFrame</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Fenetre</span>(){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setTitle</span>(<span class="ace_string">"Ma première fenêtre Java"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setSize</span>(<span class="ace_constant ace_numeric">400</span>, <span class="ace_constant ace_numeric">500</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setLocationRelativeTo</span>(<span class="ace_constant ace_language">null</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setDefaultCloseOperation</span>(<span class="ace_identifier">JFrame</span>.<span class="ace_identifier">EXIT_ON_CLOSE</span>);             
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setVisible</span>(<span class="ace_constant ace_language ace_boolean">true</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import javax.swing.JFrame;
+ 
+public class Fenetre extends JFrame {
+  public Fenetre(){
+    this.setTitle("Ma première fenêtre Java");
+    this.setSize(400, 500);
+    this.setLocationRelativeTo(null);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             
+    this.setVisible(true);
+  }
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;Fenetre fen = new Fenetre();&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">Fenetre</span> <span class="ace_identifier">fen</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Fenetre</span>();</div></div></div></code></pre>
+```java
+Fenetre fen = new Fenetre();
+```
 
-<img src="Images/jframe.png" />
-<img src="Images/jframe1.png" />
+![JFrame](Images/jframe.png)
+![JFrame1](Images/jframe1.png)
 
-<p>Un JFrame est composé, dans l'ordre, de :</p>
-<ul>
-  <li>le RootPane(en vert), le conteneur principal qui contient les autres composants ;</li>
-  <li>le LayeredPane(en violet), qui forme juste un panneau composé du conteneur global et de la barre de menu (MenuBar) ;</li>
-  <li>la MenuBar(en orange), la barre de menu, quand il y en a une ;</li>
-  <li>le Content Pane (en rose) : c'est dans celui-ci que nous placerons nos composants ;</li>
-  <li>le GlassPane (en transparence), couche utilisée pour intercepter les actions de l'utilisateur avant qu'elles ne parviennent aux composants.</li>
-</ul>
+Un JFrame est composé, dans l'ordre, de :
+* le RootPane(en vert), le conteneur principal qui contient les autres composants ;
+* le LayeredPane(en violet), qui forme juste un panneau composé du conteneur global et de la barre de menu (MenuBar) ;
+* la MenuBar(en orange), la barre de menu, quand il y en a une ;
+* le Content Pane (en rose) : c'est dans celui-ci que nous placerons nos composants ;
+* le GlassPane (en transparence), couche utilisée pour intercepter les actions de l'utilisateur avant qu'elles ne parviennent aux composants.
 
-<h3>L'objet JPanel</h3>
+### L'objet JPanel
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Color; \nimport javax.swing.JFrame;\nimport javax.swing.JPanel;\n \npublic class Fenetre extends JFrame {\n  public Fenetre(){             \n    this.setTitle(&amp;#x22;Ma premi&amp;#xE8;re fen&amp;#xEA;tre Java&amp;#x22;);\n    this.setSize(400, 100);\n    this.setLocationRelativeTo(null);               \n \n    //Instanciation d&amp;#x27;un objet JPanel\n    JPanel pan = new JPanel();\n    //D&amp;#xE9;finition de sa couleur de fond\n    pan.setBackground(Color.ORANGE);        \n    //On pr&amp;#xE9;vient notre JFrame que notre JPanel sera son content pane\n    this.setContentPane(pan);               \n    this.setVisible(true);\n  }       \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Color</span>; 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JFrame</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Fenetre</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JFrame</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Fenetre</span>(){             
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setTitle</span>(<span class="ace_string">"Ma première fenêtre Java"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setSize</span>(<span class="ace_constant ace_numeric">400</span>, <span class="ace_constant ace_numeric">100</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setLocationRelativeTo</span>(<span class="ace_constant ace_language">null</span>);               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Instanciation d'un objet JPanel</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">JPanel</span> <span class="ace_identifier">pan</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">JPanel</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Définition de sa couleur de fond</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">pan</span>.<span class="ace_identifier">setBackground</span>(<span class="ace_identifier">Color</span>.<span class="ace_identifier">ORANGE</span>);        
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//On prévient notre JFrame que notre JPanel sera son content pane</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setContentPane</span>(<span class="ace_identifier">pan</span>);               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setVisible</span>(<span class="ace_constant ace_language ace_boolean">true</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }       
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.awt.Color; 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+ 
+public class Fenetre extends JFrame {
+  public Fenetre(){             
+    this.setTitle("Ma première fenêtre Java");
+    this.setSize(400, 100);
+    this.setLocationRelativeTo(null);               
+ 
+    //Instanciation d'un objet JPanel
+    JPanel pan = new JPanel();
+    //Définition de sa couleur de fond
+    pan.setBackground(Color.ORANGE);        
+    //On prévient notre JFrame que notre JPanel sera son content pane
+    this.setContentPane(pan);               
+    this.setVisible(true);
+  }       
+}
+```
 
-<img src="Images/jframe2.png" />
+![JFrame2](Images/jframe2.png)
 
-<h3>L'objet Graphics</h3>
+### L'objet Graphics
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Graphics;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel { \n  public void paintComponent(Graphics g){\n    //Vous verrez cette phrase chaque fois que la m&amp;#xE9;thode sera invoqu&amp;#xE9;e\n    System.out.println(&amp;#x22;Je suis ex&amp;#xE9;cut&amp;#xE9;e !&amp;#x22;); \n    g.fillOval(20, 20, 75, 75);\n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> { 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//Vous verrez cette phrase chaque fois que la méthode sera invoquée</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_string">"Je suis exécutée !"</span>); 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">fillOval</span>(<span class="ace_constant ace_numeric">20</span>, <span class="ace_constant ace_numeric">20</span>, <span class="ace_constant ace_numeric">75</span>, <span class="ace_constant ace_numeric">75</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.awt.Graphics;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel { 
+  public void paintComponent(Graphics g){
+    //Vous verrez cette phrase chaque fois que la méthode sera invoquée
+    System.out.println("Je suis exécutée !"); 
+    g.fillOval(20, 20, 75, 75);
+  }               
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import javax.swing.JFrame;\n \npublic class Fenetre extends JFrame {\n  public Fenetre(){                \n    this.setTitle(&amp;#x22;Ma premi&amp;#xE8;re fen&amp;#xEA;tre Java&amp;#x22;);\n    this.setSize(100, 150);\n    this.setLocationRelativeTo(null);               \n    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n    this.setContentPane(new Panneau());\n\n    this.setVisible(true);\n  }     \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JFrame</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Fenetre</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JFrame</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_identifier">Fenetre</span>(){                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setTitle</span>(<span class="ace_string">"Ma première fenêtre Java"</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setSize</span>(<span class="ace_constant ace_numeric">100</span>, <span class="ace_constant ace_numeric">150</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setLocationRelativeTo</span>(<span class="ace_constant ace_language">null</span>);               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setDefaultCloseOperation</span>(<span class="ace_identifier">JFrame</span>.<span class="ace_identifier">EXIT_ON_CLOSE</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setContentPane</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">Panneau</span>());
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">this</span>.<span class="ace_identifier">setVisible</span>(<span class="ace_constant ace_language ace_boolean">true</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }     
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import javax.swing.JFrame;
+ 
+public class Fenetre extends JFrame {
+  public Fenetre(){                
+    this.setTitle("Ma première fenêtre Java");
+    this.setSize(100, 150);
+    this.setLocationRelativeTo(null);               
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setContentPane(new Panneau());
 
-<img src="Images/graphics.png" />
+    this.setVisible(true);
+  }     
+}
+```
 
-<h4>La méthode drawOval()</h4>
+![Graphics](Images/graphics.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Graphics;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  public void paintComponent(Graphics g){                \n    int x1 = this.getWidth()/4;\n    int y1 = this.getHeight()/4;\n    g.drawOval(x1, y1, this.getWidth()/2, this.getHeight()/2);\n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">x1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">getWidth</span>()/<span class="ace_constant ace_numeric">4</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">y1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">this</span>.<span class="ace_identifier">getHeight</span>()/<span class="ace_constant ace_numeric">4</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">drawOval</span>(<span class="ace_identifier">x1</span>, <span class="ace_identifier">y1</span>, <span class="ace_keyword">this</span>.<span class="ace_identifier">getWidth</span>()/<span class="ace_constant ace_numeric">2</span>, <span class="ace_keyword">this</span>.<span class="ace_identifier">getHeight</span>()/<span class="ace_constant ace_numeric">2</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+#### La méthode drawOval()
 
-<img src="Images/drawoval.png" />
+```java
+import java.awt.Graphics;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  public void paintComponent(Graphics g){                
+    int x1 = this.getWidth()/4;
+    int y1 = this.getHeight()/4;
+    g.drawOval(x1, y1, this.getWidth()/2, this.getHeight()/2);
+  }               
+}
+```
 
-<h4>La méthode drawRect()</h4>
+![drawOval](Images/drawoval.png)
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Graphics;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  public void paintComponent(Graphics g){\n    //x1, y1, width, height\n    g.drawRect(10, 10, 50, 60);\n    g.fillRect(65, 65, 30, 40);\n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_comment">//x1, y1, width, height</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">drawRect</span>(<span class="ace_constant ace_numeric">10</span>, <span class="ace_constant ace_numeric">10</span>, <span class="ace_constant ace_numeric">50</span>, <span class="ace_constant ace_numeric">60</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">fillRect</span>(<span class="ace_constant ace_numeric">65</span>, <span class="ace_constant ace_numeric">65</span>, <span class="ace_constant ace_numeric">30</span>, <span class="ace_constant ace_numeric">40</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
 
-<img src="Images/drawrect.png" />
+#### La méthode drawRect()
 
-<h4>La méthode drawString()</h4>
+```java
+import java.awt.Graphics;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  public void paintComponent(Graphics g){
+    //x1, y1, width, height
+    g.drawRect(10, 10, 50, 60);
+    g.fillRect(65, 65, 30, 40);
+  }               
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Color;\nimport java.awt.Font;\nimport java.awt.Graphics;\n \nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  public void paintComponent(Graphics g){                \n    Font font = new Font(&amp;#x22;Courier&amp;#x22;, Font.BOLD, 20);\n    g.setFont(font);\n    g.setColor(Color.red);          \n    g.drawString(&amp;#x22;Bonjour tout le monde !&amp;#x22;, 10, 20);                \n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Color</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Font</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Font</span> <span class="ace_identifier">font</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Font</span>(<span class="ace_string">"Courier"</span>, <span class="ace_identifier">Font</span>.<span class="ace_identifier">BOLD</span>, <span class="ace_constant ace_numeric">20</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">setFont</span>(<span class="ace_identifier">font</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">setColor</span>(<span class="ace_identifier">Color</span>.<span class="ace_identifier">red</span>);          
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g</span>.<span class="ace_identifier">drawString</span>(<span class="ace_string">"Bonjour tout le monde !"</span>, <span class="ace_constant ace_numeric">10</span>, <span class="ace_constant ace_numeric">20</span>);                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![drawRect](Images/drawrect.png)
 
-<h4>La méthode drawImage()</h4>
+#### La méthode drawString()
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Graphics;\nimport java.awt.Image;\nimport java.io.File;\nimport java.io.IOException;\nimport javax.imageio.ImageIO;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  public void paintComponent(Graphics g){\n    try {\n      Image img = ImageIO.read(new File(&amp;#x22;images.jpg&amp;#x22;));\n      g.drawImage(img, 0, 0, this);\n      //Pour une image de fond\n      //g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);\n    } catch (IOException e) {\n      e.printStackTrace();\n    }                \n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Image</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">imageio</span>.<span class="ace_identifier">ImageIO</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">try</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">Image</span> <span class="ace_identifier">img</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">ImageIO</span>.<span class="ace_identifier">read</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">File</span>(<span class="ace_string">"images.jpg"</span>));
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">g</span>.<span class="ace_identifier">drawImage</span>(<span class="ace_identifier">img</span>, <span class="ace_constant ace_numeric">0</span>, <span class="ace_constant ace_numeric">0</span>, <span class="ace_keyword">this</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//Pour une image de fond</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_comment">//g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);</span>
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    } <span class="ace_keyword">catch</span> (<span class="ace_identifier">IOException</span> <span class="ace_identifier">e</span>) {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span>  <span class="ace_identifier">e</span>.<span class="ace_identifier">printStackTrace</span>();
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+```java
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+ 
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  public void paintComponent(Graphics g){                
+    Font font = new Font("Courier", Font.BOLD, 20);
+    g.setFont(font);
+    g.setColor(Color.red);          
+    g.drawString("Bonjour tout le monde !", 10, 20);                
+  }               
+}
+```
 
-<img src="Images/drawimage.png" />
+#### La méthode drawImage()
 
-<h3>L'objet Graphics2D</h3>
+```java
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  public void paintComponent(Graphics g){
+    try {
+      Image img = ImageIO.read(new File("images.jpg"));
+      g.drawImage(img, 0, 0, this);
+      //Pour une image de fond
+      //g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }                
+  }               
+}
+```
 
-<pre class="code-block"><code data-claire-semantic="java" data-code="{&quot;language&quot;:&quot;java&quot;,&quot;source&quot;:&quot;import java.awt.Color;\nimport java.awt.Font;\nimport java.awt.GradientPaint;\nimport java.awt.Graphics;\nimport java.awt.Graphics2D;\nimport java.awt.Image;\nimport java.io.File;\nimport java.io.IOException;\n \nimport javax.imageio.ImageIO;\nimport javax.swing.JPanel;\n \npublic class Panneau extends JPanel {\n  public void paintComponent(Graphics g){\n    Graphics2D g2d = (Graphics2D)g;         \n    GradientPaint gp = new GradientPaint(0, 0, Color.RED, 30, 30, Color.cyan, true);                \n    g2d.setPaint(gp);\n    g2d.fillRect(0, 0, this.getWidth(), this.getHeight());                \n  }               \n}&quot;}" class="ace" data-widget="codeBlock"><div class="ace-openclassrooms"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Color</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Font</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">GradientPaint</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Graphics2D</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">awt</span>.<span class="ace_identifier">Image</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">File</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">io</span>.<span class="ace_identifier">IOException</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">imageio</span>.<span class="ace_identifier">ImageIO</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">javax</span>.<span class="ace_identifier">swing</span>.<span class="ace_identifier">JPanel</span>;
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span> 
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">Panneau</span> <span class="ace_keyword">extends</span> <span class="ace_identifier">JPanel</span> {
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">void</span> <span class="ace_identifier">paintComponent</span>(<span class="ace_identifier">Graphics</span> <span class="ace_identifier">g</span>){
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Graphics2D</span> <span class="ace_identifier">g2d</span> <span class="ace_keyword ace_operator">=</span> (<span class="ace_identifier">Graphics2D</span>)<span class="ace_identifier">g</span>;         
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">GradientPaint</span> <span class="ace_identifier">gp</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">GradientPaint</span>(<span class="ace_constant ace_numeric">0</span>, <span class="ace_constant ace_numeric">0</span>, <span class="ace_identifier">Color</span>.<span class="ace_identifier">RED</span>, <span class="ace_constant ace_numeric">30</span>, <span class="ace_constant ace_numeric">30</span>, <span class="ace_identifier">Color</span>.<span class="ace_identifier">cyan</span>, <span class="ace_constant ace_language ace_boolean">true</span>);                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g2d</span>.<span class="ace_identifier">setPaint</span>(<span class="ace_identifier">gp</span>);
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">g2d</span>.<span class="ace_identifier">fillRect</span>(<span class="ace_constant ace_numeric">0</span>, <span class="ace_constant ace_numeric">0</span>, <span class="ace_keyword">this</span>.<span class="ace_identifier">getWidth</span>(), <span class="ace_keyword">this</span>.<span class="ace_identifier">getHeight</span>());                
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }               
-</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
-</div></div></div></code></pre>
+![drawImage](Images/drawimage.png)
+
+### L'objet Graphics2D
+
+```java
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+ 
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+ 
+public class Panneau extends JPanel {
+  public void paintComponent(Graphics g){
+    Graphics2D g2d = (Graphics2D)g;         
+    GradientPaint gp = new GradientPaint(0, 0, Color.RED, 30, 30, Color.cyan, true);                
+    g2d.setPaint(gp);
+    g2d.fillRect(0, 0, this.getWidth(), this.getHeight());                
+  }               
+}
+```
 
 ![Graphics2](Images/graphics2.png)
 

@@ -3333,6 +3333,7 @@ public class Fenetre extends JFrame{
 ```
 
 ### Une classe Bouton personnalisée
+Créons une classe héritant de `javax.swing.JButton` que nous appellerons `Bouton` et redéfinissons sa méthode `paintComponent()`.
 
 ![Bouton](Images/bouton1.png)
 

@@ -660,8 +660,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -2634,6 +2632,8 @@ Java contient une classe nommée <stromg><i>Exception</i></strong> dans laquelle
 
 <p>Et voci le résultat en figure suivante.</p>
 <img src="Images/flux5.png" />
+
+<!--
 
 <h3><a name="jframe">L'objet JFrame</a></h3>
 

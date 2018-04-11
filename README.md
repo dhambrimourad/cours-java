@@ -3897,6 +3897,83 @@ public class Fenetre extends JFrame {
 }
 ```
 
+À l'exécution, vous remarquez que :
+* le bouton Go n'est pas cliquable et l'autre l'est ;
+* l'animation se lance ;
+* l'animation s'arrête lorsque l'on clique sur le boutonStop ;
+* le boutonGodevient alors cliquable ;
+* lorsque vous cliquez dessus, l'animation ne se relance pas !
+
+Un thread est lancé au démarrage de notre application : c'est le processus principal du programme. Au démarrage, l'animation est donc lancée dans le même thread que notre objet `Fenetre`. Lorsque nous lui demandons de s'arrêter, aucun problème : les ressources mémoire sont libérées, on sort de la boucle infinie et l'application continue à fonctionner.
+
+Mais lorsque nous redemandons à l'animation de se lancer, l'instruction se trouvant dans la méthode `actionPerformed()` appelle la méthode `go()` et, étant donné que nous nous trouvons à l'intérieur d'une boucle infinie, nous restons dans la méthode `go()` et ne sortons plus de la méthode `actionPerformed()`.
+
+#### Solution : Les threads
+Les threads sont des unités d'exécution de notre programme. Lorsque nous en créons plusieurs, nous pouvons exécuter des tâches simultanément. 
+
+Il nous suffit de créer un nouveau thread lorsqu'on clique sur le bouton Go en lui passant une implémentation de l'interface  Runnable en paramètre qui, elle, va appeler la méthode go().
+
+Voici le code de notre classe `Fenetre` utilisant le thread en question :
+
+```java
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+ 
+public class Fenetre extends JFrame{
+  private Panneau pan = new Panneau();
+  private JButton bouton = new JButton("Go");
+  private JButton bouton2 = new JButton("Stop");
+  private JPanel container = new JPanel();
+  private JLabel label = new JLabel("Le JLabel");
+  private int compteur = 0;
+  private boolean animated = true;
+  private boolean backX, backY;
+  private int x, y;
+  private Thread t;
+
+  public Fenetre(){
+    //Le constructeur n'a pas changé
+  }
+
+  private void go(){
+    //La méthode n'a pas changé
+  }
+
+  public class BoutonListener implements ActionListener{
+    public void actionPerformed(ActionEvent arg0) {
+      animated = true;
+      t = new Thread(new PlayAnimation());
+      t.start();
+      bouton.setEnabled(false);
+      bouton2.setEnabled(true);
+    }
+  }
+
+  class Bouton2Listener  implements ActionListener{
+    public void actionPerformed(ActionEvent e) {
+      animated = false;       
+      bouton.setEnabled(true);
+      bouton2.setEnabled(false);
+    }
+  }       
+
+  class PlayAnimation implements Runnable{
+    public void run() {
+      go();                   
+    }               
+  }       
+}
+```
+
+
 <!--
 -->
 

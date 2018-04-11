@@ -660,8 +660,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -1156,7 +1154,6 @@ System.out.println(" v2 = "+v2.getNom()+" ville de  "+v2.getNombreHabitants()+ "
 ```
 
 À la compilation, vous devriez obtenir la figure suivante.
-
 
 ![Ville2](Images/ville2.jpg)
 
@@ -3900,6 +3897,7 @@ public class Fenetre extends JFrame {
 }
 ```
 
+<!--
 -->
 
 

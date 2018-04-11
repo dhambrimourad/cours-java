@@ -1707,7 +1707,7 @@ public class ObjetD{
 }
 ```
 
-Les packages
+### Les packages
 Ce sont des dossiers permettant de ranger nos classes. Charger un package nous permet d'utiliser les classes qu'il contient. Pour créer un nouveau package, cliquez simplement sur cette icône comme à la figure suivante (vous pouvez aussi effectuer un clic droit puis <strong><i>New > Package</i></strong>).
 
 ![Packages](Images/packages.png)

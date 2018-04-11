@@ -1982,79 +1982,34 @@ public static void main(String[] args){
 }
 ```
 
-Implémentation de l'interface ChienDresse
+L’utilité du concept d’interface réside dans le regroupement de plusieurs classes qui implémentent un ensemble commun de méthodes, sous un même type. Une interface possède les caractéristiques suivantes :
+* elle contient des signatures de méthodes ;
+* elle ne peut pas contenir de variables ;
+* une interface peut hériter d’une autre interface (avec le mot-clé extends) ;
+* une classe peut implémenter plusieurs interfaces. La liste des interfaces implémentées doit alors figurer après le mot-clé implements placé dans la déclaration de classe, en séparant chaque interface par une virgule.
 
-* Nous voulons que nos chiens puissent être amicaux ;
-* Nous voulons définir un supertype pour utiliser le polymorphisme ;
-* Nous voulons pouvoir continuer à utiliser nos objets comme avant.
-
-Nous allons donc créer l'interface SuperChien pour ensuite l'implémenter dans notre objet Chien.
+Dans l'exemple des formes, `Forme` peut être une interface décrivant les méthodes qui doivent être implémentées par les classes `Rectangle` et `Cercle`. L’interface `Forme` s’écrit alors de la manière suivante :
 
 ```java
-public interface ChienDresse {
-  public void saluer();
-  public void sauter();
-  public void faireLeBeau();
+public interface Forme {
+    public int surface() ;
+    public void affiche() ;
 }
 ```
 
+Pour obliger les classes Rectangle, Cercle et Carre à implémenter les méthodes surface() et affiche(), il faut modifier l’héritage de ce qui était la classe Forme en une implémentation de l’interface définie ci-dessus :
+
 ```java
-public class Chien extends Canin implements ChienDresse {
-  public Chien(){
-
-  }
-  
-  public Chien(String couleur, int poids){
-    this.couleur = couleur;
-    this.poids = poids;
-  }                
-
-  void crier() {
-    System.out.println("J'aboie sans raison !");
-  }        
-
-  public void saluer() {
-    System.out.println("Je salue comme un homme !");               
-  }
-
-  public void faireLeBeau() {
-    System.out.println("Je fais le beau !");
-  }
-
-  public void sauter() {
-    System.out.println("Je peux sauter tres haut !");
-  } 
+public class Rectangle implements Forme {
+    ...
 }
 ```
 
-Voici un code que vous pouvez utiliser pour tester le polymorphisme de notre implémentation :
+et
 
 ```java
-public class Test {
- 
-  public static void main(String[] args) {
-    //Les méthodes d'un chien 
-    Chien c = new Chien("Gris bleuté", 20);
-    c.boire();
-    c.manger();
-    c.deplacement();
-    c.crier();
-    System.out.println(c.toString());
-            
-    System.out.println("--------------------------------------------");
-    //Les méthodes de l'interface
-    c.saluer();
-    c.faireLeBeau();
-    c.sauter();
-        
-    System.out.println("--------------------------------------------");
-    //Utilisons le polymorphisme de notre interface
-    ChienDresse r = new Chien();
-    r.faireLeBeau();
-    r.saluer();
-    r.sauter();
-  } 
-  
+public class Cercle implements Forme {
+    ...
 }
 ```
 

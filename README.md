@@ -660,6 +660,8 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
+<!--
+
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -2012,8 +2014,6 @@ public class Cercle implements Forme {
     ...
 }
 ```
-
-<!--
 
 ### <a name="exceptions">Les exceptions</a>
 

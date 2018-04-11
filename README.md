@@ -2058,6 +2058,8 @@ public class Test {
 }
 ```
 
+<!--
+
 ### <a name="exceptions">Les exceptions</a>
 
 Java contient une classe nommée <stromg><i>Exception</i></strong> dans laquelle sont répertoriés différents cas d'erreur. La division par zéro en fait partie ! Si vous créez un nouveau projet avec seulement la classe main et y mettez le code suivant :
@@ -3974,7 +3976,7 @@ public class Fenetre extends JFrame{
 ```
 
 
-<!--
+
 -->
 
 

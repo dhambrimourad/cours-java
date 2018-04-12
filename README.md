@@ -660,8 +660,6 @@ La figure suivante est un aperçu de ce que je vous demande.
 
 ![Celsius](Images/celsius.png)
 
-<!--
-
 ### <a name="tableaux">Tableaux à une dimension</a>
 
 ```java
@@ -1986,7 +1984,7 @@ public static void main(String[] args){
 
 L’utilité du concept d’interface réside dans le regroupement de plusieurs classes qui implémentent un ensemble commun de méthodes, sous un même type. Une interface possède les caractéristiques suivantes :
 * elle contient des signatures de méthodes ;
-* elle ne peut pas contenir de variables ;
+* les variables sont déclarées statiques et finales par défaut ;
 * une interface peut hériter d’une autre interface (avec le mot-clé extends) ;
 * une classe peut implémenter plusieurs interfaces. La liste des interfaces implémentées doit alors figurer après le mot-clé implements placé dans la déclaration de classe, en séparant chaque interface par une virgule.
 
@@ -2014,6 +2012,8 @@ public class Cercle implements Forme {
     ...
 }
 ```
+
+<!--
 
 ### <a name="exceptions">Les exceptions</a>
 

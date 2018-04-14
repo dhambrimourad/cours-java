@@ -1341,6 +1341,8 @@ Vous venez de créer un objet dont les variables sont protégées de l'extérieu
 
 En fait, lorsqu'on procède de la sorte, on s'assure que le fonctionnement interne à l'objet est intègre, car toute modification d'une donnée de l'objet est maîtrisée. Nous avons développé des méthodes qui s'assurent qu'on ne modifie pas n'importe comment les variables.
 
+<!--
+
 ### <a name="heritage">L'héritage</a>
 L’idée principale de l’héritage est d’organiser les classes de manière hiérarchique. La relation d’héritage est unidirectionnelle et, si une classe B hérite d’une classe A, on dira que B est une sousclasse de A. Cette notion de sous-classe signifie que la classe B est un cas particulier de la classe A et donc que les objets instanciant la classe B instancient également la classe A.
 
@@ -2012,8 +2014,6 @@ public class Cercle implements Forme {
     ...
 }
 ```
-
-<!--
 
 ### <a name="exceptions">Les exceptions</a>
 

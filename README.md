@@ -1713,8 +1713,6 @@ Ce sont des dossiers permettant de ranger nos classes. Charger un package nous p
 ![Packages](Images/packages.png)
 ![Packages1](Images/packages1.png)
 
-<!--
-
 ### <a name="abstraites">Les classes abstraites</a>
 Une classe abstraite est une classe que vous ne pouvez pas instancier. Imaginons que nous ayons une classe A déclarée abstraite. Voici un code qui ne compilera pas :
 
@@ -3932,7 +3930,7 @@ public class Fenetre extends JFrame{
 
 
 
--->
+
 
 
 
